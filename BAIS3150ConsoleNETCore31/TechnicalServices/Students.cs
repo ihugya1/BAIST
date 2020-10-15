@@ -1,0 +1,317 @@
+﻿using BAIS3150ConsoleNETCore31.Domain;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+namespace BAIS3150ConsoleNETCore31.TechnicalServices
+{
+    class Students
+    {
+        public bool AddStudent(Student acceptedStudent, string programCode) //parameters, camel casing
+        {
+            bool Success = true;
+            Console.WriteLine("Execute Enroll Student ");
+            string user, password;
+            Console.Write("Please enter DB Name : ");
+            user = Console.ReadLine();
+            Console.Write("Please enter DB Password : ");
+            password = Console.ReadLine();
+            //establish a connection
+            //SqlConnection ihugya1 = new SqlConnection();
+            SqlConnection BAIS3150;         //declararation
+            BAIS3150 = new SqlConnection(); //instantiation
+            BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            BAIS3150.Open();
+            SqlCommand AddStudentCommand = new SqlCommand(); // this is declaration and instantiation wooowwwww very cool
+            AddStudentCommand.Connection = BAIS3150;
+            AddStudentCommand.CommandType = CommandType.StoredProcedure;
+            AddStudentCommand.CommandText = "AddStudent";
+            SqlParameter AddStudentParameter;
+            AddStudentParameter = new SqlParameter //object initialization
+            {
+                ParameterName = "@StudentID",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = acceptedStudent.StudentID
+            };
+            AddStudentCommand.Parameters.Add(AddStudentParameter);
+            AddStudentParameter = new SqlParameter
+            {
+                ParameterName = "@FirstName",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = acceptedStudent.FirstName
+            };
+            AddStudentCommand.Parameters.Add(AddStudentParameter);
+            AddStudentParameter = new SqlParameter
+            {
+                ParameterName = "@LastName",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = acceptedStudent.LastName
+            };
+            AddStudentCommand.Parameters.Add(AddStudentParameter);
+            AddStudentParameter = new SqlParameter
+            {
+                ParameterName = "@Email",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = acceptedStudent.Email
+            };
+            AddStudentCommand.Parameters.Add(AddStudentParameter);
+            AddStudentParameter = new SqlParameter
+            {
+                ParameterName = "@ProgramCode",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = programCode
+            };
+            AddStudentCommand.Parameters.Add(AddStudentParameter);
+            try
+            {
+                AddStudentCommand.ExecuteNonQuery();//not getting a result back 
+            }
+            catch (Exception e)
+            {
+                Success = false;
+                Console.WriteLine(e);
+                return Success;
+            }
+            Console.WriteLine("Success: Added Student");
+            Success = true;
+            BAIS3150.Close();
+            return Success;
+        }
+        public Student GetStudent(string studentID)
+        {
+            Student student = new Student();
+            Console.WriteLine("Execute Get Student ");
+            string user, password;
+            Console.Write("Please enter DB Name : ");
+            user = Console.ReadLine();
+            Console.Write("Please enter DB Password : ");
+            password = Console.ReadLine();
+            SqlConnection BAIS3150 = new SqlConnection();
+            BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            BAIS3150.Open();
+            SqlCommand ASampleCommand = new SqlCommand
+            {
+                Connection = BAIS3150,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetStudent",
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@StudentID",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                SqlValue = studentID
+            };
+            ASampleCommand.Parameters.Add(ASampleCommandParameter);
+            SqlDataReader ASampleDataReader;
+            ASampleDataReader = ASampleCommand.ExecuteReader();
+            if (ASampleDataReader.HasRows)
+            {
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ASampleDataReader.FieldCount; index++)
+                {
+                    Console.WriteLine(ASampleDataReader.GetName(index));
+                }
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
+                {
+                    for (int i = 0; i < ASampleDataReader.FieldCount; i++)
+                    {
+                        Console.WriteLine(ASampleDataReader.GetValue(i));
+                        student.FirstName = ASampleDataReader.GetValue("FirstName").ToString();
+                        student.LastName = ASampleDataReader.GetValue("LastName").ToString();
+                        student.Email = ASampleDataReader.GetValue("Email").ToString();
+                    }
+                }
+                BAIS3150.Close();
+            }
+            BAIS3150.Close();
+            return student;
+        }
+        public bool UpdateStudent(Student student)
+        {
+            bool success = true;
+            Console.WriteLine("Execute Update Student ");
+            string user, password;
+            Console.Write("Please enter DB Name : ");
+            user = Console.ReadLine();
+            Console.Write("Please enter DB Password : ");
+            password = Console.ReadLine();
+            //establish a connection
+            //SqlConnection ihugya1 = new SqlConnection();
+            SqlConnection BAIS3150;         //declararation
+            BAIS3150 = new SqlConnection(); //instantiation
+            BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            BAIS3150.Open();
+            SqlCommand UpdateStudentCommand = new SqlCommand(); // this is declaration and instantiation wooowwwww very cool
+            UpdateStudentCommand.Connection = BAIS3150;
+            UpdateStudentCommand.CommandType = CommandType.StoredProcedure;
+            UpdateStudentCommand.CommandText = "UpdateStudent";
+            SqlParameter UpdateStudentParameter;
+            UpdateStudentParameter = new SqlParameter //object initialization
+            {
+                ParameterName = "@StudentID",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = "123456789"
+            };
+            UpdateStudentCommand.Parameters.Add(UpdateStudentParameter);
+            UpdateStudentParameter = new SqlParameter
+            {
+                ParameterName = "@FirstName",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = "LarryUpdated"
+            };
+            UpdateStudentCommand.Parameters.Add(UpdateStudentParameter);
+            UpdateStudentParameter = new SqlParameter
+            {
+                ParameterName = "@LastName",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = "larLarLar"
+            };
+            UpdateStudentCommand.Parameters.Add(UpdateStudentParameter);
+            UpdateStudentParameter = new SqlParameter
+            {
+                ParameterName = "@Email",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = "larry@larrys.com"
+            };
+            UpdateStudentCommand.Parameters.Add(UpdateStudentParameter);
+            UpdateStudentParameter = new SqlParameter
+            {
+                ParameterName = "@ProgramCode",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = "PHOT"
+            };
+            UpdateStudentCommand.Parameters.Add(UpdateStudentParameter);
+            try
+            {
+                UpdateStudentCommand.ExecuteNonQuery();//not getting a result back 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                success = false;
+                return success;
+                throw;
+            }
+            Console.WriteLine("Success: Updated Student");
+            BAIS3150.Close();
+            return success;
+        }
+        public bool DeleteStudent(string studentID)
+        {
+            bool success = true;
+            string user, password;
+            Console.Write("Please enter DB Name : ");
+            user = Console.ReadLine();
+            Console.Write("Please enter DB Password : ");
+            password = Console.ReadLine();
+            SqlConnection BAIS3150;         //declararation
+            BAIS3150 = new SqlConnection(); //instantiation
+            BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            BAIS3150.Open();
+            SqlCommand DeleteStudentCommand = new SqlCommand(); // this is declaration and instantiation wooowwwww very cool
+            DeleteStudentCommand.Connection = BAIS3150;
+            DeleteStudentCommand.CommandType = CommandType.StoredProcedure;
+            DeleteStudentCommand.CommandText = "StudentDelete";
+            SqlParameter DeleteStudentParameter;
+            DeleteStudentParameter = new SqlParameter //object initialization
+            {
+                ParameterName = "@StudentID",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = "123456789"
+            };
+            DeleteStudentCommand.Parameters.Add(DeleteStudentParameter);
+            try
+            {
+                DeleteStudentCommand.ExecuteNonQuery();//not getting a result back 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                success = false;
+                return success;
+                throw;
+            }
+            Console.WriteLine("Success: Delete Student");
+            BAIS3150.Close();
+            return success;
+        }
+        public Student[] GetStudentByProgramCode(string programCode)
+        {
+            Student[] studentList;
+            Console.WriteLine("Execute Get Student By ProgramCode");
+            string user, password;
+            Console.Write("Please enter DB Name : ");
+            user = Console.ReadLine();
+            Console.Write("Please enter DB Password : ");
+            password = Console.ReadLine();
+            SqlConnection BAIS3150 = new SqlConnection(); //instantiation + declararation
+            BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            BAIS3150.Open();
+            SqlCommand ASampleCommand = new SqlCommand
+            {
+                Connection = BAIS3150,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetStudentsByProgram"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@ProgramCode",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                SqlValue = "BAIST"
+            };
+            ASampleCommand.Parameters.Add(ASampleCommandParameter);
+            SqlDataReader ASampleDataReader;
+            ASampleDataReader = ASampleCommand.ExecuteReader();
+            studentList = new Student[ASampleDataReader.FieldCount];
+            if (ASampleDataReader.HasRows)
+            {
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ASampleDataReader.FieldCount; index++)
+                {
+                    Console.WriteLine(ASampleDataReader.GetName(index));
+                }
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
+                {
+                    int count = 1;
+                    while (ASampleDataReader.HasRows)
+                    {
+                       
+                        Student student = new Student();
+                        student.FirstName = ASampleDataReader.GetValue("FirstName").ToString();
+                        student.LastName = ASampleDataReader.GetValue("LastName").ToString();
+                        student.Email = ASampleDataReader.GetValue("Email").ToString();
+                        studentList[count] = student;
+                        Console.WriteLine(student.FirstName,student.LastName,student.Email);
+                        count++;
+
+                    }
+                    Console.WriteLine("-");
+                }
+            }
+            ASampleDataReader.Close();
+            BAIS3150.Close();
+            return studentList;
+        }
+    }
+}
