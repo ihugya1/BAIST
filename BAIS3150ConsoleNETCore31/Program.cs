@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Runtime.CompilerServices;
 using BAIS3150ConsoleNETCore31.Domain;
 using BAIS3150ConsoleNETCore31.TechnicalServices;
+using System.Collections.Generic;
+
 namespace BAIS3150ConsoleNETCore31
 {
     class Program
@@ -502,10 +504,11 @@ namespace BAIS3150ConsoleNETCore31
                         break;
                     case "13":
                         Students students1 = new Students();
-                        Student[] studentList = students1.GetStudentByProgramCode("BAIST");
-                        foreach (var item in studentList)
+                        List<Student> studentList = new List<Student>();
+                        studentList = students1.GetStudentByProgramCode("BAIST");
+                        foreach (Student stud in studentList)
                         {
-                            //Console.WriteLine(item.StudentID,item.FirstName,item.LastName,item.Email);
+                            Console.WriteLine($"{ stud.StudentID}, { stud.FirstName}, { stud.LastName}, { stud.Email}");
                         }
                         break;
                     default: ExecuteNonQueryExample(user, pass);

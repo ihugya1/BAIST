@@ -252,9 +252,9 @@ namespace BAIS3150ConsoleNETCore31.TechnicalServices
             BAIS3150.Close();
             return success;
         }
-        public Student[] GetStudentByProgramCode(string programCode)
+        public List<Student> GetStudentByProgramCode(string programCode)
         {
-            Student[] studentList;
+            List<Student> studentList;
             Console.WriteLine("Execute Get Student By ProgramCode");
             string user, password;
             Console.Write("Please enter DB Name : ");
@@ -280,7 +280,7 @@ namespace BAIS3150ConsoleNETCore31.TechnicalServices
             ASampleCommand.Parameters.Add(ASampleCommandParameter);
             SqlDataReader ASampleDataReader;
             ASampleDataReader = ASampleCommand.ExecuteReader();
-            studentList = new Student[ASampleDataReader.FieldCount];
+            studentList = new List<Student>();
             if (ASampleDataReader.HasRows)
             {
                 Console.WriteLine("Columns:");
@@ -291,22 +291,20 @@ namespace BAIS3150ConsoleNETCore31.TechnicalServices
                 }
                 Console.WriteLine("Values:");
                 Console.WriteLine("-------");
-                while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
+                for (int index = 0; index < ASampleDataReader.FieldCount; index++)
                 {
-                    int count = 1;
-                    while (ASampleDataReader.HasRows)
+                    while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
                     {
-                       
                         Student student = new Student();
+                        student.StudentID = ASampleDataReader.GetValue("StudentID").ToString();
                         student.FirstName = ASampleDataReader.GetValue("FirstName").ToString();
                         student.LastName = ASampleDataReader.GetValue("LastName").ToString();
                         student.Email = ASampleDataReader.GetValue("Email").ToString();
-                        studentList[count] = student;
-                        Console.WriteLine(student.FirstName,student.LastName,student.Email);
-                        count++;
-
+                        studentList.Add(student);
+                        Console.WriteLine($"{student.StudentID} {student.FirstName},{student.LastName},{student.Email}");
+                        Console.WriteLine("-");
                     }
-                    Console.WriteLine("-");
+                    
                 }
             }
             ASampleDataReader.Close();
