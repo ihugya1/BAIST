@@ -488,6 +488,7 @@ namespace BAIS3150ConsoleNETCore31
                             FirstName = "UI FirstName",
                             LastName = "UI LastName",
                             Email = "UI@email.com"
+                           
                         };
                         string programCode1 = "BAIST";
                         BCS requesterDirectorUI = new BCS();
@@ -504,15 +505,32 @@ namespace BAIS3150ConsoleNETCore31
                         break;
                     case "13":
                         Students students1 = new Students();
-                        List<Student> studentList = new List<Student>();
-                        studentList = students1.GetStudentByProgramCode("BAIST");
-                        foreach (Student stud in studentList)
+                        ProgramName newProgramName = new ProgramName();
+
+                        newProgramName.EnrolledStudents = students1.GetStudentByProgramCode("BAIST");
+                        foreach (Student stud in newProgramName.EnrolledStudents)
                         {
                             Console.WriteLine($"{ stud.StudentID}, { stud.FirstName}, { stud.LastName}, { stud.Email}");
                         }
                         break;
                     default: ExecuteNonQueryExample(user, pass);
                     break;
+                    case "14":
+                        //UI TEST
+                        //ENROLLS STUDENTS
+                        bool Confirm1;
+                        Shipper newShipper = new Shipper
+                        {
+                            ShipperID = 5,
+                            CompanyName = "Shipping UI Test",
+                            Phone = "7807007000",
+                            
+                        };
+                       
+                        BCS shipperUITest = new BCS();
+                        Confirm1 = shipperUITest.HireShipper(newShipper, user,pass);
+                        Console.WriteLine(Confirm1);
+                        break;
                 }
                 Console.Write("Run again? (Y/y)");
                 runAgain = char.Parse(Console.ReadLine());
