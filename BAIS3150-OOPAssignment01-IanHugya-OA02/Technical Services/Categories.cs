@@ -57,11 +57,11 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
             productList = new List<Product>();
             if (ASampleDataReader.HasRows)
             {
-                Console.WriteLine("Columns:");
+                Console.WriteLine("\nColumns:");
                 Console.WriteLine("--------");
                 for (int index = 0; index < ASampleDataReader.FieldCount; index++)
                 {
-                    Console.WriteLine(ASampleDataReader.GetName(index));
+                    Console.Write(ASampleDataReader.GetName(index)+ " ,");
                 }
                 Console.WriteLine("Values:");
                 Console.WriteLine("-------");
@@ -76,7 +76,7 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
                         product.ProductID = int.Parse(placeHolder);
 
                         product.ProductName = ASampleDataReader.GetValue("ProductName").ToString();
-
+                      
                         // placeHolder = ASampleDataReader.GetValue("SupplierID").ToString();idk why FK give it an issue nor do i care
                         // product.SupplierID = int.Parse(placeHolder);idk why FK give it an issue nor do i care
 
