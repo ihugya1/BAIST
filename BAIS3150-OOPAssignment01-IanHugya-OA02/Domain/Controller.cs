@@ -7,6 +7,7 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Domain
 {
     class Controller
     {
+        //Conroller = Call the Manager -> Return what was returned
         public List<Product> FindProductsByCategory(int categoryID)
         {
             Categories categoryManager = new Categories();

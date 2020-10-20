@@ -5,7 +5,7 @@ using System.Text;
 namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Domain
 {
     class Product
-    {
+    {  //Container class
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int SupplierID { get; set; }
