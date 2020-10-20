@@ -76,12 +76,7 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
                         product.ProductID = int.Parse(placeHolder);
 
                         product.ProductName = ASampleDataReader.GetValue("ProductName").ToString();
-                      
-                        // placeHolder = ASampleDataReader.GetValue("SupplierID").ToString();idk why FK give it an issue nor do i care
-                        // product.SupplierID = int.Parse(placeHolder);idk why FK give it an issue nor do i care
 
-                        // placeHolder = ASampleDataReader.GetValue("CategoryID").ToString();idk why FK give it an issue nor do i care
-                        // product.CategoryID = int.Parse(placeHolder); idk why FK give it an issue nor do i care
 
                         product.QuantityPerUnit = ASampleDataReader.GetValue("QuantityPerUnit").ToString();
 
