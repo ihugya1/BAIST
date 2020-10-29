@@ -1,0 +1,106 @@
+﻿@page
+@model BAIST3150RazorPagesNETCore31.Pages.ControlSampleModel
+@{
+}
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Control Sample</title>
+</head>
+<body>
+    <form name="ControlSampleForm" method="post" action="~/TestPost">
+        <table>
+            <tr>
+                <td>TextBox:</td>
+                <td><input type="text" name="TextBox" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="CheckBoxItem1" value="1" />Item1 <br />
+                    <input type="checkbox" name="CheckBoxItem2" value="2" />Item2 <br />
+                    <input type="checkbox" name="CheckBoxItem3" value="3" />Item3 <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="RadioButton" value="1" />Item 1 <br />
+                    <input type="radio" name="RadioButton" value="2" />Item 2 <br />
+                    <input type="radio" name="RadioButton" value="3" />Item 3 <br />
+                </td>
+            </tr>
+            <tr>
+                <td>Hidden Field</td>
+                <td>
+                    <input type="hidden" name="HiddenField" value="This is hidden" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>Password Box</td>
+                <td>
+                    <input type="password" name="PasswordBox" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>Scrolling Text Box</td>
+                <td>
+                    <textarea cols="20" name="TextArea"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Element/Option Element DDL :</td>
+                <td>
+                    <select name="SelectElementDropDownList" size="1">
+                        <option value="0">Make a selection</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Element/Option Element :</td>
+                <td>
+                    <select name="SelectElementList" size="3">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>This is a label</label></td>
+            </tr>
+            <tr>
+                <!-- ADJACENT ELEMENTS, Click on label-->
+                <td>
+                    <label>A Textbox Control Label: <input type="text" name="ATextBox" /></label>
+                </td>
+            </tr>
+            <tr>
+                <!-- ASSOCIATED ELEMENTS, Click on label-->
+                <td>
+                    <label for="AnotherTextBox">Another Textbox Label Control  </label>
+                    <input type="text" name="AnotherTextbox" id="AnotherTextBox" />
+                </td>
+            </tr>
+            <tr>
+                <!-- ASSOCIATED ELEMENTS, Click on label-->
+                <td>
+                    <fieldset name="FieldSet">
+                        <legend>Legend</legend>
+                        <label> Group Item 1: <input type="text" name="GroupItem1" /></label><br />
+                        <label> Group Item 2: <input type="text" name="GroupItem2" /></label><br />
+                        <label> Group Item 3: <input type="text" name="GroupItem3" /></label><br />
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
