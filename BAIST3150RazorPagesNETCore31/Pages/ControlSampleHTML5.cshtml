@@ -1,0 +1,59 @@
+﻿@page
+@model BAIST3150RazorPagesNETCore31.Pages.ControlSampleHTML5Model
+@{
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Control Sample HTML5</title>
+</head>
+<body>
+    <form name="ControlSampleHTML5Form" method="post" action="~/TestPost">
+        <table>
+            <tr>
+                <td>Email Address</td>
+                <td><input type="email" name="Email" /></td>
+            </tr>
+            <tr>
+                <td>URL:</td>
+                <td><input type="url" name="URL" /></td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td><input type="date" name="Date" /></td>
+            </tr>
+            <tr>
+                <td>File:</td>
+                <td><input type="file" name="File" /></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input type="tel" name="Telephone" /></td>
+            </tr>
+            <tr>
+                <td>Time:</td>
+                <td><input type="time" name="Time" /></td>
+            </tr>
+            <tr>
+                <td>Search:</td>
+                <td><input type="search" name="Search" /></td>
+            </tr>
+            <tr>
+                <td>Datalist:</td>
+                <td><input type="text" name="DateListEntry" list="DataList" />
+                    <datalist id="DataList">
+                        <option>Red</option>
+                        <option>White</option>
+                        <option>Blue</option>
+                        <option>'Murica</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

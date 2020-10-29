@@ -33,3 +33,4 @@ C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\net
 C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\TestPost.cshtml.g.cs
 C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\ControlSample.cshtml.g.cs
 C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\ControlSampleHTML5.cshtml.g.cs
