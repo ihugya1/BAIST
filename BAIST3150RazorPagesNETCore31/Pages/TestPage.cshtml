@@ -1,0 +1,79 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model BAIST3150RazorPagesNETCore31.Pages.TestPageModel
+@{
+
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>TestPage</title>
+        <script type="text/javascript">
+
+        </script>
+    </head>
+    <body>
+        <!-- HTML 5 Structural Elements: header,nav,main,footer,-->
+        <header>
+            Header Area <!--line break--><br />
+            THe headings of a webpage document are within <br />
+            <hr />
+            <!--Horizontal rule-->
+        </header>
+        <nav>
+            Navigation Area <br />
+            Section of navigation linkeds
+            <a href="#">content</a>
+        </nav><hr />
+        <main>
+            Main Area <br />
+            The main content of a web page document, only 1 per page
+            <div>
+                Division Area<br />
+                A generic structural area on a web page as block display, with empty space above and below
+                <form name="TestPageForm" method="post">
+                    <table border="1">
+                        <tr>
+                            <td>
+                               Field
+                            </td>
+                            <td>
+                                <input type="text" name="Field" value="@Model.Field" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <input type="submit" name="Submit" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                @Model.Message
+              
+                <!--
+
+                HTTP ERROR 400
+                    MISSING ANTIFORGERY TOKEN (Request Verification Tokens)
+                    Security measure put in place by ASP.NET, enabled by default in Razor Pages
+                    to avoid cross-site request forgery (CSRF) attacks
+                    token proves that request comes from site which the form orginated from (cookie and form data)
+
+                    using the namespace, Microsoft.AspNetCore.Mvc.TagHelpers, to get token
+
+                    top of file, add addtaghelper attribute below the page attribute
+                    place in _ViewImports.cshtml to make namespace available for all affected pages
+                    will genereate the antiforgery token in HTML form (view source in browser)
+
+                    Syntax:
+                    addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+                    -->
+            </div>
+            <hr />
+        </main>
+        <footer>
+            Footer Area <br />
+            The footer content of a web page or section of a webpage
+        </footer><hr />
+    </body>
+</html>
+}
