@@ -6,6 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Validation Data Annotation Attributes</title>
+    <!-- 
+        To bypass client side validation
+        comment library references
+        or
+        hard code tags, <input> set property data-val="false" to override
+
+        
+        -->
     <meta charset="utf-8" />
     <script src="~/libraries/jquery/jquery.js"></script>
     <script src="~/libraries/jquery-validate/jquery.validate.js"></script>
@@ -17,7 +25,8 @@
             <tr>
                 <td> Input Field</td>
                 <td>
-                    <input type="text" name="InputField" value="@Model.InputField" />
+                    <input asp-for="InputField" />
+                    <span asp-validation-for="InputField"></span>
                 </td>
             </tr>
             <tr>
