@@ -9,8 +9,26 @@ namespace BCS_UI_Test.Pages
 {
     public class AddCoursePageModel : PageModel
     {
+        public string Message { get; set; }
+        [BindProperty]
+        [Required]
+        [StringLength(5, MinimumLength = 1)]
+        public string InputField { get; set; }
         public void OnGet()
         {
+            Message = " on Get ";
+        }
+        public void OnPost()
+        {
+
+            if (ModelState.IsValid)
+            {
+                Message = " On Post is Valid";
+            }
+            else
+            {
+                Message = " On Post is NOT Valid";
+            }
         }
     }
 }
