@@ -10,30 +10,11 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.DAL
     {
         public bool AddCourse(Course ANewCourse)
         {
+            string user = "ihugya1";
+            string password = "test";
             bool confirmation = true;
       
-            Console.WriteLine("Execute Add Course");
-            string user;
-            Console.Write("Please enter DB Name : ");
-            user = Console.ReadLine();
-            Console.Write("Please enter DB Password : ");
-            var password = string.Empty;
-            ConsoleKey key;
-            do
-            {
-                var keyInfo = Console.ReadKey(intercept: true);
-                key = keyInfo.Key;
-                if (key == ConsoleKey.Backspace && password.Length > 0)
-                {
-                    Console.Write("\b \b");
-                    password = password[0..^1];
-                }
-                else if (!char.IsControl(keyInfo.KeyChar))
-                {
-                    Console.Write("*");
-                    password += keyInfo.KeyChar;
-                }
-            } while (key != ConsoleKey.Enter);
+   
             SqlConnection BAIS3150 = new SqlConnection(); //instantiation + declararation
             BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
             BAIS3150.Open();

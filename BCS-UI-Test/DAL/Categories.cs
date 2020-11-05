@@ -1,4 +1,5 @@
 ﻿using BAIS3150_OOPAssignment01_IanHugya_OA02.Domain;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,32 +10,13 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
 {
     class Categories
     {
+        string connectionString = "Your Connection string here";
         // Manager ADO.NET - Parameters returned
         public List<Product> GetProductsByCategories(int CategoryID)
         {
             List<Product> productList;
-            Console.WriteLine("Execute Get Product By Category Code");
-            string user;
-            Console.Write("Please enter DB Name : ");
-            user = Console.ReadLine();
-            Console.Write("Please enter DB Password : ");
-            var password = string.Empty;
-            ConsoleKey key;
-            do
-            {
-                var keyInfo = Console.ReadKey(intercept: true);
-                key = keyInfo.Key;
-                if (key == ConsoleKey.Backspace && password.Length > 0)
-                {
-                    Console.Write("\b \b");
-                    password = password[0..^1];
-                }
-                else if (!char.IsControl(keyInfo.KeyChar))
-                {
-                    Console.Write("*");
-                    password += keyInfo.KeyChar;
-                }
-            } while (key != ConsoleKey.Enter);
+            string user = "ihugya1";
+            string password = "test";
             SqlConnection BAIS3150 = new SqlConnection(); //instantiation + declararation
             BAIS3150.ConnectionString = @$"Persist Security Info=False;Database=Northwind;User ID={user};Password={password};server=dev1.baist.ca;";
             BAIS3150.Open();
