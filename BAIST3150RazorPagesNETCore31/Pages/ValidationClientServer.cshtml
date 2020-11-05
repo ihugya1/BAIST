@@ -1,0 +1,54 @@
+﻿@page
+@model BAIST3150RazorPagesNETCore31.Pages.ValidationClientServerModel
+@{
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Validation Client Server</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        // validate - Client 
+        function IsFormValid(aForm)
+        {
+            var isValid = false;
+            var aValue = aForm.InputField.value;
+            var length = aValue.length;
+
+            if (length > 0 && length <= 5)
+            {
+                isValid = true;
+            }
+            else
+            {
+                // alert or set a formcontrol value
+                alert('Alert box message');
+            }
+            //to bypass client side validation
+            // return true
+            // or
+            //-<form> set onsubmit = "return true;"
+
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+    <form method="post" name="SampleForm" onsubmit="return true; // IsFormValid(window.document.SampleForm);">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="InputField" value="@Model.InputField"/>
+                    @Html.ValidationMessage("InputField")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="Submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    @Model.Message
+</body>
+</html>
