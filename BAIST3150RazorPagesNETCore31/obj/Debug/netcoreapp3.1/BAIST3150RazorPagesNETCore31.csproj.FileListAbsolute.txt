@@ -39,3 +39,4 @@ C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\net
 C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\ValidationClientServer.cshtml.g.cs
 C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\ValidationDAA.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\DynamicDisplaySample.cshtml.g.cs

@@ -2,3 +2,20 @@
 @model BAIST3150RazorPagesNETCore31.Pages.DynamicDisplaySampleModel
 @{
 }
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table border="1">
+       @foreach(var Sample in Model.SampleObjectCollection)
+       {
+        <tr>
+            <td>@Sample.FirstProperty</td>
+            <td>@Sample.SecondProperty</td>
+        </tr>
+       }
+    </table>
+</body>
+</html>
