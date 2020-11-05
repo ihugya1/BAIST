@@ -21,6 +21,8 @@ namespace BAIST3150RazorPagesNETCore31.Pages
                 return _sampleObjectCollection;
             }
         }
+        //or
+        public List<SampleClass> SampleObjectCollect { get; } = new List<SampleClass>();
         public void OnGet()
         {
             SampleClass SampleObject;

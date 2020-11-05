@@ -21,11 +21,13 @@ namespace BAIST3150RazorPagesNETCore31.Pages
             Message = "*** On Get ***";
 
             SampleClass SampleObject;
-            SampleObject = new SampleClass();
-            SampleObject.FirstProperty = "1";
-            SampleObject.SecondProperty = "One";
-            SampleObjectCollection.Add(SampleObject);
 
+            SampleObject = new SampleClass
+            {
+                FirstProperty = "1",
+                SecondProperty = "One"
+            };
+            SampleObjectCollection.Add(SampleObject);
             SampleObject = new SampleClass
             {
                 FirstProperty = "2",
@@ -38,6 +40,10 @@ namespace BAIST3150RazorPagesNETCore31.Pages
                 SecondProperty = "Three"
             };
             SampleObjectCollection.Add(SampleObject);
+        }
+        public void OnPost()
+        {
+            Message = " *** ON POST *** " + AField + " - " + ACollection;
         }
     }
 }

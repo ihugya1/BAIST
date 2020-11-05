@@ -20,7 +20,13 @@
             <tr>
                 <td>Collection:</td>
                 <td>
-                    <select name="ACollection" size="2"></select>
+                    <select name="ACollection" size="2">
+                        @foreach (var item in Model.SampleObjectCollection)
+                        {
+                            <option value="@item.FirstProperty">@item.SecondProperty</option>
+                        }
+
+                    </select>
                 </td>
             </tr>
             <tr>
@@ -30,5 +36,6 @@
             </tr>
         </table>
   </form>
+    @Model.Message
 </body>
 </html>
