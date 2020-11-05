@@ -1,0 +1,51 @@
+﻿@page
+@model BAIST3150RazorPagesNETCore31.Pages.JavaScriptSampleModelModel
+@{
+}
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Example</title>
+    <meta charset="utf-8"/>
+    <script>
+        function IsNumeric(aValue) {
+            var length = aValue.length;
+            var isValid = length > 0;
+            for (var index = 0; index < length; index++) {
+                var aCharacter = aValue.charAt(index);
+                if (aCharacter.IsNumeric) {
+                    isValid = false;
+                }
+                else {
+                    isValid = true;
+                }
+            }
+
+            return isValid; 
+        }
+        function AddOneToField(aField) {
+            if (IsNumeric(aField.value)) {
+                aField.value = parseInt(aField.value) + 1;
+                
+            }
+            else {
+                alert("Field value must be numeric");
+                aField.focus();
+                aField.select();
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form name="sampleForm">
+        <p>
+            click this
+            <!-- window.document.forms['SampleForm'].elements['Field'] -->
+            <input type="button" value="Button" onclick="AddOneToField(window.document.sampleForm.Field);" />
+            to increment this
+            <input type="text" name="Field" value="0" size="3" />
+        </p>
+    </form>
+</body>
+</html>

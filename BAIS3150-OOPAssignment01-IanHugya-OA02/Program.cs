@@ -3,6 +3,7 @@ using BAIS3150_OOPAssignment01_IanHugya_OA02.Domain;
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace BAIS3150_OOPAssignment01_IanHugya_OA02
 {
@@ -10,34 +11,69 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02
     {
         static void Main(string[] args)
         {
+            string confirm="yes";
             Random rnd = new Random();
-           
+            do
+            {
 
-            string[] fight1= { "Joel Alvarez", "Alexander Yakovlev", "Joel Alvarez", "Alexander Yakovlev", "Joel Alvarez", "Alexander Yakovlev", "Joel Alvarez", "Alexander Yakovlev", "Joel Alvarez", "Alexander Yakovlev", "Joel Alvarez", "Alexander Yakovlev" };
-            string[] fight2 = { "Liana Jojua", "Miranda Maverick", "Liana Jojua", "Miranda Maverick", "Liana Jojua", "Miranda Maverick", "Liana Jojua", "Miranda Maverick", "Liana Jojua", "Miranda Maverick", "Liana Jojua", "Miranda Maverick" };
-            string[] fight3 = { "Sam Alvey", "Da Un Jung", "Sam Alvey", "Da Un Jung", "Sam Alvey", "Da Un Jung", "Sam Alvey", "Da Un Jung", "Sam Alvey", "Da Un Jung", "Sam Alvey", "Da Un Jung", "Sam Alvey", "Da Un Jung" };
-            string[] fight4 = { "Shavkat Rakhmonov", "Alex Oliveira", "Shavkat Rakhmonov", "Alex Oliveira", "Shavkat Rakhmonov", "Alex Oliveira", "Shavkat Rakhmonov", "Alex Oliveira", "Shavkat Rakhmonov", "Alex Oliveira", "Shavkat Rakhmonov", "Alex Oliveira", "Shavkat Rakhmonov", "Alex Oliveira" };
-            string[] fight5 = { "Nathaniel Wood", "Casey Kenney", "Nathaniel Wood", "Casey Kenney", "Nathaniel Wood", "Casey Kenney", "Nathaniel Wood", "Casey Kenney", "Nathaniel Wood", "Casey Kenney", "Nathaniel Wood", "Casey Kenney", "Nathaniel Wood", "Casey Kenney" };
-            string[] fight6 = { "Tai Tuivasa", "Stefan Struve", "Tai Tuivasa", "Stefan Struve", "Tai Tuivasa", "Stefan Struve", "Tai Tuivasa", "Stefan Struve", "Tai Tuivasa", "Stefan Struve", "Tai Tuivasa", "Stefan Struve", "Tai Tuivasa", "Stefan Struve" };
-            string[] fight7 = { "Ion Cutelaba", "Magomed Ankalaev", "Ion Cutelaba", "Magomed Ankalaev", "Ion Cutelaba", "Magomed Ankalaev", "Ion Cutelaba", "Magomed Ankalaev", "Ion Cutelaba", "Magomed Ankalaev", "Ion Cutelaba", "Magomed Ankalaev", "Ion Cutelaba", "Magomed Ankalaev" };
-            string[] fight8 = { "Liliya Shakirova", "Lauren Murphy", "Liliya Shakirova", "Lauren Murphy", "Liliya Shakirova", "Lauren Murphy", "Liliya Shakirova", "Lauren Murphy", "Liliya Shakirova", "Lauren Murphy", "Liliya Shakirova", "Lauren Murphy", "Liliya Shakirova", "Lauren Murphy" };
-            string[] fight9 = { "Phil Hawes", "Jacob Malkoun", "Phil Hawes", "Jacob Malkoun", "Phil Hawes", "Jacob Malkoun", "Phil Hawes", "Jacob Malkoun", "Phil Hawes", "Jacob Malkoun", "Phil Hawes", "Jacob Malkoun", "Phil Hawes", "Jacob Malkoun" };
-            string[] fight10 = { "Walt Harris", "Alexander Volkov", "Walt Harris", "Alexander Volkov", "Walt Harris", "Alexander Volkov", "Walt Harris", "Alexander Volkov", "Walt Harris", "Alexander Volkov", "Walt Harris", "Alexander Volkov", "Walt Harris", "Alexander Volkov" };
-            string[] fight11 = { "Rob Whit", "Jared C", "Rob Whit", "Jared C", "Rob Whit", "Jared C", "Rob Whit", "Jared C", "Rob Whit", "Jared C", "Rob Whit", "Jared C", "Rob Whit", "Jared C", };
-            Console.WriteLine(fight1[rnd.Next(0,10)]);
-            Console.WriteLine(fight2[rnd.Next(0, 10)]);
-            Console.WriteLine(fight3[rnd.Next(0, 10)]);
-            Console.WriteLine(fight4[rnd.Next(0, 10)]);
-            Console.WriteLine(fight5[rnd.Next(0, 10)]);
-            Console.WriteLine(fight6[rnd.Next(0, 10)]);
-            Console.WriteLine(fight7[rnd.Next(0, 10)]);
-            Console.WriteLine(fight8[rnd.Next(0, 10)]);
-            Console.WriteLine(fight9[rnd.Next(0, 10)]);
-            Console.WriteLine(fight10[rnd.Next(0, 10)]);
-            Console.WriteLine(fight11[rnd.Next(0, 10)]);
+        
 
+            string[] fight1= { "Kevin Natividad", "Miles Johns", "Kevin Natividad", "Miles Johns", "Kevin Natividad", "Miles Johns", "Kevin Natividad", "Miles Johns", "Kevin Natividad", "Miles Johns", "Kevin Natividad", "Miles Johns", "Kevin Natividad", "Miles Johns", };
+            string[] fight2 = {"Justin Ledet","Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", "Justin Ledet", "Dustin Jacoby", };
+            string[] fight3 = { "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", "Cole Williams", "Jason Witt", };
+            string[] fight4 = { "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", "Jack Marshman", "Sean Strickland", };
+            string[] fight5 = { "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", "Charlie Ontiveros", "Kevin Holland", };
+            string[] fight6 = { "Andre Fili", "Bryce Mitchell", "Andre Fili", "Bryce Mitchell", "Andre Fili", "Bryce Mitchell", "Andre Fili", "Bryce Mitchell", "Andre Fili", "Bryce Mitchell", "Andre Fili", "Bryce Mitchell", "Andre Fili", "Bryce Mitchell", };
+            string[] fight7 = { "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", "Anderson Silva", "Uriah Hall", };
+            string[] fight8 = { "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", "Maurice Greene", "Greg Hardy", };
+            string[] fight9 = { "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", "Thiago Moises", "Bobby Green", };
+            string[] fight10 = { "Chris Gruetzemacher", "Alexander Hernandez", "Chris Gruetzemacher", "Alexander Hernandez", "Chris Gruetzemacher", "Alexander Hernandez", "Chris Gruetzemacher", "Alexander Hernandez", "Chris Gruetzemacher", "Alexander Hernandez", "Chris Gruetzemacher", "Alexander Hernandez", "Chris Gruetzemacher", "Alexander Hernandez", };
+            string[] fight11 = { "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", "Victor Rodriguez", "Adrian Yanez", };
+                if (rnd.Next(1,100) % 2 == 0 )
+                {
+                    Console.WriteLine(fight1[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) % 2 != 0)
+                {
+                    Console.WriteLine(fight2[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) % 2 != 0)
+                {
+                    Console.WriteLine(fight3[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) % 2 == 0)
+                {
+                    Console.WriteLine(fight4[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) % 2 != 0)
+                {
+                    Console.WriteLine(fight5[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) % 2 == 3)
+                {
+                    Console.WriteLine(fight6[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) < 50)
+                {
+                    Console.WriteLine(fight7[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) > 50)
+                {
+                    Console.WriteLine(fight8[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) < 25)
+                {
+                    Console.WriteLine(fight9[rnd.Next(0, 10)]);
+                }
+                if (rnd.Next(1, 100) > 33)
+                {
+                    Console.WriteLine(fight10[rnd.Next(0, 10)]);
+                }
 
+                Console.WriteLine("\n\n");
+            confirm=Console.ReadLine();
 
+            } while (confirm!="no");
 
         }
     }
