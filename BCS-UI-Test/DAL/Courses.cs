@@ -11,7 +11,7 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.DAL
         public bool AddCourse(Course ANewCourse)
         {
             string user = "ihugya1";
-            string password = "test";
+            string password = "SimpCord101";
             bool confirmation = true;
       
    

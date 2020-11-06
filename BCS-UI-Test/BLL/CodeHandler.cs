@@ -12,6 +12,7 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Domain
         //Conroller = Call the Manager -> Return what was returned
         public bool AddCourse(Course aNewCourse)
         {
+            Console.WriteLine("HIT");
             bool confirmation;
             Courses courseManager = new Courses();
             confirmation = courseManager.AddCourse(aNewCourse);

@@ -10,13 +10,13 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
 {
     class Categories
     {
-        string connectionString = "Your Connection string here";
+        
         // Manager ADO.NET - Parameters returned
         public List<Product> GetProductsByCategories(int CategoryID)
         {
             List<Product> productList;
             string user = "ihugya1";
-            string password = "test";
+            string password = "SimpCord101";
             SqlConnection BAIS3150 = new SqlConnection(); //instantiation + declararation
             BAIS3150.ConnectionString = @$"Persist Security Info=False;Database=Northwind;User ID={user};Password={password};server=dev1.baist.ca;";
             BAIS3150.Open();

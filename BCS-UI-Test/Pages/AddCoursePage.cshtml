@@ -20,17 +20,31 @@
     <script src="~/libraries/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 </head>
 <body>
-    <form method="post" name="SampleForm">
+    <form method="post" name="ProgramForm">
         <table>
             <tr>
-                <td> Input Field</td>
+                <td> Course ID</td>
                 <td>
-                    <input asp-for="InputField" />
-                    <span asp-validation-for="InputField"></span>
+                    <input asp-for="CourseIDField" />
+                    <span asp-validation-for="CourseIDField"></span>
+       
                 </td>
             </tr>
             <tr>
-                <td> Input Field</td>
+                <td> Offering</td>
+                <td>
+                    <input asp-for="OfferingField" />
+                    <span asp-validation-for="OfferingField"></span>
+                </td>
+            </tr>
+            <tr>
+                <td> Hours</td>
+                <td>
+                    <input type="number" asp-for="HoursField" />
+                    <span asp-validation-for="HoursField"></span>
+                </td>
+            </tr>
+            <tr>
                 <td>
                     <input type="submit" name="Submit" value="Submit" />
                 </td>
