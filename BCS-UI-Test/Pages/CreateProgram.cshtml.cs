@@ -16,7 +16,7 @@ namespace BCS_UI_Test.Pages
         [BindProperty]
         public ProgramName programName { get; set; }
         [BindProperty]
-        [RegularExpression("[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]")]
+        
         [Required]
         public string ProgramCodeField { get; set; }
         [BindProperty]

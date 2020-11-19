@@ -37,8 +37,8 @@
 
 
         <div class="form-group">
-            <label for="studentIDField">Student ID</label>
-            <input asp-for="ProgramCode" type="text" class="form-control" id="studentIDField" value="@Model.ProgramCode" name="id" placeholder="Enter Program Code">
+            <label for="programIDField">Program Code</label>
+            <input asp-for="ProgramCode" type="text" class="form-control" id="programIDField" value="@Model.ProgramCode" name="id" placeholder="Enter Program Code">
 
         </div>
         <button class="btn btn-default">View</button>
@@ -50,16 +50,14 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Student ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
+                <th>Program Code</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>@Model.program.ProgramCode</td>
-                <td>@Model.program.Description</td>
+                <td><input type="text" asp-for="program.ProgramCode" class="form-control" id="studentIDField1" /></td>
+                <td><input type="text" asp-for="program.Description" class="form-control" id="firstNameField" /></td>
 
             </tr>
         </tbody>

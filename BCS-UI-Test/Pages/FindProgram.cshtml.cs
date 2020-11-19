@@ -20,13 +20,14 @@ namespace BCS_UI_Test.Pages
 
         public void OnGet()
         {
-           
 
+            Message = $"On Get";
         }
-        public void OnPost()
+        public void OnPost(string id)
         {
             BCS RequestDirector = new BCS();
-            program = RequestDirector.FindProgram(ProgramCode);
+            program = RequestDirector.FindProgram(id);
+
            
             Message = $"Viewing {program.ProgramCode}";
         }
