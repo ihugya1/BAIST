@@ -1,0 +1,40 @@
+﻿@page
+@model BCS_UI_Test.Pages.ihugya1SignOnModel
+@{
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ihugya1SignOn</title>
+    <meta charset="utf-8" />
+    <script src="~/libraries/jquery/jquery.js"></script>
+    <script src="~/libraries/jquery-validate/jquery.validate.js"></script>
+    <script src="~/libraries/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+    <form method="post" name="SampleForm">
+        <table>
+            <tr>
+                <td> UserID:</td>
+                <td>
+                    <input asp-for="UserIDField" />
+                    <span asp-validation-for="UserIDField"></span>
+                </td>
+            </tr>
+            <tr>
+                <td> Password</td>
+                <td>
+                    <input asp-for="PasswordField" type="password" />
+                    <span asp-validation-for="PasswordField"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="Submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    @Model.Message
+</body>
+</html>

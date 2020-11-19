@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Domain
+namespace BAIS3150_OOPAssignment01_IanHugya_OA02.BLL
 {
     class Product
     {  //Container class

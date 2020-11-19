@@ -1,11 +1,11 @@
 ﻿using BAIS3150_OOPAssignment01_IanHugya_OA02.BLL;
 using BAIS3150_OOPAssignment01_IanHugya_OA02.DAL;
-using BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Domain
+namespace BAIS3150_OOPAssignment01_IanHugya_OA02.BLL
 {
     class CodeHandler
     {

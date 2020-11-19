@@ -200,7 +200,7 @@ namespace BAIS3150ConsoleNETCore31
                 ParameterName = "@StudentID",
                 SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
                 Direction = ParameterDirection.Input,
-                SqlValue = "123456789"
+                SqlValue = "123456"
             };
             DeleteStudentCommand.Parameters.Add(DeleteStudentParameter);
             DeleteStudentCommand.ExecuteNonQuery();//not getting a result back 
@@ -467,10 +467,10 @@ namespace BAIS3150ConsoleNETCore31
                         bool Confirmation;
                         Student AcceptedStudent2 = new Student
                         {
-                            StudentID = "1BCS Ex1",
-                            FirstName = "1BCS  Nam5e51",
-                            LastName = "1BCS  Nam5414e55",
-                            Email = "3BCS@7.co1m5"
+                            StudentID = "1BsS Ex1",
+                            FirstName = "1BsS  Nam5e51",
+                            LastName = "1BsS  Nam5414e55",
+                            Email = "3BCS@s.co1m5"
                         };
                         BCS RequestDirector = new BCS();
                         Confirmation = RequestDirector.EnrollStudent(AcceptedStudent2, "PHOT");
@@ -528,7 +528,7 @@ namespace BAIS3150ConsoleNETCore31
                         };
                        
                         BCS shipperUITest = new BCS();
-                        Confirm1 = shipperUITest.HireShipper(newShipper, user,pass);
+                        Confirm1 = shipperUITest.RemoveStudent("123456");
                         Console.WriteLine(Confirm1);
                         break;
                 }

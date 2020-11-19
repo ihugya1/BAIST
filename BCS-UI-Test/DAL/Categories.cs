@@ -1,4 +1,5 @@
-﻿using BAIS3150_OOPAssignment01_IanHugya_OA02.Domain;
+﻿
+using BAIS3150_OOPAssignment01_IanHugya_OA02.BLL;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -6,15 +7,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
+namespace BAIS3150_OOPAssignment01_IanHugya_OA02.DAL
 {
-    class Categories
+   public class Categories
     {
-        
-        // Manager ADO.NET - Parameters returned
-        public List<Product> GetProductsByCategories(int CategoryID)
+       
+        public List<Category> GetNorthwindCategories()
         {
-            List<Product> productList;
+            List<Category> CategoriesList;
             string user = "ihugya1";
             string password = "SimpCord101";
             SqlConnection BAIS3150 = new SqlConnection(); //instantiation + declararation
@@ -24,26 +24,20 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
             {
                 Connection = BAIS3150,
                 CommandType = CommandType.StoredProcedure,
-                CommandText = $"{user}.GetProductsByCategory"
+                CommandText = $"{user}.GetNorthwindCategories"
             };
-            SqlParameter ASampleCommandParameter = new SqlParameter
-            {
-                ParameterName = "@CategoryID",
-                SqlDbType = SqlDbType.VarChar,
-                Direction = ParameterDirection.Input,
-                SqlValue = CategoryID
-            };
-            ASampleCommand.Parameters.Add(ASampleCommandParameter);
+         
+         
             SqlDataReader ASampleDataReader;
             ASampleDataReader = ASampleCommand.ExecuteReader();
-            productList = new List<Product>();
+            CategoriesList = new List<Category>();
             if (ASampleDataReader.HasRows)
             {
                 Console.WriteLine("\nColumns:");
                 Console.WriteLine("--------");
                 for (int index = 0; index < ASampleDataReader.FieldCount; index++)
                 {
-                    Console.Write(ASampleDataReader.GetName(index)+ " ,");
+                    Console.Write(ASampleDataReader.GetName(index) + " ,");
                 }
                 Console.WriteLine("Values:");
                 Console.WriteLine("-------");
@@ -51,41 +45,26 @@ namespace BAIS3150_OOPAssignment01_IanHugya_OA02.Technical_Services
                 {
                     while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
                     {
-                        string placeHolder="";
-                        Product product = new Product();
+                    
+                        Category category = new Category();
 
-                        placeHolder = ASampleDataReader.GetValue("ProductID").ToString();
-                        product.ProductID = int.Parse(placeHolder);
+                        category.CategoryName = ASampleDataReader.GetValue("CategoryName").ToString();
+                        
 
-                        product.ProductName = ASampleDataReader.GetValue("ProductName").ToString();
+                        category.Description = ASampleDataReader.GetValue("Description").ToString();
 
+                        category.Picture = ASampleDataReader.GetValue("Picture").ToString();
 
-                        product.QuantityPerUnit = ASampleDataReader.GetValue("QuantityPerUnit").ToString();
+                       
+                        CategoriesList.Add(category);
 
-                        placeHolder = ASampleDataReader.GetValue("UnitPrice").ToString();
-                        product.UnitPrice = double.Parse(placeHolder);
-
-
-                        placeHolder = ASampleDataReader.GetValue("UnitsInStock").ToString();
-                        product.UnitsInStock = int.Parse(placeHolder);
-
-                        placeHolder = ASampleDataReader.GetValue("UnitsOnOrder").ToString();
-                        product.UnitsOnOrder = int.Parse(placeHolder);
-
-                        placeHolder = ASampleDataReader.GetValue("ReorderLevel").ToString();
-                        product.ReorderLevel = int.Parse(placeHolder);
-
-                        placeHolder = ASampleDataReader.GetValue("Discontinued").ToString();
-                        product.Discontinued = bool.Parse(placeHolder);
-                        productList.Add(product);
-                      
                     }
 
                 }
             }
             ASampleDataReader.Close();
             BAIS3150.Close();
-            return productList;
+            return CategoriesList;
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿@page
+@model BAIST3150RazorPagesNETCore31.Pages.ContentModel
+@{
+    Layout = "_Layout"; // remove if using _ViewStart
+    ViewData["Title"] = "*** Title from content page ***";
+}
+@section scriptContent
+{ 
+    <script type="text/javascript">
+        // *** script from content page ***
+    </script>
+}
+<table>
+    <tr>
+        <td>*** Main Area from content page ***</td>
+    </tr>
+    <tr>
+        <td><div><table>
+    <tr>
+        <td>*** Division Area from content page ***</td>
+    </tr>
+    <tr>
+        <td>***<input type="text" name="InputField" /> ***</td>
+    </tr>
+</table></div></td>
+    </tr>
+</table>
+@section footerContent{ 
+    <table>
+        <tr>
+            <td> *** Footer Area from conent page *** </td>
+        </tr>
+    </table>
+}

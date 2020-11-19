@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" content="width=device-width" />
+    <!-- /wwwroot/css-->
+    <link href="~/css/sampleBlueStyle.css" rel="stylesheet" />
+    <title>@ViewData["Title"]</title>
+    <script type="text/javascript">
+        //script from layout
+    </script>
+    @RenderSection("scriptContent", required:false)
+</head>
+<body>
+    <header>
+        Header Area from layout
+    </header>
+    <nav>
+        Navigation Area from layout <br />
+    </nav>
+    <main>
+        Main Area from layout <br />
+        @RenderBody()
+    </main>
+    <footer>
+        Footer Area from layout <br />     
+        @if (IsSectionDefined("footerContent"))
+        {
+            @RenderSection("footerContent")
+        }
+    </footer>
+</body>
+</html>
