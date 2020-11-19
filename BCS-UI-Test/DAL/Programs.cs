@@ -102,7 +102,7 @@ namespace BCS_UI_Test.DAL
         }
         public ProgramName GetProgram(string programCode)
         {
-            programCode = "PHOT";
+           
             string user = "ihugya1";
             string password = "SimpCord101";
             ProgramName program = new ProgramName();
