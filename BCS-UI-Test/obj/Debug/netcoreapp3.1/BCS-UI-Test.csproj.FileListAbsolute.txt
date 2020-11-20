@@ -68,7 +68,6 @@ C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.TagHelpers.input.cache
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.TagHelpers.output.cache
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.RazorCoreGenerate.cache
-C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\AddCoursePage.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\ihugya1SignOn.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\ihugya1Student.cshtml.g.cs
@@ -90,9 +89,12 @@ C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.genruntimeconfig.cache
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\ihugya1Categories.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.csprojAssemblyReference.cache
-C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\CreateProgram.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\BCS-UI-Test.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\AddCoursePage.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\CreateProgram.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\EnrollStudent.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\FindStudent.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\FindProgram.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\FindStudent.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\ModifyAStudent.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\BCS-UI-Test\obj\Debug\netcoreapp3.1\Razor\Pages\RemoveAStudent.cshtml.g.cs

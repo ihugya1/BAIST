@@ -1,4 +1,5 @@
-﻿@page
+﻿
+@page
 @model BCS_UI_Test.Pages.FindStudentModel
 @{
 }
@@ -38,15 +39,15 @@
 
         <div class="form-group">
             <label for="studentIDField">Student ID</label>
-            <input asp-for="StudentIDField" type="text" class="form-control" id="studentIDField"  value="@Model.StudentIDField" name="id" placeholder="Enter Student ID">
-            
+            <input asp-for="StudentIDField" type="text" class="form-control" id="studentIDField" value="@Model.StudentIDField" name="id" placeholder="Enter Student ID">
+
         </div>
         <button class="btn btn-default">View</button>
 
 
 
     </form>
-   
+
     <table class="table">
         <thead>
             <tr>
@@ -58,10 +59,10 @@
         </thead>
         <tbody>
             <tr>
-                <td><input type="text" asp-for="StudentIDField" class="form-control" id="studentIDField1" /></td>
-                <td><input type="text" asp-for="FirstNameField" class="form-control" id="firstNameField" /></td>
-                <td><input type="text" asp-for="LastNameField" class="form-control" id="lastNameField" /></td>
-                <td><input type="text" asp-for="EmailField" class="form-control" id="emailField" /></td>
+                <td><input type="text" asp-for="StudentIDField" class="form-control" id="studentIDField1"  readonly="readonly"/></td>
+                <td><input type="text" asp-for="FirstNameField" class="form-control" id="firstNameField" readonly="readonly"/></td>
+                <td><input type="text" asp-for="LastNameField" class="form-control" id="lastNameField" readonly="readonly"/></td>
+                <td><input type="text" asp-for="EmailField" class="form-control" id="emailField"readonly="readonly" /></td>
 
 
 
@@ -72,22 +73,56 @@
 
     </table>
 
-    <div class="form-group">
-        <div class="col-lg-1">
-            <form asp-page-handler="edit" method="post">
-                <input type="hidden" name="id" value=@Model.AcceptedStudent.StudentID />
-                <button class="btn btn-warning">Save</button>
-            </form>
-        </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Modify a Student</h1>
 
-        <div class="col-lg-1">
-            <form asp-page-handler="delete" method="post">
-                <input type="hidden" name="id" value=@Model.AcceptedStudent.StudentID />
-                <button class="btn btn-danger">Delete</button>
-            </form>
+       
+
+        <form method="post" asp-page-handler="edit" name="SampleForm">
+
+
+            <div class="form-group">
+                <label for="studentIDField">Student ID</label>
+                <input asp-for="StudentIDField" type="text" class="form-control" id="studentIDField" placeholder="Enter Student ID" readonly="readonly">
+                <span asp-validation-for="StudentIDField"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="firstNameField">First Name</label>
+                <input asp-for="FirstNameField" type="text" class="form-control" id="firstNameField" placeholder="Enter First Name">
+                <span asp-validation-for="FirstNameField"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="lastNameField">Last Name</label>
+                <input asp-for="LastNameField" type="text" class="form-control" id="lastNameField" placeholder="Enter Last Name">
+                <span asp-validation-for="LastNameField"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="emailField">Email</label>
+                <input asp-for="EmailField" type="email" class="form-control" id="emailField" placeholder="Enter Email">
+                <span asp-validation-for="EmailField"></span>
+            </div>
+
+            <div class="row">
+                <button name="Submit" value="Submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+
+
+            <div class="col-lg-1">
+                <form asp-page-handler="delete" method="post">
+                    <input asp-for="StudentIDField" type="hidden" class="form-control" id="studentIDField" value="@Model.StudentIDField" placeholder="Enter Student ID">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
         </div>
     </div>
-    <h3 class="clearfix">@Model.Message</h3>
-   
+
+    @Model.Message
+
 </body>
 </html>

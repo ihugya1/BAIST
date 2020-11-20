@@ -1,0 +1,51 @@
+﻿@page
+@model BCS_UI_Test.Pages.Shared.ModifyAStudentModel
+@{
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Modify a Student</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Modify a Student</h1>
+    </div>
+    <div class="form-group">
+        
+            <form method="post" name="SampleForm">
+         
+
+                <div class="form-group">
+                    <label for="studentIDField">Student ID</label>
+                    <input asp-for="StudentIDField" type="text" class="form-control" id="studentIDField" placeholder="Enter Student ID">
+                    <span asp-validation-for="StudentIDField"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstNameField">First Name</label>
+                    <input asp-for="FirstNameField" type="text" class="form-control" id="firstNameField" placeholder="Enter First Name">
+                    <span asp-validation-for="FirstNameField"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastNameField">Last Name</label>
+                    <input asp-for="LastNameField" type="text" class="form-control" id="lastNameField" placeholder="Enter Last Name">
+                    <span asp-validation-for="LastNameField"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailField">Email</label>
+                    <input asp-for="EmailField" type="email" class="form-control" id="emailField" placeholder="Enter Email">
+                    <span asp-validation-for="EmailField"></span>
+                </div>
+
+
+                <button name="Submit" value="Submit" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            @Model.Message
+     
+    </div>
+</body>
+</html>

@@ -16,7 +16,6 @@ namespace BCS_UI_Test.Pages
         [BindProperty]
         public ProgramName programName { get; set; }
         [BindProperty]
-        
         [Required]
         public string ProgramCodeField { get; set; }
         [BindProperty]
@@ -54,11 +53,7 @@ namespace BCS_UI_Test.Pages
             if (ModelState.IsValid)
             {
                 bool confirm = false;
-
                 BCS RequestDirector = new BCS();
-
-               
-
                 programName = RequestDirector.FindProgram(id);
                 Message = $"Edit : {confirm}";
             }

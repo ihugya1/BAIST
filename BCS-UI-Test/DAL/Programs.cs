@@ -92,6 +92,7 @@ namespace BCS_UI_Test.DAL
                     {
                         program.ProgramCode = ASampleDataReader.GetValue("ProgramCode").ToString();
                         program.Description = ASampleDataReader.GetValue("Description").ToString();
+
                     }
                     Console.WriteLine("-");
                 }
@@ -128,22 +129,31 @@ namespace BCS_UI_Test.DAL
                 SqlValue = programCode
             };
             GetProgramCommand.Parameters.Add(GetProgramParameter);
-            SqlDataReader GetProgramReader;
-            GetProgramReader = GetProgramCommand.ExecuteReader();
-
-
-
-
-            if (GetProgramReader.HasRows)
+            SqlDataReader ASampleDataReader;
+            ASampleDataReader = GetProgramCommand.ExecuteReader();
+         
+            if (ASampleDataReader.HasRows)
             {
-                while (GetProgramReader.Read())// no value no read (returns true until no rows left to return)
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ASampleDataReader.FieldCount; index++)
                 {
-                    program.ProgramCode = GetProgramReader.GetValue("ProgramCode").ToString();
-                    program.Description = GetProgramReader.GetValue("Description").ToString();
-                    program.EnrolledStudents = GetStudentByProgramCode(programCode);
+                    Console.WriteLine(ASampleDataReader.GetName(index));
                 }
-                BAIS3150.Close();
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                while (ASampleDataReader.Read()) // no value no read (returns true until no rows left to return)
+                {
+                    for (int i = 0; i < ASampleDataReader.FieldCount; i++)
+                    {
+                        program.ProgramCode = programCode;
+                        program.Description = ASampleDataReader.GetValue("Description").ToString();
+                        program.EnrolledStudents = GetStudentByProgramCode(programCode);
+                    }
+                    Console.WriteLine("-");
+                }
             }
+            ASampleDataReader.Close();
             BAIS3150.Close();
             return program;
         }
@@ -157,7 +167,7 @@ namespace BCS_UI_Test.DAL
             BAIS3150.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
             BAIS3150.Open();
            
-            BAIS3150.Open();
+         
 
             SqlCommand GetStudentByCodeCommand = new SqlCommand
             {

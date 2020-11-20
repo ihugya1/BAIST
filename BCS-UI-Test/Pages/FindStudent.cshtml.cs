@@ -12,27 +12,27 @@ namespace BCS_UI_Test.Pages
     public class FindStudentModel : PageModel
     {
         [BindProperty]
-        
+
         public string FirstNameField { get; set; }
         [BindProperty]
-       
+
         public string LastNameField { get; set; }
         [BindProperty]
-   
+
         public string EmailField { get; set; }
         [BindProperty]
         public string StudentIDField { get; set; }
 
         public string Message { get; set; }
-   
+
         [BindProperty]
         public Student AcceptedStudent { get; set; }
         public void OnGet()
         {
             AcceptedStudent = new Student();
-           
+
         }
-      
+
         public void OnPostView(string id)
         {
             if (ModelState.IsValid)
@@ -47,30 +47,30 @@ namespace BCS_UI_Test.Pages
             }
         }
 
-        public void OnPostDelete(string id)
+        public void OnPostDelete(string studentIDField)
         {
-            
+
             if (ModelState.IsValid)
             {
                 bool confirm = false;
                 BCS RequestDirector = new BCS();
-         
-                confirm = RequestDirector.RemoveStudent(id);
-                Message = $"DELETED Student ID {id}";
+
+                confirm = RequestDirector.RemoveStudent(studentIDField);
+                Message = $"{confirm}DELETED Student ID {studentIDField}";
             }
         }
 
-        public void OnPostEdit(string id)
+        public void OnPostEdit(string studentIDField)
         {
             if (ModelState.IsValid)
             {
                 bool confirm = false;
-                
+
                 BCS RequestDirector = new BCS();
 
                 Student modifyStudent = new Student()
                 {
-                    StudentID = id,
+                    StudentID = studentIDField,
                     FirstName = FirstNameField,
                     LastName = LastNameField,
                     Email = EmailField
@@ -82,6 +82,6 @@ namespace BCS_UI_Test.Pages
             }
         }
 
-       
+
     }
 }
