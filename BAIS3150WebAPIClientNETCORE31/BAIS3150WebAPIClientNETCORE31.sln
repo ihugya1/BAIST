@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAIS3150WebAPIClientNETCORE31", "BAIS3150WebAPIClientNETCORE31.csproj", "{0F236143-C3F0-420E-A716-28BF06B12FEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F236143-C3F0-420E-A716-28BF06B12FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F236143-C3F0-420E-A716-28BF06B12FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F236143-C3F0-420E-A716-28BF06B12FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F236143-C3F0-420E-A716-28BF06B12FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0F77BE0-4E20-4834-826D-F4FB38713101}
+	EndGlobalSection
+EndGlobal

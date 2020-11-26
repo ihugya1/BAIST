@@ -1,0 +1,13 @@
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\bin\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.exe
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\bin\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.deps.json
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\bin\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.runtimeconfig.json
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\bin\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.runtimeconfig.dev.json
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\bin\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\bin\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.pdb
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.AssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.pdb
+C:\Users\admin\Documents\GitHub\BAIST\BAIS3150WebAPIClientNETCORE31\obj\Debug\netcoreapp3.1\BAIS3150WebAPIClientNETCORE31.genruntimeconfig.cache

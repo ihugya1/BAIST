@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "BAIS3150WebAPIClientNETCORE31/1.0.0": {
+        "runtime": {
+          "BAIS3150WebAPIClientNETCORE31.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BAIS3150WebAPIClientNETCORE31/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
