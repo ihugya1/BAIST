@@ -56,8 +56,6 @@ C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\net
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.csprojAssemblyReference.cache
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.AssemblyInfoInputs.cache
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.AssemblyInfo.cs
-C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.csproj.CoreCompileInputs.cache
-C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.RazorAssemblyInfo.cache
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.RazorAssemblyInfo.cs
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.TagHelpers.input.cache
@@ -86,3 +84,12 @@ C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\net
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.csproj.CopyComplete
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\Content.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\FindDatabaseUser.cshtml.g.cs

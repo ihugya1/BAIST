@@ -1,0 +1,26 @@
+﻿@page
+@model BAIST3150RazorPagesNETCore31.Pages.FindDatabaseUserModel
+@{
+}
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find Database User</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Current User:</td>
+            <td>@Model.CurrentDatabaseUser.CurrentUser</td>
+        </tr>
+        <tr>
+            <td>System User:</td>
+            <td>@Model.CurrentDatabaseUser.SystemUser</td>
+        </tr>
+        <tr>
+            <td>Session User:</td>
+            <td>@Model.CurrentDatabaseUser.SessionUser</td>
+        </tr>
+    </table>
+</body>
+</html>
