@@ -182,7 +182,7 @@ namespace BAIS3150WebAPI_NetCore31.Controllers
         }
 
         // DELETE api/<ItemsController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{itemNumber}")]
         public void Delete(int itemNumber)
         {
             SqlConnection BAIS3150 = new SqlConnection();

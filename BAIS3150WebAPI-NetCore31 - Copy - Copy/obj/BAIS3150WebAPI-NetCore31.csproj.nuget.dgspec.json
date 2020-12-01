@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Documents\\GitHub\\BAIS3150WebAPI-NetCore31 - Copy\\BAIS3150WebAPI-NetCore31.csproj": {}
+    "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\BAIS3150WebAPI-NetCore31 - Copy - Copy\\BAIS3150WebAPI-NetCore31.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Documents\\GitHub\\BAIS3150WebAPI-NetCore31 - Copy\\BAIS3150WebAPI-NetCore31.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\BAIS3150WebAPI-NetCore31 - Copy - Copy\\BAIS3150WebAPI-NetCore31.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\BAIS3150WebAPI-NetCore31 - Copy\\BAIS3150WebAPI-NetCore31.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\BAIS3150WebAPI-NetCore31 - Copy - Copy\\BAIS3150WebAPI-NetCore31.csproj",
         "projectName": "BAIS3150WebAPI-NetCore31",
-        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\BAIS3150WebAPI-NetCore31 - Copy\\BAIS3150WebAPI-NetCore31.csproj",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\BAIS3150WebAPI-NetCore31 - Copy - Copy\\BAIS3150WebAPI-NetCore31.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\BAIS3150WebAPI-NetCore31 - Copy\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\BAIS3150WebAPI-NetCore31 - Copy - Copy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
