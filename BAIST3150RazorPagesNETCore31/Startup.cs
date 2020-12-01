@@ -26,9 +26,14 @@ namespace BAIST3150RazorPagesNETCore31
             {
                 app.UseDeveloperExceptionPage();
             }
+            else// add code for production environment
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseRouting();
-            app.UseStaticFiles();// Reference files that end in HTML etc (wwroot folder)
+            app.UseStaticFiles();// Reference files that end in HTML etc (wwwroot folder)
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();// Add code for Razor Pages
