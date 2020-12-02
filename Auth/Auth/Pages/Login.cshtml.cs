@@ -62,7 +62,7 @@ namespace Auth.Pages
                     ParameterName = "@UserID",
                     SqlDbType = SqlDbType.VarChar,
                     Direction = ParameterDirection.Input,
-                    SqlValue = 3
+                    SqlValue = 7
                 };
             InsertUserCommand.Parameters.Add(UserIdParameter);
                 SqlParameter HoursParameter = new SqlParameter
