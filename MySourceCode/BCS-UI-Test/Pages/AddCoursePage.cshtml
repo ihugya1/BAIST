@@ -1,0 +1,57 @@
+﻿@page
+@model BCS_UI_Test.Pages.AddCoursePageModel
+@{
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Validation Data Annotation Attributes</title>
+    <!--
+        To bypass client side validation
+        comment library references
+        or
+        hard code tags, <input> set property data-val="false" to override
+
+
+        -->
+    <meta charset="utf-8" />
+    <script src="~/libraries/jquery/jquery.js"></script>
+    <script src="~/libraries/jquery-validate/jquery.validate.js"></script>
+    <script src="~/libraries/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+    <form method="post" name="ProgramForm">
+        <table>
+            <tr>
+                <td> Course ID</td>
+                <td>
+                    <input asp-for="CourseIDField" />
+                    <span asp-validation-for="CourseIDField"></span>
+       
+                </td>
+            </tr>
+            <tr>
+                <td> Offering</td>
+                <td>
+                    <input asp-for="OfferingField" />
+                    <span asp-validation-for="OfferingField"></span>
+                </td>
+            </tr>
+            <tr>
+                <td> Hours</td>
+                <td>
+                    <input type="number" asp-for="HoursField" />
+                    <span asp-validation-for="HoursField"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="Submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    @Model.Message
+</body>
+</html>

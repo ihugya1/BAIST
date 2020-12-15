@@ -44,7 +44,6 @@ C:\Users\ianhu\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\net
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\libman.json
-C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.exe
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.deps.json
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.runtimeconfig.json
@@ -93,3 +92,5 @@ C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\bin\Debug\net
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\BAIST3150RazorPagesNETCore31.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\FindDatabaseUser.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\scopedcss\bundle\BAIST3150RazorPagesNETCore31.styles.css
+C:\Users\admin\Documents\GitHub\BAIST\BAIST3150RazorPagesNETCore31\obj\Debug\netcoreapp3.1\Razor\Pages\SessionSample.cshtml.g.cs

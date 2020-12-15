@@ -1,0 +1,46 @@
+﻿@page
+@model ABC_Hardware.Pages.Shared.AddACustomerModel
+@{
+}
+
+<form method="post" name="ItemForm">
+    <div class="form-group">
+        <label for="CustomerField">Customer ID:</label>
+        <input type="text" class="form-control" id="CustomerField" asp-for="CustomerIDField" placeholder="Enter Customer ID">
+        <span asp-validation-for="CustomerIDField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="customerNameField">Customer Name</label>
+        <input asp-for="CustomerNameField" type="text" class="form-control" id="studentIDField" placeholder="Enter Student ID">
+        <span asp-validation-for="CustomerNameField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="addressField">Address</label>
+        <input asp-for="AddressField" type="text" class="form-control" id="addressField" placeholder="Enter Address">
+        <span asp-validation-for="AddressField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="cityField">City</label>
+        <input asp-for="CityField" type="text" class="form-control" id="cityField" placeholder="Enter City">
+        <span asp-validation-for="CityField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="provinceField">Province</label>
+        <input asp-for="ProvinceField" type="text" class="form-control" id="provinceField" placeholder="Enter Province">
+        <span asp-validation-for="ProvinceField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="postalField">Postal Code</label>
+        <input asp-for="PostalCodeField" type="text" class="form-control" id="postalField" placeholder="Enter Postal Code">
+        <span asp-validation-for="PostalCodeField"> </span>
+    </div>
+
+
+    <button name="Submit" value="Submit" type="submit" class="btn btn-primary">Submit</button>
+</form>
+@Model.Message

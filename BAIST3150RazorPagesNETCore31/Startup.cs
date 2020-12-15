@@ -17,6 +17,7 @@ namespace BAIST3150RazorPagesNETCore31
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();// add code for Razor Pages
+            services.AddSession(); // add code for session state
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +35,8 @@ namespace BAIST3150RazorPagesNETCore31
 
             app.UseRouting();
             app.UseStaticFiles();// Reference files that end in HTML etc (wwwroot folder)
+            app.UseSession(); // add code for session state
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();// Add code for Razor Pages

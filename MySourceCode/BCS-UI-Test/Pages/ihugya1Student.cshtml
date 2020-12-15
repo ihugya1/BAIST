@@ -1,0 +1,139 @@
+﻿@page
+@model BCS_UI_Test.Pages.ihugya1StudentModel
+@{
+}
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Validation Client Server</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        // validate - Client
+        function IsFormValid(aForm) {
+            var firstNameValid = false;
+            var lastNameValid = false;
+            var userIDValid = false;
+            var passwordValid = false;
+            var passwordMatchValid = false;
+            var isValid = false;
+            var aValue = aForm.FirstName.value;
+            var length = aValue.length;
+
+            if (!length > 0) {
+                alert("FirstName is required");
+            }
+            else {
+                firstNameValid = true;
+            }
+
+            var aValue = aForm.LastName.value;
+            var length = aValue.length;
+            if (!length > 0) {
+                alert("LastName is required");
+            }
+            else {
+                lastNameValid = true;
+            }
+
+            let re = /[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]/;
+            var aValue = aForm.UserID.value;
+            var length = aValue.length;
+            if (!length > 0) {
+                alert("UserID is required");
+            }
+             if (!aValue.match(re)) {
+                 alert("UserID is incorrect format");
+            }
+             else {
+                 userIDValid = true;
+            }
+
+            var aValue = aForm.Password.value;
+            var length = aValue.length;
+            if (!length > 0) {
+                alert("Password is required");
+            }
+            if (!length > 6) {
+                alert("Password needs to be greater than 6 characters");
+            }
+            else {
+                passwordValid = true;
+            }
+          
+            var value1 = aForm.Password.value;
+            var value2 = aForm.ConfirmedPassword.value;
+            if (value1==value2) {
+                passwordMatchValid = true;
+            }
+            else {
+                alert("Password needs to match confirmed password");
+            }
+            if (firstNameValid == true && lastNameValid==true && userIDValid ==true && passwordValid == true && passwordMatchValid == true) {
+                isValid = true;
+            }
+
+
+            return isValid;
+        }
+
+    </script>
+</head>
+<body>
+    <form name="studentForm">
+        <p>
+        
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td>
+                        <input type="text" name="FirstName" value="@Model.FirstName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>
+                        <input type="text" name="LastName"value="@Model.LastName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="email" name="Email"value="@Model.Email" />
+                    </td>
+                <tr>
+                    <td>Program</td>
+                    <td>
+                        <select name="Program" value="@Model.Program">
+                            <option value="BAIST">Bachelor of Applied Information System Technology</option>
+                            <option value="BBA">Bachelor of Business Administration</option>
+                            <option value="PHOT">Photographic Technology</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User ID</td>
+                    <td>
+                        <input type="text" name="UserID"value="@Model.UserID" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" name="Password"value="@Model.Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td>
+                        <input type="password" name="ConfirmedPassword"value="@Model.ConfirmedPassword" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>  <input type="button" value="Submit" onclick="IsFormValid(window.document.studentForm);" /></td>
+                </tr>
+            </table>
+        </p>
+      
+    </form>
+</body>
+</html>

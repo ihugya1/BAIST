@@ -1,0 +1,28 @@
+﻿@page
+@model BCS_UI_Test.Pages.ihugya1CategoriesModel
+@{
+}
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>CategoryName</th>
+            <th>Description</th>
+            <th>Picture</th>
+        </tr>
+        @foreach (var Sample in Model.CategoryCollection)
+        {
+
+            <tr>
+                <td>@Sample.CategoryName</td>
+                <td>@Sample.Description</td>
+                <td>@Sample.Picture</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

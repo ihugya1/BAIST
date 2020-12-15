@@ -1,0 +1,67 @@
+﻿@page
+@model Assignment2.Pages.AddCourseModel
+@{
+}
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Example</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        // validate - Client
+        function IsFormValid(aForm) {
+            var isValid = false;
+            var aValue = SampleForm['OfferingField'].value;
+            if (aValue == "") {
+                alert('Please enter a value for offering');
+            }
+            if (aValue != "PT" || aValue != "FT") {
+                alert('Offering must be "PT" or "FT"');
+            }
+            
+            else {
+        
+                isValid = true;
+            }
+        
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+    <div class="text-center">
+        <form method="post" name="SampleForm" onsubmit="IsFormValid(window.document.SampleForm);">
+            <table>
+                <tr>
+                    <td><label>CourseID</label></td>
+                    <td>
+                        <input type="text" name="CourseIDField" id="CourseIDField"  />
+                        @Html.ValidationMessage("CourseIDField")
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Hours</label></td>
+                    <td>
+                        <input type="text" name="HoursField" />
+                        @Html.ValidationMessage("HoursField")
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Offering</label></td>
+                    <td>
+                        <input type="text" name="OfferingField" id="OfferingField" />
+                        @Html.ValidationMessage("OfferingField")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="Submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        @Model.Message
+    </div>
+</body>
+</html>
+
