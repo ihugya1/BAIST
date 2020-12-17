@@ -37,7 +37,7 @@ namespace ABC_Hardware.BLL
             Confirmation = customerManager.AddCustomer(newCustomer);
             return Confirmation;
         }
-
+       
 
     }
 }
