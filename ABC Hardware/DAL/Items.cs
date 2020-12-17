@@ -181,5 +181,61 @@ namespace ABC_Hardware.DAL
             BAIS3150.Close();
             return success;
         }
+        public Item GetItem(string itemCode)
+        {
+            Item item = new Item();
+
+            ConfigurationBuilder DatabaseUsersBuilder = new ConfigurationBuilder();
+            DatabaseUsersBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            DatabaseUsersBuilder.AddJsonFile("appsettings.json");
+            IConfiguration DatabaseUsersConfiguration = DatabaseUsersBuilder.Build();
+            SqlConnection BAIS3150 = new SqlConnection();
+            BAIS3150.ConnectionString = DatabaseUsersConfiguration.GetConnectionString("BAIS3150");
+            BAIS3150.Open();
+            SqlCommand ASampleCommand = new SqlCommand
+            {
+                Connection = BAIS3150,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetItem",
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@ItemCode",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                SqlValue = itemCode
+            };
+            ASampleCommand.Parameters.Add(ASampleCommandParameter);
+            SqlDataReader ASampleDataReader;
+            ASampleDataReader = ASampleCommand.ExecuteReader();
+            if (ASampleDataReader.HasRows)
+            {
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ASampleDataReader.FieldCount; index++)
+                {
+                    Console.WriteLine(ASampleDataReader.GetName(index));
+                }
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
+                {
+                    for (int i = 0; i < ASampleDataReader.FieldCount; i++)
+                    {
+                        
+                        item.ItemCode = ASampleDataReader.GetValue("ItemCode").ToString();
+                        item.ItemDescription = ASampleDataReader.GetValue("ItemDescription").ToString();
+                        item.UnitPrice = decimal.Parse(ASampleDataReader.GetValue("UnitPrice").ToString());
+                        item.QuantityOnHand = int.Parse(ASampleDataReader.GetValue("QuantityOnHand").ToString());
+                        item.IsDeleted = bool.Parse(ASampleDataReader.GetValue("IsDeleted").ToString());
+                      
+                    }
+                }
+                BAIS3150.Close();
+            }
+            BAIS3150.Close();
+            return item;
+        }
+
     }
 }

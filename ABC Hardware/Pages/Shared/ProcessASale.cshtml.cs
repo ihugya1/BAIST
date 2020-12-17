@@ -28,6 +28,14 @@ namespace ABC_Hardware.Pages.Shared
             }
         }
 
+        private List<Item> _sampleObjectCollection2 = new List<Item>();
+        public List<Item> SampleObjectCollection2
+        {
+            get
+            {
+                return _sampleObjectCollection2;
+            }
+        }
 
         public void OnGet()
         {
@@ -48,16 +56,33 @@ namespace ABC_Hardware.Pages.Shared
                     _sampleObjectCollection = systemControl.SearchItemsByParam(Parameter);
                     //  Message = $"OnPost - First - {FirstInputField}";
                     break;
-                case "Delete":
-                    confirm = systemControl.DeleteAnItem(subs[1]);
-                    if (confirm)
+                case "Add":
+                    try
                     {
-                        Message = $"{subs[1]} deleted";
-                        _sampleObjectCollection = systemControl.SearchItemsByParam(Parameter);
+                        Item item = new Item();
+                        item = systemControl.GetAnItem(subs[1]);
+                        _sampleObjectCollection2.Add(item);
+                        Message = $"{subs[1]} added";
                     }
-                    else
+                    catch (Exception e)
                     {
-                        Message = "Error";
+
+                        Message = $"Error {e}";
+                    }
+                   
+                    break;
+                case "Remove":
+                    try
+                    {
+                        Item item = new Item();
+                        item = systemControl.GetAnItem(subs[1]);
+                        _sampleObjectCollection2.Remove(item);
+                        Message = $"{subs[1]} removed";
+                    }
+                    catch (Exception e)
+                    {
+
+                        Message = $"Error {e}";
                     }
                     break;
                 default:

@@ -37,7 +37,14 @@ namespace ABC_Hardware.BLL
             Confirmation = customerManager.AddCustomer(newCustomer);
             return Confirmation;
         }
-       
+        public Item GetAnItem(string itemCode)
+        {
+            Item item;
+            Items itemManager = new Items();
+            item = itemManager.GetItem(itemCode);
+            return item;
+        }
+
 
     }
 }
