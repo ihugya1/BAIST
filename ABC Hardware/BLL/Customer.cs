@@ -13,6 +13,6 @@ namespace ABC_Hardware.BLL
         public string City { get; set; }
         public string Province { get; set; }// Auto-Implemented Property, no loginc in get/set
         public string PostalCode { get; set; }
-        public string IsDeleted { get; set; }// Auto-Implemented Property, no loginc in get/set
+        public bool IsDeleted { get; set; }// Auto-Implemented Property, no loginc in get/set
     }
 }

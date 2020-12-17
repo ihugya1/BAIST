@@ -1,0 +1,80 @@
+﻿@page
+@model ABC_Hardware.Pages.Shared.ShopModel
+@{
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form method="post" name="ShopForm">
+        <table>
+            <tr>
+                <td>Search:</td>
+                <td><input type="text" name="SearchParameter" value="@Model.SearchParameter" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Submit" value="Search " /></td>
+            </tr>
+
+        </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ItemCode</th>
+                    <th>ItemDescription</th>
+                    <th>Quantity On Hand</th>
+                    <th>Unit Price</th>
+                </tr>
+                @foreach (var items in Model.SampleObjectCollection)
+                {
+                    if (items.IsDeleted == false)
+                    {
+                        <tr>
+                            <td>@items.ItemCode<br /></td>
+                            <td>@items.ItemDescription<br /></td>
+                            <td>@items.QuantityOnHand<br /></td>
+                            <td>@items.UnitPrice<br /></td>
+
+                            <td><input type="submit" name="Submit" value="Add @items.ItemCode" /><br /></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ItemCode</th>
+                    <th>ItemDescription</th>
+                    <th>Quantity On Hand</th>
+                    <th>Unit Price</th>
+                </tr>
+                @if (Model.items != null)
+                {
+                    foreach (var items in Model.items)
+                    {
+                        if (items.IsDeleted == false)
+                        {
+                            <tr>
+                                <td>@items.ItemCode<br /></td>
+                                <td>@items.ItemDescription<br /></td>
+                                <td>@items.QuantityOnHand<br /></td>
+                                <td>@items.UnitPrice<br /></td>
+
+                                <td><input type="submit" name="Submit" value="Remove @items.ItemCode" /><br /></td>
+                            </tr>
+                        }
+                    }
+                }
+                </tbody>
+        </table>
+        @Model.Message
+    </form>
+    <a asp-page="ProcessASale">Proceed To Check</a>
+
+</body>
+</html>

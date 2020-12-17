@@ -68,7 +68,7 @@ namespace ABC_Hardware.DAL
                 SqlValue = newItem.QuantityOnHand
             };
             AddItemCommand.Parameters.Add(AddItemParameter);
-           
+
             try
             {
                 AddItemCommand.ExecuteNonQuery();//not getting a result back 
@@ -133,7 +133,7 @@ namespace ABC_Hardware.DAL
                         item.QuantityOnHand = int.Parse(ASampleDataReader.GetValue("QuantityOnHand").ToString());
                         item.IsDeleted = bool.Parse(ASampleDataReader.GetValue("IsDeleted").ToString());
                         itemList.Add(item);
-                      
+
                     }
 
                 }
@@ -222,13 +222,13 @@ namespace ABC_Hardware.DAL
                 {
                     for (int i = 0; i < ASampleDataReader.FieldCount; i++)
                     {
-                        
+
                         item.ItemCode = ASampleDataReader.GetValue("ItemCode").ToString();
                         item.ItemDescription = ASampleDataReader.GetValue("ItemDescription").ToString();
                         item.UnitPrice = decimal.Parse(ASampleDataReader.GetValue("UnitPrice").ToString());
                         item.QuantityOnHand = int.Parse(ASampleDataReader.GetValue("QuantityOnHand").ToString());
                         item.IsDeleted = bool.Parse(ASampleDataReader.GetValue("IsDeleted").ToString());
-                      
+
                     }
                 }
                 BAIS3150.Close();
@@ -236,6 +236,70 @@ namespace ABC_Hardware.DAL
             BAIS3150.Close();
             return item;
         }
+        public bool UpdateItem(Item newItem)
+        {
+            bool success = true;
+            ConfigurationBuilder DatabaseUsersBuilder = new ConfigurationBuilder();
+            DatabaseUsersBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            DatabaseUsersBuilder.AddJsonFile("appsettings.json");
+            IConfiguration DatabaseUsersConfiguration = DatabaseUsersBuilder.Build();
+            SqlConnection BAIS3150 = new SqlConnection();
+            BAIS3150.ConnectionString = DatabaseUsersConfiguration.GetConnectionString("BAIS3150");
+            BAIS3150.Open();
+            SqlCommand UpdateItemCommand = new SqlCommand(); // this is declaration and instantiation wooowwwww very cool
+            UpdateItemCommand.Connection = BAIS3150;
+            UpdateItemCommand.CommandType = CommandType.StoredProcedure;
+            UpdateItemCommand.CommandText = "UpdateItem";
+            SqlParameter UpdateItemParameter;
+            UpdateItemParameter = new SqlParameter //object initialization
+            {
+                ParameterName = "@ItemCode",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = newItem.ItemCode
+            };
+            UpdateItemCommand.Parameters.Add(UpdateItemParameter);
+            UpdateItemParameter = new SqlParameter
+            {
+                ParameterName = "@ItemDescription",
+                SqlDbType = SqlDbType.VarChar,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = newItem.ItemDescription
+            };
+            UpdateItemCommand.Parameters.Add(UpdateItemParameter);
+            UpdateItemParameter = new SqlParameter
+            {
+                ParameterName = "@UnitPrice",
+                SqlDbType = SqlDbType.SmallMoney,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = newItem.UnitPrice
+            };
+            UpdateItemCommand.Parameters.Add(UpdateItemParameter);
+            UpdateItemParameter = new SqlParameter
+            {
+                ParameterName = "@QuantityOnHand",
+                SqlDbType = SqlDbType.Int,//this is a input parameter -> no need to input (10) or "size"
+                Direction = ParameterDirection.Input,
+                SqlValue = newItem.QuantityOnHand
+            };
+            UpdateItemCommand.Parameters.Add(UpdateItemParameter);
+
+            try
+            {
+                UpdateItemCommand.ExecuteNonQuery();//not getting a result back 
+            }
+            catch (Exception e)
+            {
+                success = false;
+                Console.WriteLine(e);
+                return success;
+            }
+            Console.WriteLine("Success: Added Item");
+            success = true;
+            BAIS3150.Close();
+            return success;
+        }
+
 
     }
 }

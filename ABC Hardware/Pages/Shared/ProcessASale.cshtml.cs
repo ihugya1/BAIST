@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using ABC_Hardware.BLL;
+using ABC_Hardware.Helpers;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -11,83 +14,65 @@ namespace ABC_Hardware.Pages.Shared
     public class ProcessASaleModel : PageModel
     {
 
+        public Item item { get; set; }
+
+        public List<Item> items { get; set; }
+
+        [BindProperty]
+        public decimal Total { get; set; }
         public string Message { get; set; }
         [BindProperty]
-        public string SearchParameter { get; set; }
+        [Required]
+        public DateTime SaleDateField { get; set; }
         [BindProperty]
-        public string SecondInputField { get; set; }
+        [Required]
+        public int SalePersonIDField { get; set; }
         [BindProperty]
-        public string Submit { get; set; }
+        [Required]
+        public int CustomerIDField { get; set; }
+        public List<SaleItem> saleitems = new List<SaleItem>();
 
-        private List<Item> _sampleObjectCollection = new List<Item>();
-        public List<Item> SampleObjectCollection
-        {
-            get
+        public void OnGet() {
+            items = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "saleitems");
+            if (items != null)
             {
-                return _sampleObjectCollection;
+
+          
+            foreach (var i in items)
+            {
+                SaleItem saleItem = new SaleItem
+                {
+                    ItemCode = i.ItemCode,
+                    
+                };
+                saleitems.Add(saleItem);
+            }
             }
         }
-
-        private List<Item> _sampleObjectCollection2 = new List<Item>();
-        public List<Item> SampleObjectCollection2
-        {
-            get
-            {
-                return _sampleObjectCollection2;
-            }
-        }
-
-        public void OnGet()
-        {
-            Message = "*** On Get ***";
-        }
+        
         public void OnPost()
         {
-            string Parameter;
-            bool confirm;
-            ABCCS systemControl = new ABCCS();
-            Parameter = SearchParameter;
-            string[] subs = Submit.Split(' ');
+            int saleNum = 0;
+            ABCPOS abcpos = new ABCPOS();
+            Sale sale = new Sale()
+            {
+                SalesDate = DateTime.Now,
+                CustomerID = CustomerIDField,
+                SalesPersonID = SalePersonIDField,
+                SalesItems = saleitems
 
-            switch (subs[0])
+            };
+            try
+            {
+                saleNum = abcpos.ProcessSale(sale);
+            }
+            catch (Exception e )
             {
 
-                case "Search":
-                    _sampleObjectCollection = systemControl.SearchItemsByParam(Parameter);
-                    //  Message = $"OnPost - First - {FirstInputField}";
-                    break;
-                case "Add":
-                    try
-                    {
-                        Item item = new Item();
-                        item = systemControl.GetAnItem(subs[1]);
-                        _sampleObjectCollection2.Add(item);
-                        Message = $"{subs[1]} added";
-                    }
-                    catch (Exception e)
-                    {
-
-                        Message = $"Error {e}";
-                    }
-                   
-                    break;
-                case "Remove":
-                    try
-                    {
-                        Item item = new Item();
-                        item = systemControl.GetAnItem(subs[1]);
-                        _sampleObjectCollection2.Remove(item);
-                        Message = $"{subs[1]} removed";
-                    }
-                    catch (Exception e)
-                    {
-
-                        Message = $"Error {e}";
-                    }
-                    break;
-                default:
-                    break;
+                Message = $"Error : {e}";
             }
+          
+         
         }
     }
 

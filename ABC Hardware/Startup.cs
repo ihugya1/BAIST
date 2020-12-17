@@ -23,6 +23,8 @@ namespace ABC_Hardware
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSession();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,7 +38,8 @@ namespace ABC_Hardware
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            app.UseSession();
+           
             app.UseStaticFiles();
 
             app.UseRouting();

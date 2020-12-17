@@ -37,6 +37,20 @@ namespace ABC_Hardware.BLL
             Confirmation = customerManager.AddCustomer(newCustomer);
             return Confirmation;
         }
+        public bool DeleteCustomer(string customerID)
+        {
+            bool Confirmation;
+            Customers customerManager = new Customers();
+            Confirmation = customerManager.DeleteCustomer(customerID);
+            return Confirmation;
+        }
+        public List<Customer> SearchCustomersByParam(string searchParam)
+        {
+            List<Customer> customerList = new List<Customer>();
+            Customers customerManager = new Customers();
+            customerList = customerManager.GetCustomerByParam(searchParam);
+            return customerList;
+        }
         public Item GetAnItem(string itemCode)
         {
             Item item;
@@ -44,6 +58,28 @@ namespace ABC_Hardware.BLL
             item = itemManager.GetItem(itemCode);
             return item;
         }
+        public Customer GetACustomer(string customerID)
+        {
+            Customer customer;
+            Customers customerManager = new Customers();
+            customer = customerManager.GetCustomer(customerID);
+            return customer;
+        }
+        public bool UpdateAnItem(Item item)
+        {
+            bool Confirmation;
+            Items itemsManager = new Items();
+            Confirmation = itemsManager.UpdateItem(item);
+            return Confirmation;
+        }
+        public bool UpdateACustomer(Customer customer)
+        {
+            bool Confirmation;
+            Customers customersManager = new Customers();
+            Confirmation = customersManager.UpdateCustomer(customer);
+            return Confirmation;
+        }
+
 
 
     }
