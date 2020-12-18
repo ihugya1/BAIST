@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>ABC_Hardware</RootNamespace>
+    <UserSecretsId>da1f9c7e-92ef-43ee-a0a4-160a7bffc06e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

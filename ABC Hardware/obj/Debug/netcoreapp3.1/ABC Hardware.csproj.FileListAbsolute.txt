@@ -34,13 +34,6 @@ C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\ABC H
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\ABC Hardware.pdb
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\ABC Hardware.genruntimeconfig.cache
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\ABC Hardware.csproj.CopyComplete
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\AddACustomer.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\AddAnItem.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\DeleteACustomer.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\DeleteAnItem.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\ProcessASale.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\UpdateACustomer.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\UpdateAnItem.cshtml.g.cs
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\scopedcss\bundle\ABC Hardware.styles.css
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
@@ -50,5 +43,12 @@ C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Debug\netcoreapp3.1\runti
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\_VIewImports.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Shop.cshtml.g.cs
-C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\SAleTest.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\AddACustomer.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\AddAnItem.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteACustomer.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteAnItem.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\ProcessASale.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\SAleTest.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\Shop.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateACustomer.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateAnItem.cshtml.g.cs

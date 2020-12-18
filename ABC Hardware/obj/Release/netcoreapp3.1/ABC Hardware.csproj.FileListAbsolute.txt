@@ -1,0 +1,54 @@
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.exe
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.deps.json
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.runtimeconfig.json
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.runtimeconfig.dev.json
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.pdb
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.Views.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\ABC Hardware.Views.pdb
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.AssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.RazorAssemblyInfo.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.RazorAssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\staticwebassets\ABC Hardware.StaticWebAssets.Manifest.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\staticwebassets\ABC Hardware.StaticWebAssets.xml
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\scopedcss\bundle\ABC Hardware.styles.css
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.TagHelpers.input.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.TagHelpers.output.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.RazorCoreGenerate.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\_VIewImports.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.RazorTargetAssemblyInfo.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.RazorTargetAssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.Views.pdb
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.csproj.CopyComplete
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.dll
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.pdb
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\ABC Hardware.genruntimeconfig.cache
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\AddACustomer.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\AddAnItem.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\DeleteACustomer.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\DeleteAnItem.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\ProcessASale.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\SAleTest.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\Shop.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\UpdateACustomer.cshtml.g.cs
+C:\Users\admin\Documents\GitHub\BAIST\ABC Hardware\obj\Release\netcoreapp3.1\Razor\Pages\UpdateAnItem.cshtml.g.cs
