@@ -1,0 +1,54 @@
+﻿@page
+@model ClubBAIST.Pages.BookTeeTimeModel
+@{
+}
+<form method="post" name="ItemForm">
+    <div class="form-group">
+        <label for="dateField">Date :</label>
+        <input type="date" class="form-control" id="dateField" asp-for="DateField" placeholder="Enter Booking Date">
+        <span asp-validation-for="DateField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="timeField">Time :</label>
+        <input asp-for="TimeField" type="time" class="form-control" id="timeField" placeholder="Enter Booking Time">
+        <span asp-validation-for="TimeField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="dayOfWeek">Day of Week</label>
+        <select name="dayOfWeek" asp-for="DayOfWeekField">
+            <option value="">Select a Day</option>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select>
+        <span asp-validation-for="DayOfWeekField"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="memberName">Member Name</label>
+        <input asp-for="MemberNameField" type="text" class="form-control" id="cityField" placeholder="Enter Member Name">
+        <span asp-validation-for="MemberNameField"></span>
+    </div>
+    <!--
+    <div class="form-group">
+        <label for="employee">Employee</label>
+        <input asp-for="EmployeeField" type="text" class="form-control" id="employee" placeholder="Enter Employee">
+        <span asp-validation-for="EmployeeField"></span>
+    </div>
+    -->
+    <div class="form-group">
+        <label for="dateTimeCreated">Date / Time Created</label>
+        <input asp-for="DateTimeCreated" type="text" class="form-control" id="dateTimeCreated" disabled >
+        <span asp-validation-for="DateTimeCreated"> </span>
+    </div>
+
+
+    <button name="Submit" value="Submit" type="submit" class="btn btn-primary">Submit</button>
+</form>
+@Model.Message
