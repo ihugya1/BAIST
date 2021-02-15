@@ -1,0 +1,72 @@
+﻿@page
+@model ABC_Hardware.Pages.Shared.UpdateAnItemModel
+@{
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Delete An Item</title>
+</head>
+<body>
+    <form name="DeleteAnItemForm" method="post">
+        <table>
+            <tr>
+                <td>First Input Field:</td>
+                <td><input type="text" name="SearchParameter" value="@Model.SearchParameter" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Submit" value="Search" /></td>
+            </tr>
+        </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ItemCode</th>
+                    <th>ItemDescription</th>
+                    <th>Quantity On Hand</th>
+                    <th>Unit Price</th>
+                </tr>
+                @foreach (var items in Model.SampleObjectCollection)
+                {
+                    if (items.IsDeleted == false)
+                    {
+                        <tr>
+                            <td>@items.ItemCode<br /></td>
+                            <td>@items.ItemDescription<br /></td>
+                            <td>@items.QuantityOnHand<br /></td>
+                            <td>@items.UnitPrice<br /></td>
+
+                            <td><input type="submit" name="Submit" value="Select @items.ItemCode" /><br /></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <label for="itemCode">Item Code:</label>
+            <b>@Model.ItemCodeField</b>
+            <input type="text" class="form-control" id="itemCode" value="@Model.ItemCodeField" asp-for="ItemCodeField" placeholder="Enter Item Code" hidden>
+            <span asp-validation-for="ItemCodeField"> </span>
+        </div>
+
+        <div class="form-group">
+            <label for="itemDescription">Item Description</label>
+            <input asp-for="ItemDescriptionField" type="text" value="@Model.ItemDescriptionField" class="form-control" id="itemDescription" placeholder="Enter Item Description">
+            <span asp-validation-for="ItemDescriptionField"> </span>
+        </div>
+        <div class="form-group">
+            <label for="unitPrice">Unit Price</label>
+            <input asp-for="UnitPriceField"value="@Model.UnitPriceField" type="text" class="form-control" id="unitPrice" placeholder="Enter Unit Price">
+            <span asp-validation-for="UnitPriceField"> </span>
+        </div>
+
+        <div class="form-group">
+            <label for="quantityOnHand">Quantity On Hand</label>
+            <input asp-for="QuantityOnHandField"value="@Model.QuantityOnHandField" type="text" class="form-control" id="quantityOnHand" placeholder="Enter Quantity">
+            <span asp-validation-for="QuantityOnHandField"> </span>
+        </div>
+        <button name="Submit" value="Update" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    @Model.Message
+</body>
+</html>

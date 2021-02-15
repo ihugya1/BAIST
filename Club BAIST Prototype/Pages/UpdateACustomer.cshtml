@@ -1,0 +1,92 @@
+﻿@page
+@model ABC_Hardware.Pages.Shared.UpdateACustomerModel
+@{
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Update A Customer</title>
+</head>
+<body>
+    <form name="UpdateACustomerForm" method="post">
+        <table>
+            <tr>
+                <td>First Input Field:</td>
+                <td><input type="text" name="SearchParameter" value="@Model.SearchParameter" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Submit" value="Search" /></td>
+            </tr>
+        </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>CustomerID</th>
+                    <th>CustomerName</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>PostalCode</th>
+                </tr>
+                @foreach (var items in Model.SampleObjectCollection)
+                {
+                    if (items.IsDeleted == false)
+                    {
+                        <tr>
+                            <td>@items.CustomerID<br /></td>
+                            <td>@items.CustomerName<br /></td>
+                            <td>@items.Address<br /></td>
+                            <td>@items.City<br /></td>
+                            <td>@items.Province<br /></td>
+                            <td>@items.PostalCode<br /></td>
+                            <td><input type="submit" name="Submit" value="Select @items.CustomerID" /><br /></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <label for="CustomerField">Customer ID:</label>
+            <b>@Model.CustomerIDField</b>
+            <input type="text" class="form-control" id="CustomerField"  value="@Model.CustomerIDField" asp-for="CustomerIDField" placeholder="Enter Customer ID" hidden>
+            <span asp-validation-for="CustomerIDField"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="customerNameField">Customer Name</label>
+            <input asp-for="CustomerNameField" type="text" class="form-control" value="@Model.CustomerNameField" id="studentIDField" placeholder="Enter Student ID">
+            <span asp-validation-for="CustomerNameField"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="addressField">Address</label>
+            <input asp-for="AddressField" type="text" class="form-control" value="@Model.AddressField" id="addressField" placeholder="Enter Address">
+            <span asp-validation-for="AddressField"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="cityField">City</label>
+            <input asp-for="CityField" type="text" class="form-control" value="@Model.CityField" id="cityField" placeholder="Enter City">
+            <span asp-validation-for="CityField"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="provinceField">Province</label>
+            <input asp-for="ProvinceField" type="text" class="form-control" value="@Model.ProvinceField" id="provinceField" placeholder="Enter Province">
+            <span asp-validation-for="ProvinceField"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="postalField">Postal Code</label>
+            <input asp-for="PostalCodeField" type="text" class="form-control" value="@Model.PostalCodeField" id="postalField" placeholder="Enter Postal Code">
+            <span asp-validation-for="PostalCodeField"> </span>
+        </div>
+
+
+    
+        <button name="Submit" value="Update" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    @Model.Message
+</body>
+</html>

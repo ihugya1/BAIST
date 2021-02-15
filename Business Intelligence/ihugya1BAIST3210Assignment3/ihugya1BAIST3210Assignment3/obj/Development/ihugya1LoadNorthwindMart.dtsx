@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{C64A5CD3-5790-474D-96ED-BD8BD822176C}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{BE8E61B8-E08E-4271-9031-6E55673A6A39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAFqsxBCDagG9r7a4ACsGVWFjKbIYRdYuXXDGIGXYpLCgAAAAAOgAAAAAIAACAAAABs3/W6yd3d7LDW6YmvCCHqzX8Zf2NjycSCXM3DRe8RoSAAAACYe35qd0qL4tr+xCqGuF5Xsb5dSZPgHnfJHyAZtkqwtUAAAABMoAFjuJ87DyrexUCRtH6w3GqpQJGP3WaX3JY2jDMXTcGj7PUrRGh68NFhbxDiL2eu1lPH2D8XOo5JwSiqdtRT</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABJQY+4tZH7gJYCSgDnMfLcxfFKVBzTDPqljj/iCLHbagAAAAAOgAAAAAIAACAAAAACKvE2yc/3+fwVnEH1pBdLJixJOWyHayCWLLD/IzMM6yAAAADg8Dzl+3UlaMc1SeY8Ow+UP0a+VvEC3bwFjSEw7q8Kf0AAAACLmJvnLSz9sZbCmlFJinq8UN0F+d3ciWoSqsrtoGOixwARZNIDzX3pFcfrR0xXohOTYp6TxXhVHOVLVdu/Sm6Z</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACTsWxi5SGXuqCi2hTXsT1I9wuvRC0IH+xzhTjXUPzgWwAAAAAOgAAAAAIAACAAAAC5PtZ/x5T4GddleGAoHB/DDnX6vaYRXgzy/U6TUn77UiAAAABs+af6Ee7gZ+AG53pj8jnrirMX2LVfo1OAf1TvOTs43kAAAAB4JXyDOmm+V8WYuejJHP67nOC9l33QPd2MEv5+aQGQ1d3d8OGtB83kfCppEzJpDdxUgEYFLY1B0+cbgwdUYAJH</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADpYS+1n2GcCdO8/HlmVKeT9G5PDv54FDMUWynoIT1l0gAAAAAOgAAAAAIAACAAAACuRC6ksgWiNK2POfSyAGrrcduWT1SuZx4XGZQ/LeLuuiAAAADBG3/+4zMozU5hGmWfXe4UNk3fRqQoSEL8u/qE9ZxsykAAAAB/EqSxahCv7yQyYrBtWPte8/KG1IpGRBCFi9126WQAba03N5dg86sJsknQcODMmkNr8RcgxIGHsLai57sp6aWN</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -159,7 +159,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D4887B05-A2BF-4065-A8AA-FC189021A9A3}"
-          SQLTask:SqlStatementSource="ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_CustomerDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_EmployeeDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_ProductDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_ShipperDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_TimeDimension;&#xA;&#xA;TRUNCATE TABLE ShipperDimension&#xA;TRUNCATE TABLE EmployeeDimension&#xA;TRUNCATE TABLE ProductDimension&#xA;TRUNCATE TABLE CustomerDimension&#xA;TRUNCATE TABLE TimeDimension&#xA;&#xA;ALTER TABLE SaleFact&#xA;ADD CONSTRAINT FK_SaleFact_CustomerDimension FOREIGN KEY (CustomerKey)&#xA;REFERENCES CustomerDimension(CustomerKey),&#xA;CONSTRAINT FK_SaleFact_EmployeeDimension FOREIGN KEY (EmployeeKey)&#xA;REFERENCES EmployeeDimension(EmployeeKey),&#xA;CONSTRAINT FK_SaleFact_ProductDimension FOREIGN KEY (ProductKey)&#xA;REFERENCES ProductDimension(ProductKey),&#xA;CONSTRAINT FK_SaleFact_ShipperDimension FOREIGN KEY (ShipperKey)&#xA;REFERENCES ShipperDimension(ShipperKey),&#xA;CONSTRAINT FK_SaleFact_TimeDimension FOREIGN KEY (TimeKey)&#xA;REFERENCES TimeDimension(TimeKey)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_CustomerDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_EmployeeDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_ProductDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_ShipperDimension;&#xA;ALTER TABLE SaleFact&#xA;DROP CONSTRAINT FK_SaleFact_TimeDimension;&#xA;&#xA;TRUNCATE TABLE ShipperDimension&#xA;TRUNCATE TABLE EmployeeDimension&#xA;TRUNCATE TABLE ProductDimension&#xA;TRUNCATE TABLE CustomerDimension&#xA;TRUNCATE TABLE TimeDimension&#xA;TRUNCATE TABLE SaleFact&#xA;&#xA;ALTER TABLE SaleFact&#xA;ADD CONSTRAINT FK_SaleFact_CustomerDimension FOREIGN KEY (CustomerKey)&#xA;REFERENCES CustomerDimension(CustomerKey),&#xA;CONSTRAINT FK_SaleFact_EmployeeDimension FOREIGN KEY (EmployeeKey)&#xA;REFERENCES EmployeeDimension(EmployeeKey),&#xA;CONSTRAINT FK_SaleFact_ProductDimension FOREIGN KEY (ProductKey)&#xA;REFERENCES ProductDimension(ProductKey),&#xA;CONSTRAINT FK_SaleFact_ShipperDimension FOREIGN KEY (ShipperKey)&#xA;REFERENCES ShipperDimension(ShipperKey),&#xA;CONSTRAINT FK_SaleFact_TimeDimension FOREIGN KEY (TimeKey)&#xA;REFERENCES TimeDimension(TimeKey)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -3854,9 +3854,9 @@ FROM            Products INNER JOIN
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        DISTINCT OrderDate, DATEPART(dd, OrderDate) AS TheDate, DATEPART(dw, OrderDate) AS DayOfWeek, DATENAME(dw, OrderDate) AS DayOfWeekName, DATEPART(m, OrderDate) AS Month, DATENAME(m, OrderDate) AS MonthName, 
-                         YEAR(OrderDate) AS Year, DATEPART(q, OrderDate) AS Quarter, DATEPART(dy, OrderDate) AS DayOfYear, IIF(DATEPART(dw, OrderDate) = 1 OR
-                         DATEPART(dw, OrderDate) = 7, 'N', 'Y') AS Weekday, DATEPART(wk, OrderDate) AS WeekOfYear
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        DISTINCT ShippedDate, DATEPART(dd, ShippedDate) AS TheDate, DATEPART(dw, ShippedDate) AS DayOfWeek, DATENAME(dw, ShippedDate) AS DayOfWeekName, DATEPART(m, ShippedDate) AS Month, DATENAME(m, ShippedDate) AS MonthName, 
+                         YEAR(ShippedDate) AS Year, DATEPART(q, ShippedDate) AS Quarter, DATEPART(dy, ShippedDate) AS DayOfYear, IIF(DATEPART(dw, ShippedDate) = 1 OR
+                         DATEPART(dw, ShippedDate) = 7, 'N', 'Y') AS Weekday, DATEPART(wk, ShippedDate) AS WeekOfYear
 FROM            Orders</property>
                 <property
                   dataType="System.Int32"
@@ -3895,13 +3895,13 @@ FROM            Orders</property>
                   name="ADO NET Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]"
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[ShippedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrderDate]"
-                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]"
-                      name="OrderDate"
+                      externalMetadataColumnId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ShippedDate]"
+                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[ShippedDate]"
+                      name="ShippedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[TheDate]"
@@ -4000,9 +4000,9 @@ FROM            Orders</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrderDate]"
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ShippedDate]"
                       dataType="dbTimeStamp"
-                      name="OrderDate" />
+                      name="ShippedDate" />
                     <externalMetadataColumn
                       refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TheDate]"
                       dataType="i4"
@@ -4054,10 +4054,10 @@ FROM            Orders</property>
                   name="ADO NET Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrderDate]"
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ShippedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrderDate]"
-                      name="OrderDate" />
+                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ShippedDate]"
+                      name="ShippedDate" />
                     <outputColumn
                       refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TheDate]"
                       dataType="i4"
@@ -4609,7 +4609,7 @@ FROM            Orders</property>
     design-time-name="Package\Load NorthwindMartCustomerDimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167,42"
           Id="Package\Load NorthwindMartCustomerDimension\Script Component"
@@ -4653,7 +4653,9 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4687,7 +4689,9 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4713,7 +4717,7 @@ FROM            Orders</property>
     design-time-name="Package\Load NorthwindMartEmployeeDimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
           Id="Package\Load NorthwindMartEmployeeDimension\ADO NET Source"
@@ -4745,7 +4749,9 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4767,7 +4773,9 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4793,7 +4801,7 @@ FROM            Orders</property>
     design-time-name="Package\Load NorthwindMartProductDimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
           Id="Package\Load NorthwindMartProductDimension\ADO NET Source"
@@ -4821,7 +4829,9 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4847,7 +4857,7 @@ FROM            Orders</property>
     design-time-name="Package\Load NorthwindMartSalesFact">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
           Id="Package\Load NorthwindMartSalesFact\ADO NET Source"
@@ -4887,17 +4897,35 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMartSalesFact\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMartSalesFact\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load NorthwindMartShipperDimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="156,42"
           Id="Package\Load NorthwindMartShipperDimension\Flat File Source"
@@ -4925,7 +4953,9 @@ FROM            Orders</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4999,22 +5029,6 @@ FROM            Orders</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load NorthwindMartTimeDimension\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMartSalesFact\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMartSalesFact\ADO NET Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

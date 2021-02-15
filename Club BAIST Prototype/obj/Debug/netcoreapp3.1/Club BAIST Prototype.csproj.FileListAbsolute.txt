@@ -1,0 +1,54 @@
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.exe
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.deps.json
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.runtimeconfig.json
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.runtimeconfig.dev.json
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.pdb
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.Views.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Club BAIST Prototype.Views.pdb
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.csprojAssemblyReference.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.AssemblyInfoInputs.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.AssemblyInfo.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.csproj.CoreCompileInputs.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.RazorAssemblyInfo.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.RazorAssemblyInfo.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\staticwebassets\Club BAIST Prototype.StaticWebAssets.Manifest.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\staticwebassets\Club BAIST Prototype.StaticWebAssets.xml
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\scopedcss\bundle\Club BAIST Prototype.styles.css
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.TagHelpers.input.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.TagHelpers.output.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.RazorCoreGenerate.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\AddACustomer.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\AddAnItem.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteACustomer.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteAnItem.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\ProcessASale.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\SAleTest.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\Shop.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateACustomer.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateAnItem.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Razor\_VIewImports.cshtml.g.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.RazorTargetAssemblyInfo.cache
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.RazorTargetAssemblyInfo.cs
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.Views.pdb
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.csproj.CopyComplete
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.dll
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.pdb
+C:\Users\ianhu\Documents\GitHub\BAIST\Club BAIST Prototype\obj\Debug\netcoreapp3.1\Club BAIST Prototype.genruntimeconfig.cache
