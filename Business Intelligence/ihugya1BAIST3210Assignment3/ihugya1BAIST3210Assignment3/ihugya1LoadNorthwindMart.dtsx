@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{4385718C-A7C9-4F02-8E6A-87FC000AE13B}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{8E884742-57FD-4C56-AE82-A6EF2B87749F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAqnllra8aJ9KEYzhsdtXIj9j33/BNJ1rRV8G4egKj0swAAAAAOgAAAAAIAACAAAAAv0m1fUYWM/WveeSWJPpCIh3Q4z7/lUuPB8fPRARV4hSAAAACZLUuN9m+zlnHKezd+hJkfjWaofFfJ/HALsd6HI7Gb80AAAAAyI3H6ILQOhWXGRL2l9NPBddbxAw46DsCdy8o3qVwcacAr8cHeTqP9WYm3YBNL8tN8mmbQr/LWgEgyJgKBkr3/</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADwpwWohzTZpuos8BEKNK/11OHSbOzjIVVUTFRnDcbAmQAAAAAOgAAAAAIAACAAAABMBXJko7k9uP3sgGDraGbMsrk/fyEhKluy359KEGiAnSAAAAAYqyBnP0MjqK4r5D/WbO4vJL0xNHZ2Zqu+fCzUlRShikAAAABWRhe18zuHrwubSCpUkkkI1peV1zwmtt1PUHyGuvwMrZNIY+lN7/sy0Gu6COJnJfAwPiy8l0UHtWhtNWZzF5ST</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADsWY4ZIJqfCvzd2KI9UU3c5SufWrXll9CmBkywBMScOAAAAAAOgAAAAAIAACAAAADqlQK504YiSYBNkFU+QQM2w+JOGlLJv5zEIuTRlxNlpSAAAAA9SX2euqlL8KEe7XRH/yiRXQqP0Q+Jr6JOSOlhvxppyEAAAACXXff19QetTv44MfX7kzTyJPZGX2Z5hbdbRlXO9cSUQebvTLdmqeURIvJ4pNVvJgH3D//WUuzbUtRwvvNABINZ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvU8wO+pCL0SR/l/mgZoqwAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAACX+QCFtMq6MM8Lh0ITVmbAUNvxjNupKewbuDPjLKMgAAAAAOgAAAAAIAACAAAAAFbuCp2mEPiXuCzsXl1D55TqbB8h05Zv1nh2xRaSlcGyAAAAAnEsjKsxPnq6fC94pyanGl2NF7bgbM8rxYqm7gKymYHUAAAACwuVgALuHbbPs3pJBBqdeSWwr9iVEnACnDLwKyyLUvkeg2vPUdYXco4Qb2GJ5dk4dsKqt7DNxApFIFYQbuKtUo</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2979,6 +2979,24 @@ FROM            Products INNER JOIN
                       externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeKey]"
                       lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[TimeKey]" />
                     <inputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OrderDate]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]" />
+                    <inputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ShippedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShippedDate"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShippedDate]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[ShippedDate]" />
+                    <inputColumn
                       refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Quantity]"
                       cachedDataType="i2"
                       cachedName="Quantity"
@@ -3047,6 +3065,18 @@ FROM            Products INNER JOIN
                       name="LineItemTotal"
                       precision="19"
                       scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3089,33 +3119,15 @@ FROM            Products INNER JOIN
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ihugya1.dbo.CustomerDimension.CustomerKey,
-	ihugya1.dbo.EmployeeDimension.EmployeeKey,
-	ihugya1.dbo.ProductDimension.ProductKey,
-	ihugya1.dbo.ShipperDimension.ShipperKey,
-	ihugya1.dbo.TimeDimension.TimeKey,
-	Northwind.dbo.[Order Details].Quantity,
-	Northwind.dbo.[Order Details].Discount,
-	Northwind.dbo.Orders.Freight,
-	Northwind.dbo.[Order Details].UnitPrice
-	
-
-
-	FROM ihugya1.dbo.CustomerDimension,
-	ihugya1.dbo.EmployeeDimension,
-	ihugya1.dbo.ProductDimension,
-	ihugya1.dbo.ShipperDimension,
-	ihugya1.dbo.TimeDimension,
-	Northwind.dbo.Orders
-	
-	INNER JOIN Northwind.dbo.[Order Details] on Northwind.dbo.[Order Details].OrderID = Northwind.dbo.Orders.OrderID
-
-	WHERE ihugya1.dbo.CustomerDimension.CustomerID = Northwind.dbo.Orders.CustomerID
-	AND ihugya1.dbo.EmployeeDimension.EmployeeID = Northwind.dbo.Orders.EmployeeID
-	AND ihugya1.dbo.ProductDimension.ProductID = Northwind.dbo.[Order Details].ProductID
-	AND ihugya1.dbo.ShipperDimension.ShipperID = Northwind.dbo.Orders.ShipVia
-	AND DATEFROMPARTS(ihugya1.dbo.TimeDimension.Year, ihugya1.dbo.TimeDimension.Month, ihugya1.dbo.TimeDimension.TheDate)
-	= Convert(date, Northwind.dbo.Orders.OrderDate)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        CustomerDimension.CustomerKey, EmployeeDimension.EmployeeKey, ProductDimension.ProductKey, ShipperDimension.ShipperKey, TimeDimension.TimeKey, Northwind.dbo.[Order Details].Quantity, 
+                         Northwind.dbo.[Order Details].Discount, Northwind.dbo.[Order Details].UnitPrice, Northwind.dbo.Orders.Freight, Northwind.dbo.Orders.OrderDate, Northwind.dbo.Orders.RequiredDate, Northwind.dbo.Orders.ShippedDate
+FROM            CustomerDimension INNER JOIN
+                         Northwind.dbo.Orders INNER JOIN
+                         Northwind.dbo.[Order Details] ON Northwind.dbo.[Order Details].OrderID = Northwind.dbo.Orders.OrderID ON CustomerDimension.CustomerID = Northwind.dbo.Orders.CustomerID INNER JOIN
+                         EmployeeDimension ON Northwind.dbo.Orders.EmployeeID = EmployeeDimension.EmployeeID INNER JOIN
+                         ProductDimension ON Northwind.dbo.[Order Details].ProductID = ProductDimension.ProductID INNER JOIN
+                         ShipperDimension ON Northwind.dbo.Orders.ShipVia = ShipperDimension.ShipperID INNER JOIN
+                         TimeDimension ON CONVERT(date, Northwind.dbo.Orders.OrderDate) = DATEFROMPARTS(TimeDimension.Year, TimeDimension.Month, TimeDimension.TheDate)</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -3216,6 +3228,15 @@ FROM            Products INNER JOIN
                       name="Discount"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[Freight]"
                       dataType="cy"
                       errorOrTruncationOperation="Conversion"
@@ -3225,13 +3246,31 @@ FROM            Products INNER JOIN
                       name="Freight"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[UnitPrice]"
-                      dataType="cy"
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UnitPrice]"
-                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[UnitPrice]"
-                      name="UnitPrice"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrderDate]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]"
+                      name="RequiredDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ShippedDate]"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[ShippedDate]"
+                      name="ShippedDate"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -3265,13 +3304,25 @@ FROM            Products INNER JOIN
                       dataType="r4"
                       name="Discount" />
                     <externalMetadataColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
                       refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Freight]"
                       dataType="cy"
                       name="Freight" />
                     <externalMetadataColumn
-                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UnitPrice]"
-                      dataType="cy"
-                      name="UnitPrice" />
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3315,15 +3366,30 @@ FROM            Products INNER JOIN
                       lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Discount]"
                       name="Discount" />
                     <outputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
                       refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Freight]"
                       dataType="cy"
                       lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Freight]"
                       name="Freight" />
                     <outputColumn
-                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UnitPrice]"
-                      dataType="cy"
-                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UnitPrice]"
-                      name="UnitPrice" />
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RequiredDate]"
+                      name="RequiredDate" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ShippedDate]"
+                      name="ShippedDate" />
                     <outputColumn
                       refId="Package\Load NorthwindMartSalesFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -3854,8 +3920,9 @@ FROM            Products INNER JOIN
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        DISTINCT ShippedDate, DATEPART(dd, ShippedDate) AS TheDate, DATEPART(dw, ShippedDate) AS DayOfWeek, DATENAME(dw, ShippedDate) AS DayOfWeekName, DATEPART(m, ShippedDate) AS Month, DATENAME(m, ShippedDate) AS MonthName, 
-                         YEAR(ShippedDate) AS Year, DATEPART(q, ShippedDate) AS Quarter, DATEPART(dy, ShippedDate) AS DayOfYear, IIF(DATEPART(dw, ShippedDate) = 1 OR
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+                         ShippedDate, RequiredDate, OrderDate, DATEPART(dd, ShippedDate) AS TheDate, DATEPART(dw, ShippedDate) AS DayOfWeek, DATENAME(dw, ShippedDate) AS DayOfWeekName, DATEPART(m, ShippedDate) AS Month, 
+                         DATENAME(m, ShippedDate) AS MonthName, YEAR(ShippedDate) AS Year, DATEPART(q, ShippedDate) AS Quarter, DATEPART(dy, ShippedDate) AS DayOfYear, IIF(DATEPART(dw, ShippedDate) = 1 OR
                          DATEPART(dw, ShippedDate) = 7, 'N', 'Y') AS Weekday, DATEPART(wk, ShippedDate) AS WeekOfYear
 FROM            Orders</property>
                 <property
@@ -3902,6 +3969,24 @@ FROM            Orders</property>
                       externalMetadataColumnId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ShippedDate]"
                       lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[ShippedDate]"
                       name="ShippedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]"
+                      name="RequiredDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrderDate]"
+                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrderDate]"
+                      name="OrderDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].Columns[TheDate]"
@@ -4004,6 +4089,14 @@ FROM            Orders</property>
                       dataType="dbTimeStamp"
                       name="ShippedDate" />
                     <externalMetadataColumn
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
                       refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TheDate]"
                       dataType="i4"
                       name="TheDate" />
@@ -4058,6 +4151,16 @@ FROM            Orders</property>
                       dataType="dbTimeStamp"
                       lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ShippedDate]"
                       name="ShippedDate" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RequiredDate]"
+                      name="RequiredDate" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrderDate]"
+                      name="OrderDate" />
                     <outputColumn
                       refId="Package\Load NorthwindMartTimeDimension\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TheDate]"
                       dataType="i4"
@@ -4865,33 +4968,33 @@ FROM            Orders</property>
         <NodeLayout
           Size="186,42"
           Id="Package\Load NorthwindMartSalesFact\ADO NET Destination"
-          TopLeft="706.25,281.25" />
+          TopLeft="705.25,280.25" />
         <EdgeLayout
           Id="Package\Load NorthwindMartSalesFact.Paths[ADO NET Source Output]"
           TopLeft="724.25,109.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="75,171.75"
+              EndConnector="74,170.75"
               Start="0,0"
-              End="75,164.25">
+              End="74,163.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.875" />
+                    End="0,81.375" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,81.875"
-                    Point2="0,85.875"
-                    Point3="4,85.875" />
+                    Point1="0,81.375"
+                    Point2="0,85.375"
+                    Point3="4,85.375" />
                   <mssgle:LineSegment
-                    End="71,85.875" />
+                    End="70,85.375" />
                   <mssgle:CubicBezierSegment
-                    Point1="71,85.875"
-                    Point2="75,85.875"
-                    Point3="75,89.875" />
+                    Point1="70,85.375"
+                    Point2="74,85.375"
+                    Point3="74,89.375" />
                   <mssgle:LineSegment
-                    End="75,164.25" />
+                    End="74,163.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
