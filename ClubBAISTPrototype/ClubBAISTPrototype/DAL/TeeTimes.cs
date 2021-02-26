@@ -11,6 +11,39 @@ namespace ClubBAISTPrototype.DAL
 {
     public class TeeTimes
     {
+        public void CreateDailySheet(DateTime searchParam,string user, string password)
+        {
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
+            SqlCommand CreateTimesCommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "CreateTimes"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@TeeSheetDay",
+                SqlDbType = SqlDbType.Date,
+                Direction = ParameterDirection.Input,
+                SqlValue = searchParam.ToString("yyyy-MM-dd",
+                System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
+            };
+            CreateTimesCommand.Parameters.Add(ASampleCommandParameter);
+            try
+            {
+                CreateTimesCommand.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(searchParam);
+                Console.WriteLine("Already exists");
+            }
+          
+        }
         public List<TeeTime> GetDailyTeeSheetByDay(DateTime searchParam,string user, string password)
         {
             List<TeeTime> itemList;
@@ -22,22 +55,25 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
+           
             SqlCommand ASampleCommand = new SqlCommand
             {
                 Connection = ClubBaistConnection,
                 CommandType = CommandType.StoredProcedure,
                 CommandText = "GetDailyTeeSheet"
             };
-            SqlParameter ASampleCommandParameter = new SqlParameter
+            SqlParameter ASampleCommandParameter2 = new SqlParameter
             {
                 ParameterName = "@TeeSheetDay",
-                SqlDbType = SqlDbType.Date,
+                SqlDbType = SqlDbType.DateTime,
                 Direction = ParameterDirection.Input,
                 SqlValue = searchParam.ToString("yyyy-MM-dd",
-                System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
-        };
-            ASampleCommand.Parameters.Add(ASampleCommandParameter);
+               System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
+            };
+
+            ASampleCommand.Parameters.Add(ASampleCommandParameter2);
             SqlDataReader ASampleDataReader;
+            
             ASampleDataReader = ASampleCommand.ExecuteReader();
             itemList = new List<TeeTime>();
             if (ASampleDataReader.HasRows)
@@ -57,11 +93,13 @@ namespace ClubBAISTPrototype.DAL
                         TeeTime item = new TeeTime();
                         item.TeeTimeDate = DateTime.Parse(ASampleDataReader.GetValue("TeeTimeDate").ToString());
                         item.TeeTimeTime = DateTime.Parse(ASampleDataReader.GetValue("TeeTimeTime").ToString());
+                        item.TeeTimeDate = item.TeeTimeDate.Add(item.TeeTimeTime.TimeOfDay);
                         item.MemberNumber = ASampleDataReader.GetValue("MemberNumber") as int? ?? default(int);
                         item.NumPlayers = ASampleDataReader.GetValue("NumPlayers") as int? ?? default(int);
                         item.NumCarts = ASampleDataReader.GetValue("NumCarts") as int? ?? default(int);
                         item.EmployeeName = ASampleDataReader.GetValue("EmployeeName") as string;
                         item.IsStandingTeeTime = ASampleDataReader.GetValue("IsStandingTeeTime") as bool? ?? default(bool);
+                        item.IsSpecialEvent = ASampleDataReader.GetValue("IsSpecialEvent") as bool? ?? default(bool);
                         itemList.Add(item);
 
                     }

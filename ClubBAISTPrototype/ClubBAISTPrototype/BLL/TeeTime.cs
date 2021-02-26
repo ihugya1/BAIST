@@ -14,5 +14,6 @@ namespace ClubBAISTPrototype.BLL
       public int NumCarts { get; set; }
       public string EmployeeName { get; set; }
       public bool IsStandingTeeTime { get; set; }
+        public bool IsSpecialEvent { get; set; }
     }
 }

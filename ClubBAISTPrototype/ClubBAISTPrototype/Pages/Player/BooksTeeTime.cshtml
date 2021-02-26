@@ -38,12 +38,15 @@
                           
                             @foreach (var teeTime in Model.SampleObjectCollection)
                             {
+                                
                             <tr>
 
 
-                                <td class="tg-0lax">@teeTime.TeeTimeTime</td>
+
                                 @if (teeTime.MemberNumber > 0)
                                 {
+
+                                    <td class="tg-0lax">@teeTime.TeeTimeDate</td>
                                     <td class="tg-0lax">@teeTime.MemberNumber</td>
                                     <td class="tg-0lax">@teeTime.NumCarts</td>
                                     <td class="tg-0lax">@teeTime.IsStandingTeeTime</td>
@@ -52,6 +55,7 @@
                                 }
                                 else
                                 {
+                                    <td class="tg-0lax">@teeTime.TeeTimeDate</td>
                                     <td class="tg-0lax"> <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter MemberNumber"></td>
                                     <td class="tg-0lax"> <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter # of Carts"></td>
                                     <td class="tg-0lax"> <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter Standing Tee Time"></td>

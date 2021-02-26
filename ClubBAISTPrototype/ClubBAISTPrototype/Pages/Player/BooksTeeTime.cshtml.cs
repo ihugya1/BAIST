@@ -39,27 +39,13 @@ namespace ClubBAISTPrototype.Pages.Player
                 return _sampleObjectCollection;
             }
         }
-        private List<DateTime> _sampleObjectCollection2 = new List<DateTime>();
-        public List<DateTime> SampleObjectCollection2
-        {
-            get
-            {
-                return _sampleObjectCollection2;
-            }
-        }
-        private List<DateTime> _sampleObjectCollection3 = new List<DateTime>();
-        public List<DateTime> SampleObjectCollection3
-        {
-            get
-            {
-                return _sampleObjectCollection3;
-            }
-        }
+
 
         public void OnGet()
         {
             CBS teetimes = new CBS();
-            DateTime dateVal = new DateTime(2021, 02, 25);
+            DateTime dateVal = new DateTime(2021, 02, 15);
+            teetimes.CreateTeeSheet(dateVal);
             _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(dateVal);
 
 

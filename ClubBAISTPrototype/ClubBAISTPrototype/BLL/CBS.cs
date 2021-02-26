@@ -57,5 +57,12 @@ namespace ClubBAISTPrototype.BLL
             itemList = teeTimeManager.GetDailyTeeSheetByDay(searchParam, "ihugya1", "SimpCord101");
             return itemList;
         }
+        public void CreateTeeSheet(DateTime searchParam)
+        {
+            
+            TeeTimes teeTimeManager = new TeeTimes();
+            teeTimeManager.CreateDailySheet(searchParam, "ihugya1", "SimpCord101");
+            
+        }
     }
 }
