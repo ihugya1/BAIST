@@ -7,7 +7,8 @@ namespace ClubBAISTPrototype.BLL
 {
     public class TeeTime
     {
-        public DateTime TeeTimeDateTime { get; set; }
+        public DateTime TeeTimeDate { get; set; }
+        public DateTime TeeTimeTime { get; set; }
         public int MemberNumber { get; set; }
       public int NumPlayers { get; set; }
       public int NumCarts { get; set; }

@@ -62,36 +62,6 @@ namespace ClubBAISTPrototype.Pages.Player
             DateTime dateVal = new DateTime(2021, 02, 25);
             _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(dateVal);
 
-            TimeSpan ts = new TimeSpan(9, 00, 0);
-            TimeSpan ts2 = new TimeSpan(19, 30, 0);
-            foreach (var item in _sampleObjectCollection)
-            {
-
-                SampleObjectCollection3.Add(item.TeeTimeDateTime);
-
-            }
-            for ( DateTime search = DateTime.Now.AddHours(8); search < DateTime.Now.AddHours(18); search = search.AddMinutes(8))
-            {
-                bool exist = SampleObjectCollection3.Any(d => d.Month == search.Month && d.Day == search.Day && d.Hour == search.Hour && d.Minute == search.Minute);
-                exist = SampleObjectCollection3.Any(d => d.Month == search.Month && d.Day == search.Day && d.Hour == search.Hour && d.Minute == search.Minute);
-                if (!exist)
-                { 
-                    TeeTime item = new TeeTime();
-                    item.TeeTimeDateTime = search;
-                    item.NumPlayers = 0;
-                        item.NumCarts = 0;
-                        item.IsStandingTeeTime = false;
-                        item.EmployeeName = "";
-                        item.MemberNumber = 0;
-                    SampleObjectCollection.Add(item);
-                   
-                }
-                
-
-            }
-           
-            
-           
 
         }
        

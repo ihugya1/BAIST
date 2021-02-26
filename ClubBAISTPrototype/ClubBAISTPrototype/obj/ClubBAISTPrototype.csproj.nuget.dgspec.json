@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ianhu\\source\\repos\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj": {}
+    "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ianhu\\source\\repos\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ianhu\\source\\repos\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj",
         "projectName": "ClubBAISTPrototype",
-        "projectPath": "C:\\Users\\ianhu\\source\\repos\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj",
-        "packagesPath": "C:\\Users\\ianhu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ianhu\\source\\repos\\ClubBAISTPrototype\\ClubBAISTPrototype\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\ClubBAISTPrototype\\ClubBAISTPrototype\\ClubBAISTPrototype.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\BAIST\\ClubBAISTPrototype\\ClubBAISTPrototype\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ianhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -20,7 +20,7 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.Open();
             SqlCommand UpdateMACommand = new SqlCommand();
 
-            SqlCommand GetMACommand = new SqlCommand
+            SqlCommand ApplicationCommand = new SqlCommand
             {
                 Connection = ClubBaistConnection,
                 CommandType = CommandType.StoredProcedure,
@@ -28,40 +28,40 @@ namespace ClubBAISTPrototype.DAL
             };
 
 
-            SqlParameter GetMAParameter = new SqlParameter
+            SqlParameter ApplicationParameter = new SqlParameter
             {
                 ParameterName = "@MembershipApplicationID",
                 SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
                 SqlValue = MembershipApplicationID
             };
-            GetMACommand.Parameters.Add(GetMAParameter);
-            SqlDataReader GetMAReader;
-            GetMAReader = GetMACommand.ExecuteReader();
+            ApplicationCommand.Parameters.Add(ApplicationParameter);
+            SqlDataReader ApplicationReader;
+            ApplicationReader = ApplicationCommand.ExecuteReader();
 
 
-            if (GetMAReader.HasRows)
+            if (ApplicationReader.HasRows)
             {
 
-                while (GetMAReader.Read())
+                while (ApplicationReader.Read())
                 {
-                    membershipApplication.MembershipApplicationID = int.Parse(GetMAReader.GetValue("MembershipApplicationID").ToString());
-                    membershipApplication.FirstName = GetMAReader.GetValue("FirstName").ToString();
-                    membershipApplication.LastName = GetMAReader.GetValue("LastName").ToString();
-                    membershipApplication.Occupation = GetMAReader.GetValue("Occupation").ToString();
-                    membershipApplication.CompanyName = GetMAReader.GetValue("CompanyName").ToString();
-                    membershipApplication.HomeAddress = GetMAReader.GetValue("HomeAddress").ToString();
-                    membershipApplication.CompanyAddress = GetMAReader.GetValue("CompanyAddress").ToString();
-                    membershipApplication.HomePostalCode = GetMAReader.GetValue("HomePostalCode").ToString();
-                    membershipApplication.CompanyPostalCode = GetMAReader.GetValue("CompanyPostalCode").ToString();
-                    membershipApplication.HomePhone = GetMAReader.GetValue("HomePhone").ToString();
-                    membershipApplication.CompanyPhone = GetMAReader.GetValue("CompanyPhone").ToString();
-                    membershipApplication.HomeAlternatePhone = GetMAReader.GetValue("HomeAlternatePhone").ToString();
-                    membershipApplication.Email = GetMAReader.GetValue("Email").ToString();
-                    membershipApplication.DateOfBirth = DateTime.Parse(GetMAReader.GetValue("DateOfBirth").ToString());
-                    membershipApplication.DateCompleted = DateTime.Parse(GetMAReader.GetValue("DateCompleted").ToString());
-                    membershipApplication.ShareholderName1 = GetMAReader.GetValue("ShareholderName1").ToString();
-                    membershipApplication.ShareholderName2 = GetMAReader.GetValue("ShareholderName2").ToString();
+                    membershipApplication.MembershipApplicationID = int.Parse(ApplicationReader.GetValue("MembershipApplicationID").ToString());
+                    membershipApplication.FirstName = ApplicationReader.GetValue("FirstName").ToString();
+                    membershipApplication.LastName = ApplicationReader.GetValue("LastName").ToString();
+                    membershipApplication.Occupation = ApplicationReader.GetValue("Occupation").ToString();
+                    membershipApplication.CompanyName = ApplicationReader.GetValue("CompanyName").ToString();
+                    membershipApplication.HomeAddress = ApplicationReader.GetValue("HomeAddress").ToString();
+                    membershipApplication.CompanyAddress = ApplicationReader.GetValue("CompanyAddress").ToString();
+                    membershipApplication.HomePostalCode = ApplicationReader.GetValue("HomePostalCode").ToString();
+                    membershipApplication.CompanyPostalCode = ApplicationReader.GetValue("CompanyPostalCode").ToString();
+                    membershipApplication.HomePhone = ApplicationReader.GetValue("HomePhone").ToString();
+                    membershipApplication.CompanyPhone = ApplicationReader.GetValue("CompanyPhone").ToString();
+                    membershipApplication.HomeAlternatePhone = ApplicationReader.GetValue("HomeAlternatePhone").ToString();
+                    membershipApplication.Email = ApplicationReader.GetValue("Email").ToString();
+                    membershipApplication.DateOfBirth = DateTime.Parse(ApplicationReader.GetValue("DateOfBirth").ToString());
+                    membershipApplication.DateCompleted = DateTime.Parse(ApplicationReader.GetValue("DateCompleted").ToString());
+                    membershipApplication.ShareholderName1 = ApplicationReader.GetValue("ShareholderName1").ToString();
+                    membershipApplication.ShareholderName2 = ApplicationReader.GetValue("ShareholderName2").ToString();
 
                 }
                 ClubBaistConnection.Close();
@@ -96,48 +96,48 @@ namespace ClubBAISTPrototype.DAL
             };
 
             MACommand.Parameters.Add(ASampleCommandParameter);
-            SqlDataReader GetMAReader;
-            GetMAReader = MACommand.ExecuteReader();
+            SqlDataReader ApplicationReader;
+            ApplicationReader = MACommand.ExecuteReader();
             membershipApplicationList = new List<MembershipApplication>();
-            if (GetMAReader.HasRows)
+            if (ApplicationReader.HasRows)
             {
                 Console.WriteLine("Columns:");
                 Console.WriteLine("--------");
-                for (int index = 0; index < GetMAReader.FieldCount; index++)
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
                 {
-                    Console.WriteLine(GetMAReader.GetName(index));
+                    Console.WriteLine(ApplicationReader.GetName(index));
                 }
                 Console.WriteLine("Values:");
                 Console.WriteLine("-------");
-                for (int index = 0; index < GetMAReader.FieldCount; index++)
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
                 {
-                    while (GetMAReader.Read())
+                    while (ApplicationReader.Read())
                     {
                         MembershipApplication membershipApplication = new MembershipApplication();
-                        membershipApplication.MembershipApplicationID = int.Parse(GetMAReader.GetValue("MembershipApplicationID").ToString());
-                        membershipApplication.FirstName = GetMAReader.GetValue("FirstName").ToString();
-                        membershipApplication.LastName = GetMAReader.GetValue("LastName").ToString();
-                        membershipApplication.Occupation = GetMAReader.GetValue("Occupation").ToString();
-                        membershipApplication.CompanyName = GetMAReader.GetValue("CompanyName").ToString();
-                        membershipApplication.HomeAddress = GetMAReader.GetValue("HomeAddress").ToString();
-                        membershipApplication.CompanyAddress = GetMAReader.GetValue("CompanyAddress").ToString();
-                        membershipApplication.HomePostalCode = GetMAReader.GetValue("HomePostalCode").ToString();
-                        membershipApplication.CompanyPostalCode = GetMAReader.GetValue("CompanyPostalCode").ToString();
-                        membershipApplication.HomePhone = GetMAReader.GetValue("HomePhone").ToString();
-                        membershipApplication.CompanyPhone = GetMAReader.GetValue("CompanyPhone").ToString();
-                        membershipApplication.HomeAlternatePhone = GetMAReader.GetValue("HomeAlternatePhone").ToString();
-                        membershipApplication.Email = GetMAReader.GetValue("Email").ToString();
-                        membershipApplication.DateOfBirth = DateTime.Parse(GetMAReader.GetValue("DateOfBirth").ToString());
-                        membershipApplication.DateCompleted = DateTime.Parse(GetMAReader.GetValue("DateCompleted").ToString());
-                        membershipApplication.ShareholderName1 = GetMAReader.GetValue("ShareholderName1").ToString();
-                        membershipApplication.ShareholderName2 = GetMAReader.GetValue("ShareholderName2").ToString();
+                        membershipApplication.MembershipApplicationID = int.Parse(ApplicationReader.GetValue("MembershipApplicationID").ToString());
+                        membershipApplication.FirstName = ApplicationReader.GetValue("FirstName").ToString();
+                        membershipApplication.LastName = ApplicationReader.GetValue("LastName").ToString();
+                        membershipApplication.Occupation = ApplicationReader.GetValue("Occupation").ToString();
+                        membershipApplication.CompanyName = ApplicationReader.GetValue("CompanyName").ToString();
+                        membershipApplication.HomeAddress = ApplicationReader.GetValue("HomeAddress").ToString();
+                        membershipApplication.CompanyAddress = ApplicationReader.GetValue("CompanyAddress").ToString();
+                        membershipApplication.HomePostalCode = ApplicationReader.GetValue("HomePostalCode").ToString();
+                        membershipApplication.CompanyPostalCode = ApplicationReader.GetValue("CompanyPostalCode").ToString();
+                        membershipApplication.HomePhone = ApplicationReader.GetValue("HomePhone").ToString();
+                        membershipApplication.CompanyPhone = ApplicationReader.GetValue("CompanyPhone").ToString();
+                        membershipApplication.HomeAlternatePhone = ApplicationReader.GetValue("HomeAlternatePhone").ToString();
+                        membershipApplication.Email = ApplicationReader.GetValue("Email").ToString();
+                        membershipApplication.DateOfBirth = DateTime.Parse(ApplicationReader.GetValue("DateOfBirth").ToString());
+                        membershipApplication.DateCompleted = DateTime.Parse(ApplicationReader.GetValue("DateCompleted").ToString());
+                        membershipApplication.ShareholderName1 = ApplicationReader.GetValue("ShareholderName1").ToString();
+                        membershipApplication.ShareholderName2 = ApplicationReader.GetValue("ShareholderName2").ToString();
                         membershipApplicationList.Add(membershipApplication);
 
                     }
 
                 }
             }
-            GetMAReader.Close();
+            ApplicationReader.Close();
             ClubBaistConnection.Close();
             return membershipApplicationList;
         }

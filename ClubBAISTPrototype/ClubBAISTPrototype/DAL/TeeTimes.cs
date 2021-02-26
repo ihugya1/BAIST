@@ -55,12 +55,13 @@ namespace ClubBAISTPrototype.DAL
                     while (ASampleDataReader.Read())// no value no read (returns true until no rows left to return)
                     {
                         TeeTime item = new TeeTime();
-                        item.TeeTimeDateTime = DateTime.Parse(ASampleDataReader.GetValue("TeeTimeDateTime").ToString());
-                        item.MemberNumber = int.Parse(ASampleDataReader.GetValue("MemberNumber").ToString());
-                        item.NumPlayers = int.Parse(ASampleDataReader.GetValue("NumPlayers").ToString());
-                        item.NumCarts = int.Parse(ASampleDataReader.GetValue("NumCarts").ToString());
-                        item.EmployeeName = ASampleDataReader.GetValue("EmployeeName").ToString();
-                        item.IsStandingTeeTime = bool.Parse(ASampleDataReader.GetValue("IsStandingTeeTime").ToString());
+                        item.TeeTimeDate = DateTime.Parse(ASampleDataReader.GetValue("TeeTimeDate").ToString());
+                        item.TeeTimeTime = DateTime.Parse(ASampleDataReader.GetValue("TeeTimeTime").ToString());
+                        item.MemberNumber = ASampleDataReader.GetValue("MemberNumber") as int? ?? default(int);
+                        item.NumPlayers = ASampleDataReader.GetValue("NumPlayers") as int? ?? default(int);
+                        item.NumCarts = ASampleDataReader.GetValue("NumCarts") as int? ?? default(int);
+                        item.EmployeeName = ASampleDataReader.GetValue("EmployeeName") as string;
+                        item.IsStandingTeeTime = ASampleDataReader.GetValue("IsStandingTeeTime") as bool? ?? default(bool);
                         itemList.Add(item);
 
                     }
@@ -71,5 +72,7 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.Close();
             return itemList;
         }
+       
     }
+
 }
