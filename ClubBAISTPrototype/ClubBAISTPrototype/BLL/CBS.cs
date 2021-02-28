@@ -113,5 +113,19 @@ namespace ClubBAISTPrototype.BLL
             name = teeTimeManager.GetMemberName(memberNumber, "ihugya1", "SimpCord101");
             return name;
         }
+        public bool InsertStandingTeeTimeRequest(StandingTeeTime newStandingTeeTimeRequest)
+        {
+            bool Confirmation;
+            StandingTeeTimes standingTeeTimeManager = new StandingTeeTimes();
+            Confirmation = standingTeeTimeManager.InsertStandingTeeTimeRequest(newStandingTeeTimeRequest, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
+        public List<StandingTeeTime> GetStandingTeeTimeList()
+        {
+            List<StandingTeeTime> standingTeeTimes = new List<StandingTeeTime>();
+            StandingTeeTimes standingManager = new StandingTeeTimes();
+            standingTeeTimes = standingManager.GetStandingTeeTimeRequests("ihugya1", "SimpCord101");
+            return standingTeeTimes;
+        }
     }
 }

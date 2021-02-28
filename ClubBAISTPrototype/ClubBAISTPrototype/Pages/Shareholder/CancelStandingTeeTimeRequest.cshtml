@@ -2,3 +2,236 @@
 @model ClubBAISTPrototype.Pages.Shareholder.CancelStandingTeeTimeRequestModel
 @{
 }
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Modify Standing Tee Time Request</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <form name="ModifyStandingteeTimeRequest" method="post">
+            <div class="card mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-light">Applications: </h6>
+
+                    <span class="label label-default">Search :</span>
+
+                    <input type="submit" name="Submit" value="Search" class="btn btn-info" />
+
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>StandingTeeTime ID</th>
+                                    <th>ShareHolderNumber</th>
+                                    <th>MemberNumber2</th>
+                                    <th>MemberNumber3</th>
+                                    <th>MemberNumber4</th>
+                                    <th>ShareholderName</th>
+                                    <th>MemberName2</th>
+                                    <th>MemberName3</th>
+                                    <th>MemberName4</th>
+                                    <th>StartDate</th>
+                                    <th>EndDate</th>
+                                    <th>TeeTimeTime</th>
+                                    <th>RequestedDayOfWeek</th>
+                                    
+                                    <th>IsApproved</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var items in Model.SampleObjectCollection)
+                                {
+
+                                    <tr>
+                                        <td><input type="submit" name="Submit" value="Select @items.StandingTeeTimeID" /></td>
+                                        <td>@items.ShareHolderNumber<br /></td>
+                                        <td>@items.MemberNumber2<br /></td>
+                                        <td>@items.MemberNumber3<br /></td>
+                                        <td>@items.MemberNumber4<br /></td>
+                                        <td>@items.ShareHolderName<br /></td>
+                                        <td>@items.Member3Name<br /></td>
+                                        <td>@items.Member4Name<br /></td>
+                                        <td>@items.DateStart<br /></td>
+                                        <td>@items.DateEnd<br /></td>
+                                        <td>@items.TeeTimeTime<br /></td>
+                                        <td>@items.RequestedDayOfWeek<br /></td>
+                                    
+                                        <td>@items.IsApproved<br /></td>
+                                
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--
+
+    if (Model.StandingTeeTimeID > 0)
+    {
+
+
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-light">Club BAIST Membership Application: </h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-dark table-borderless table-sm">
+                        <thead>
+                            <tr>
+                                <th>Personal Info:</th>
+                                <th>Work Info:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>Last Name</label>
+                                    <input value="Model.StandingTeeTimeID" class="form-control" id="lastNameField" disabled>
+
+                                </td>
+                                <td>
+                                    <label>Last Name</label>
+                                    <input value="Model.ShareHolderNumber" class="form-control" id="lastNameField" disabled>
+
+                                </td>
+
+                                <td>
+                                    <label>Occupation</label>
+                                    <input value="Model.ShareHolderName" class="form-control" id="occupationField" disabled>
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>First Name</label>
+                                    <input value="Model.FirstNameField" class="form-control" id="firstNameField" disabled>
+
+                                </td>
+
+                                <td>
+                                    <label>Company Name</label>
+                                    <input value="Model.CompanyNameField" class="form-control" id="companyNameField" disabled>
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Address</label>
+                                    <input value="Model.HomeAddressField" class="form-control" id="homeAddressField" disabled>
+
+                                </td>
+
+                                <td>
+                                    <label>Address</label>
+                                    <input value="Model.CompanyAddressField" class="form-control" id="companyAddressField" disabled>
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Postal Code</label>
+                                    <input value="Model.HomePostalCodeField" class="form-control" id="homePostalCode" disabled>
+
+                                </td>
+
+                                <td>
+                                    <label>Postal code</label>
+                                    <input value="Model.CompanyPostalCodeField" class="form-control" id="companyPostalCode" disabled>
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Phone</label>
+                                    <input value="Model.HomePhoneField" class="form-control" id="homePhoneField" disabled>
+
+                                </td>
+
+                                <td>
+                                    <label>Phone</label>
+                                    <input value="Model.CompanyPhoneField" class="form-control" id="companyPhoneField" disabled>
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Alternate Phone</label>
+                                    <input value="Model.HomeAlternatePhoneField" class="form-control" id="alternateHomePhoneField" disabled>
+
+                                </td>
+                                <td> </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Email</label>
+                                    <input value=Model.EmailField" class="form-control" id="emailField" disabled>
+
+                                </td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Date of Birth (Month/Day/Year)</label>
+                                    <input value="Model.DateOfBirthField" class="form-control" id="dateOfBirthField" disabled>
+
+                                </td>
+                                <td> </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Shareholder Name 1:</label>
+                                    <input disabled class="form-control" id="shareholderName1Field" value="Model.ShareHolder1Field">
+
+                                </td>
+
+                                <td>
+                                    <label>Shareholder Name 2:</label>
+                                    <input value="Model.ShareHolder2Field" class="form-control" id="shareholderName2Field" disabled>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button name="Submit" value="Submit" type="submit" class="btn btn-light">Submit</button>
+                </div>
+            </div>
+        </div> }
+
+    //else
+    //{
+        <div class="card text-center text-white bg-danger" style="max-width: 18rem;">
+            <div class="card-body">
+
+                <p class="card-text">Please select a membership application above.</p>
+            </div>
+        </div>
+    }
+        -->
+        </form>
+    </div>
+    @Model.Message
+</body>
+</html>

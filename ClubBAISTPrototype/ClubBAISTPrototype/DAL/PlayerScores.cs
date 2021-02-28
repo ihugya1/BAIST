@@ -16,14 +16,14 @@ namespace ClubBAISTPrototype.DAL
             int saleNumber = 0;
 
 
-            Console.WriteLine("InsertStandTeeTimeRequest ");
+            Console.WriteLine("InsertGolfGame ");
             SqlConnection ClubBaistConnection;
             ClubBaistConnection = new SqlConnection();
             ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
 
-            SqlCommand addSaleCommand = new SqlCommand()
+            SqlCommand AddGolfGameCommand = new SqlCommand()
             {
                 CommandText = "AddGame",
                 CommandType = CommandType.StoredProcedure,
@@ -38,7 +38,7 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.Date,
                 SqlValue = newGolfGame.GolfGameDate
             };
-            addSaleCommand.Parameters.Add(GolfGameDate);
+            AddGolfGameCommand.Parameters.Add(GolfGameDate);
             SqlParameter timeSubmitted = new SqlParameter()
             {
                 Direction = ParameterDirection.Input,
@@ -46,7 +46,7 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.Date,
                 SqlValue = DateTime.Now
             };
-            addSaleCommand.Parameters.Add(timeSubmitted);
+            AddGolfGameCommand.Parameters.Add(timeSubmitted);
             SqlParameter golfCourse = new SqlParameter()
             {
                 Direction = ParameterDirection.Input,
@@ -54,7 +54,7 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.NVarChar,
                 SqlValue = newGolfGame.GolfCourse
             };
-            addSaleCommand.Parameters.Add(golfCourse);
+            AddGolfGameCommand.Parameters.Add(golfCourse);
 
             SqlParameter courseRating = new SqlParameter()
             {
@@ -63,7 +63,7 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.Int,
                 SqlValue = newGolfGame.CourseRating
             };
-            addSaleCommand.Parameters.Add(courseRating);
+            AddGolfGameCommand.Parameters.Add(courseRating);
             SqlParameter slopeRating = new SqlParameter()
             {
                 Direction = ParameterDirection.Input,
@@ -71,7 +71,7 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.Int,
                 SqlValue = newGolfGame.SlopeRating
             };
-            addSaleCommand.Parameters.Add(slopeRating);
+            AddGolfGameCommand.Parameters.Add(slopeRating);
             SqlParameter totalScore = new SqlParameter()
             {
                 Direction = ParameterDirection.Input,
@@ -79,7 +79,7 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.Int,
                 SqlValue = newGolfGame.TotalScore
             };
-            addSaleCommand.Parameters.Add(totalScore);
+            AddGolfGameCommand.Parameters.Add(totalScore);
             SqlParameter memberNumber = new SqlParameter()
             {
                 Direction = ParameterDirection.Input,
@@ -87,18 +87,18 @@ namespace ClubBAISTPrototype.DAL
                 SqlDbType = SqlDbType.Int,
                 SqlValue = newGolfGame.MemberNumber
             };
-            addSaleCommand.Parameters.Add(memberNumber);
+            AddGolfGameCommand.Parameters.Add(memberNumber);
             SqlParameter GolfGameID = new SqlParameter()
             {
                 Direction = ParameterDirection.ReturnValue,
                 ParameterName = "@GolfGameID",
                 SqlDbType = SqlDbType.Int
             };
-            addSaleCommand.Parameters.Add(GolfGameID);
+            AddGolfGameCommand.Parameters.Add(GolfGameID);
             try
             {
-                addSaleCommand.ExecuteNonQuery();
-                saleNumber = (int)addSaleCommand.Parameters["@GolfGameID"].Value;
+                AddGolfGameCommand.ExecuteNonQuery();
+                saleNumber = (int)AddGolfGameCommand.Parameters["@GolfGameID"].Value;
                 if (saleNumber == -1)
                 {
                     throw new Exception("Failed to add game");
@@ -177,10 +177,10 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection = new SqlConnection();
             ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
             ClubBaistConnection.Open();
-            SqlCommand UpdateMACommand = new SqlCommand();
+            SqlCommand UpdateLast20Command = new SqlCommand();
 
 
-            SqlCommand MACommand = new SqlCommand
+            SqlCommand Last20Command = new SqlCommand
             {
                 Connection = ClubBaistConnection,
                 CommandType = CommandType.StoredProcedure,
@@ -194,9 +194,9 @@ namespace ClubBAISTPrototype.DAL
                 SqlValue = memberNumber
             };
 
-            MACommand.Parameters.Add(ASampleCommandParameter);
+            Last20Command.Parameters.Add(ASampleCommandParameter);
             SqlDataReader ApplicationReader;
-            ApplicationReader = MACommand.ExecuteReader();
+            ApplicationReader = Last20Command.ExecuteReader();
             totalScoreList = new List<int>();
             if (ApplicationReader.HasRows)
             {
