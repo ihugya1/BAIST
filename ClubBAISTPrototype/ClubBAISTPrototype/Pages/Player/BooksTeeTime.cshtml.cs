@@ -13,11 +13,15 @@ namespace ClubBAISTPrototype.Pages.Player
     public class BooksTeeTimeModel : PageModel
     {
         [BindProperty]
-        public DateTime newTeeTime { get; set; }
+        public DateTime newTeeTimeTime { get; set; }
+        [BindProperty]
+        public string memberName { get; set; }
         [BindProperty]
         public int newMemberNumber { get; set; }
         [BindProperty]
-        public int numOfPlayers { get; set; }
+        public int newNumOfPlayers { get; set; }
+        [BindProperty]
+        public int newNumOfCarts { get; set; }
 
         [BindProperty]
         public TimeSpan ts { get; set; }
@@ -28,8 +32,10 @@ namespace ClubBAISTPrototype.Pages.Player
         public DateTime dateVal { get; set; }
         [BindProperty]
         public List<SelectListItem> Options { get; set; }
-
+        [BindProperty]
         public string Message { get; set; }
+        [BindProperty]
+        public string SelectedFilter { get; set; }
         [BindProperty]
         public DateTime SearchParameter { get; set; }
         [BindProperty]
@@ -50,45 +56,65 @@ namespace ClubBAISTPrototype.Pages.Player
         {
             CBS teetimes = new CBS();
            
-            DateTime dateVal = new DateTime(1999, 02, 15);
-            newTeeTime = DateTime.Now;
-            newMemberNumber = 0;
-            numOfPlayers = 0;
-          
-            if (SearchParameter < dateVal)
-            {
-                SearchParameter = new DateTime(1999, 02, 15);
-            }
-            teetimes.CreateTeeSheet(SearchParameter);
-            _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter);
+            DateTime dateVal = new DateTime(2015, 02, 15);
+
+            SearchParameter = DateTime.Now;
+            teetimes.CreateTeeSheet(DateTime.Now);
+            _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
 
 
         }
         public void OnPost()
         {
-            DateTime Parameter;
+            
             TeeTime newTeeTime = new TeeTime();
 
             CBS teetimes = new CBS();
-            Parameter = SearchParameter;
+            SearchParameter = SearchParameter;
+            CBS systemControl = new CBS();
+
             string[] subs = Submit.Split(' ');
+
 
             switch (subs[0])
             {
 
                 case "Search":
-                    _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(Parameter);
-                    //  Message = $"OnPost - First - {FirstInputField}";
+                    SearchParameter = SearchParameter;
+                    teetimes.CreateTeeSheet(SearchParameter);
+                    Console.WriteLine(SearchParameter);
+                    _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
+
                     break;
-                case "Get":
-                    newTeeTime = teetimes.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
-                    //  Message = $"OnPost - First - {FirstInputField}";
+                case "Select":
+                    SearchParameter = SearchParameter;
+                    newTeeTimeTime = (DateTime.Parse(subs[1]).Add(DateTime.Parse(subs[2]).TimeOfDay));
+                    _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
                     break;
-                case "Modify":
-                    newTeeTime = teetimes.GetTeeTime(DateTime.Parse(subs[1]),DateTime.Parse(subs[2]));
+                case "Submit":
+                    _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
+                    SearchParameter = SearchParameter;
+                    newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
+                    if (newTeeTime != null)
+                    {
+                        bool success = false;
+                        Message = $"{subs[1]} Selected";
+                        newTeeTime.NumCarts = newNumOfCarts;
+                        newTeeTime.NumPlayers = newNumOfPlayers;
+                        newTeeTime.TeeTimeDate = DateTime.Parse(subs[2]);
+                        newTeeTime.MemberNumber = newMemberNumber;
+                        newTeeTime.EmployeeName = "";
+                        success= systemControl.BookNewTeeTime(newTeeTime);
+                    }
+                    else
+                    {
+                        Message = "Error";
+                    }
                     break;
-                default:
-                    break;
+
+
+                  
+
             }
         }
 

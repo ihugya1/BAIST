@@ -149,3 +149,4 @@ C:\Users\ianhu\Documents\GitHub\BAIST\ClubBAISTPrototype\ClubBAISTPrototype\obj\
 C:\Users\ianhu\Documents\GitHub\BAIST\ClubBAISTPrototype\ClubBAISTPrototype\obj\Debug\netcoreapp3.1\ClubBAISTPrototype.Views.pdb
 C:\Users\ianhu\Documents\GitHub\BAIST\ClubBAISTPrototype\ClubBAISTPrototype\obj\Debug\netcoreapp3.1\ClubBAISTPrototype.csproj.CopyComplete
 C:\Users\ianhu\Documents\GitHub\BAIST\ClubBAISTPrototype\ClubBAISTPrototype\obj\Debug\netcoreapp3.1\ClubBAISTPrototype.genruntimeconfig.cache
+C:\Users\admin\Documents\GitHub\BAIST\ClubBAISTPrototype\ClubBAISTPrototype\obj\Debug\netcoreapp3.1\ClubBAISTPrototype.csprojAssemblyReference.cache

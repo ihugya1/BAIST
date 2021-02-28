@@ -12,6 +12,9 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-light">Club BAIST Member Handicaps: </h6>
+                <span class="label label-default">Search :</span>
+                <select class="form-select" asp-for="selectedFilter" asp-items="Model.Options"></select>
+                <input type="submit" name="Submit" value="Search" class="btn btn-info" />
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -19,7 +22,7 @@
                             <thead>
                                 <tr>
                                     <th class="tg-0lax">MemberName</th>
-                                    <th class="tg-0lax">HandicapINdex</th>
+                                    <th class="tg-0lax">HandicapIndex</th>
                                     <th class="tg-0lax">Last 20 Average</th>
                                     <th class="tg-0lax">Best 8 Average</th>
                                     <th class="tg-0lax" colspan="20">Last 20 Round Scores</th>
@@ -27,30 +30,30 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
-                                    <td class="tg-0lax">Input</td>
+                                   
+                                  
+                                        <td class="tg-0lax">@Model.memberName</td>
+                                        <td class="tg-0lax">@Model.HandicapIndex.ToString("F1")</td>
+                                        <td class="tg-0lax">@Model.Last20Average</td>
+                                        <td class="tg-0lax">@Model.Best8Total</td>
+                                    @if (Model.SampleObjectCollection.Count>19)
+                                    {
+
+                                    
+                                        @foreach (var item in Model.SampleObjectCollection)
+                                        {
+                                            <td class="tg-0lax">@item</td>
+                                        }
+                                    }
+                                    else
+                                    {
+
+
+
+                                        <td class="tg-0lax" colspan="20">Not enough data</td>
+                                    }
+                                    @Model.Message
+
                                 </tr>
                             </tbody>
                         </table>

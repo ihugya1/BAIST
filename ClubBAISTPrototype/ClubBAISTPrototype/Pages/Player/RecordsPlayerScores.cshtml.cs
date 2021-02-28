@@ -87,6 +87,7 @@ namespace ClubBAISTPrototype.Pages.Player
         }
         public void OnPost()
         {
+
             int total = 0;
             // Message = "OnPost";
             if (ModelState.IsValid)

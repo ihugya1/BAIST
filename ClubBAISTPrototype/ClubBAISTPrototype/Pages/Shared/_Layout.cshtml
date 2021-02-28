@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Club BAIST</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,19 +30,44 @@
                         <a class="nav-link" href="/Player/BooksTeeTime">Book Tee Time</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/Player/ModifiesTeeTime">Change Tee Time</a>
+                        <a class="nav-link" href="/Player/ModifiesTeeTime">Change Tee Time</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tee Times</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/Player/BooksTeeTime">Book a Tee Time</a>
+                            <a class="dropdown-item" href="/Player/ModifiesTeeTime">Modify/Cancel a Tee Time</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Applications</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="/MembershipCommittee/RecordMembershipApplication">Records Membership Application</a>
+                            <a class="dropdown-item" href="/MembershipCommittee/ReviewsMembershipApplication">Review Membership Application</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Scores</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/Player/RecordsPlayerScores">Record Player Score</a>
+                            <a class="dropdown-item" href="/Player/ViewsPlayerHandicap">View Player Handicap</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Standing Tee Times:</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/Shareholder/MakeStandingTeeTimeRequest">Make Standing Tee Time Request</a>
+                            <a class="dropdown-item" href="/ShareholderCancelStandingTeeTimeRequest">Cancel Standing Tee Time Request</a>
                             <a class="dropdown-item" href="#">Something else here</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>

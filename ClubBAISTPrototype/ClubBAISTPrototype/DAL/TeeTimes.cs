@@ -49,7 +49,7 @@ namespace ClubBAISTPrototype.DAL
             List<TeeTime> itemList;
 
 
-            Console.WriteLine("InsertStandTeeTimeRequest ");
+            Console.WriteLine("GetDailyTeeSheetByDay ");
             SqlConnection ClubBaistConnection;
             ClubBaistConnection = new SqlConnection();
             ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
@@ -65,7 +65,7 @@ namespace ClubBAISTPrototype.DAL
             SqlParameter ASampleCommandParameter2 = new SqlParameter
             {
                 ParameterName = "@TeeSheetDay",
-                SqlDbType = SqlDbType.DateTime,
+                SqlDbType = SqlDbType.Date,
                 Direction = ParameterDirection.Input,
                 SqlValue = searchParam.ToString("yyyy-MM-dd",
                System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
@@ -126,16 +126,17 @@ namespace ClubBAISTPrototype.DAL
             {
                 Connection = ClubBaistConnection,
                 CommandType = CommandType.StoredProcedure,
-                CommandText = "GetDailyTeeSheet"
+                CommandText = "GetTeeTime"
             };
             SqlParameter ASampleCommandParameter = new SqlParameter
             {
                 ParameterName = "@TeeSheetDay",
-                SqlDbType = SqlDbType.DateTime,
+                SqlDbType = SqlDbType.Date,
                 Direction = ParameterDirection.Input,
                 SqlValue = searchParam.ToString("yyyy-MM-dd",
                System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
             };
+            ASampleCommand.Parameters.Add(ASampleCommandParameter);
             SqlParameter ASampleCommandParameter2 = new SqlParameter
             {
                 ParameterName = "@TeeTimeTime",
@@ -183,7 +184,200 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.Close();
             return item;
         }
+        public bool InsertTeeTime(TeeTime teeTime, string user, string password)
+        {
 
+            bool success = false;
+            TeeTime item = new TeeTime();
+            Console.WriteLine("BookTeeTime ");
+            Console.WriteLine(teeTime.TeeTimeDate);
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
+
+            SqlCommand BookTeeTimeCommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "BookTeeTime"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@TeeTimeDateTime",
+                SqlDbType = SqlDbType.DateTime,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.TeeTimeDate
+            };
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter);
+            SqlParameter ASampleCommandParameter2 = new SqlParameter
+            {
+                ParameterName = "@MemberNumber",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.MemberNumber
+            };
+
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter2);
+            SqlParameter ASampleCommandParameter3 = new SqlParameter
+            {
+                ParameterName = "@NumPlayers",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.NumPlayers
+            };
+
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter3);
+            SqlParameter ASampleCommandParameter4 = new SqlParameter
+            {
+                ParameterName = "@NumCarts",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.NumCarts
+            };
+
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter4);
+            SqlParameter employeeName = new SqlParameter
+            {
+                ParameterName = "@EmployeeName",
+                SqlDbType = SqlDbType.NVarChar,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.EmployeeName
+            };
+
+            BookTeeTimeCommand.Parameters.Add(employeeName);
+            try
+            {
+
+                BookTeeTimeCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Booking Tee Time Error - {e}");
+                success = false;
+            }
+            ClubBaistConnection.Close();
+            return success;
+        }
+        public bool DeleteTeeTime(TeeTime teeTime, string user, string password)
+        {
+
+            bool success = false;
+            TeeTime item = new TeeTime();
+            Console.WriteLine("Delete Tee Time ");
+            Console.WriteLine(teeTime.TeeTimeDate);
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
+
+            SqlCommand BookTeeTimeCommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "DeleteTeeTime"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@TeeTimeDateTime",
+                SqlDbType = SqlDbType.DateTime,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.TeeTimeDate
+            };
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter);
+
+            try
+            {
+
+                BookTeeTimeCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Booking Tee Time Error - {e}");
+                success = false;
+            }
+            ClubBaistConnection.Close();
+            return success;
+        }
+        public bool ModifyTeeTime(TeeTime teeTime, string user, string password)
+        {
+
+            bool success = false;
+            TeeTime item = new TeeTime();
+            Console.WriteLine("ModifyTeeTime ");
+            Console.WriteLine(teeTime.TeeTimeDate);
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
+
+            SqlCommand BookTeeTimeCommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "ModifyTeeTime"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@TeeTimeDateTime",
+                SqlDbType = SqlDbType.DateTime,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.TeeTimeDate
+            };
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter);
+            SqlParameter ASampleCommandParameter2 = new SqlParameter
+            {
+                ParameterName = "@MemberNumber",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.MemberNumber
+            };
+
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter2);
+            SqlParameter ASampleCommandParameter3 = new SqlParameter
+            {
+                ParameterName = "@NumPlayers",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.NumPlayers
+            };
+
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter3);
+            SqlParameter ASampleCommandParameter4 = new SqlParameter
+            {
+                ParameterName = "@NumCarts",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.NumCarts
+            };
+
+            BookTeeTimeCommand.Parameters.Add(ASampleCommandParameter4);
+            SqlParameter employeeName = new SqlParameter
+            {
+                ParameterName = "@EmployeeName",
+                SqlDbType = SqlDbType.NVarChar,
+                Direction = ParameterDirection.Input,
+                SqlValue = teeTime.EmployeeName
+            };
+
+            BookTeeTimeCommand.Parameters.Add(employeeName);
+
+            try
+            {
+
+                BookTeeTimeCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Booking Tee Time Error - {e}");
+                success = false;
+            }
+            ClubBaistConnection.Close();
+            return success;
+        }
     }
 
 }

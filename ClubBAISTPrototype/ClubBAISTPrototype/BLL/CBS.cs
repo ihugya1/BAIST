@@ -71,5 +71,47 @@ namespace ClubBAISTPrototype.BLL
             getTeeTime = teeTimeManager.GetTeeTime(teeDate, teeTime, "ihugya1", "SimpCord101");
             return getTeeTime;
         }
+        public bool BookNewTeeTime(TeeTime newTeeTime)
+        {
+            bool Confirmation;
+            TeeTimes teeTimeManager = new TeeTimes();
+            Confirmation = teeTimeManager.InsertTeeTime(newTeeTime, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
+        public bool RemoveTeeTime(TeeTime newTeeTime)
+        {
+            bool Confirmation;
+            TeeTimes teeTimeManager = new TeeTimes();
+            Confirmation = teeTimeManager.DeleteTeeTime(newTeeTime, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
+        public bool UpdateTeeTime(TeeTime newTeeTime)
+        {
+            bool Confirmation;
+            TeeTimes teeTimeManager = new TeeTimes();
+            Confirmation = teeTimeManager.ModifyTeeTime(newTeeTime, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
+        public List<int> GetLast20Scores(int memberNumber)
+        {
+            List<int> itemList = new List<int>();
+            PlayerScores teeTimeManager = new PlayerScores();
+            itemList = teeTimeManager.GetLast20Scores(memberNumber, "ihugya1", "SimpCord101");
+            return itemList;
+        }
+        public decimal GetHandicapIndex(int memberNumber)
+        {
+            decimal handicap;
+            PlayerScores teeTimeManager = new PlayerScores();
+            handicap = teeTimeManager.GetHandicap(memberNumber, "ihugya1", "SimpCord101");
+            return handicap;
+        }
+        public string GetMemberName(int memberNumber)
+        {
+            string name;
+            PlayerScores teeTimeManager = new PlayerScores();
+            name = teeTimeManager.GetMemberName(memberNumber, "ihugya1", "SimpCord101");
+            return name;
+        }
     }
 }

@@ -4,21 +4,72 @@
 }
 
 
-    
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
 
+    </script>
+</head>
+<body>
+    <div class="jumbotron-fluid">Book a Tee Time   </div>
     <div class="container-fluid">
+        @if (Model.newTeeTimeTime > Model.dateVal)
+        {<form name="SampleForm" method="post">
+                <div class="form-row">
+                    <div class="col">
+                        @Model.Message
+                        <label for="demo" class="col-form-label">Tee Time:</label>
 
+                        <input id="demo" value="@Model.newTeeTimeTime" class="form-control form-control-sm" name="teedate" disabled />
+
+                    </div>
+                    <div class="col">
+                        <label for="newmembernumber" class="col-form-label">Member Number:</label>
+                        <input type="number" asp-for="newMemberNumber" class="form-control form-control-sm" id="newmembernumber" placeholder="Enter Member Number" />
+                    </div>
+
+                    <div class="col">
+                        <label for="numofplayers" class="col-form-label">Num of Players:</label>
+                        <input type="number" asp-for="newNumOfPlayers" class="form-control form-control-sm" id="numofplayers" placeholder="Enter # of Players" />
+                    </div>
+                    <div class="col">
+                        <label for="numofcarts" class="col-form-label">Num of Carts:</label>
+                        <input asp-for="newNumOfCarts" type="text" class="form-control form-control-sm" id="numofcarts" placeholder="Enter # of Carts">
+
+                    </div>
+                    <div class="col">
+                        <label for="numofcarts" class="col-form-label">Submit:</label>
+                        <input type="submit" name="Submit" class="btn btn-success btn-sm" value="Submit @Model.newTeeTimeTime" data-toggle="modal" data-target="#exampleModal" />
+                    </div>
+                </div>
+            </form>
+
+        }
+
+
+
+        else
+        {
+            <div class="card text-center text-white bg-danger" style="max-width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Please select a tee time below.</p>
+                </div>
+            </div>
+        }
 
         <h1 class="h3 mb-2 text-light">Book Tee Time</h1>
-
-        <form method="post" name="ItemForm">
+        <form asp-page-handler="search" method="post">
+            <h6 class="m-0 font-weight-bold text-light">Tee Times: </h6>
+            <span class="label label-default">Date Select :</span>
+            <input type="date" name="SearchParameter" asp-for="SearchParameter" />
+            <input type="submit" name="Submit" value="Search" class="btn btn-info" />
+        </form>
+        <form method="post">
             <!-- /.container-fluid -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-light">Tee Times: </h6>
-                    <span class="label label-default">Date Select :</span>
-                    <input type="date" name="SearchParameter" value="@Model.SearchParameter" />
-                    <input type="submit" name="Submit" value="Search" class="btn btn-info" />
+
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -28,7 +79,7 @@
                                     <th class="tg-0lax">Date Time</th>
                                     <th class="tg-0lax">Member Number</th>
                                     <th class="tg-0lax">Number Carts</th>
-                                    <th class="tg-0lax">Is Standing Tee Time</th>
+
                                     <th class="tg-0lax">Num Players</th>
                                     <th class="tg-0lax">Book</th>
                                 </tr>
@@ -40,22 +91,23 @@
 
                                         @if (teeTime.MemberNumber > 0)
                                         {
-
                                             <td class="tg-0lax">@teeTime.TeeTimeDate</td>
                                             <td class="tg-0lax">@teeTime.MemberNumber</td>
                                             <td class="tg-0lax">@teeTime.NumCarts</td>
-                                            <td class="tg-0lax">@teeTime.IsStandingTeeTime</td>
                                             <td class="tg-0lax">@teeTime.NumPlayers</td>
-                                            <td class="tg-0lax"><button type="button" class="btn btn-warning btn-sm">Booked</button></td>
+                                            <td class="tg-0lax"><button type="button" class="btn btn-warning btn-sm" disabled>Booked</button></td>
                                         }
                                         else
                                         {
-                                            <td class="tg-0lax">@teeTime.TeeTimeDate</td>
-                                            <td class="tg-0lax"> </td>
-                                            <td class="tg-0lax"> </td>//type="submit" name="Submit" value="Search"
+                                            <td class="tg-0lax" id="@teeTime.TeeTimeDate">@teeTime.TeeTimeDate</td>
                                             <td class="tg-0lax"> </td>
                                             <td class="tg-0lax"> </td>
-                                            <td class="tg-0lax"><button type="submit" name="Submit" value="Get @teeTime.TeeTimeDate" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" data-whatever="@teeTime.TeeTimeDate)">Book @teeTime.TeeTimeDate</button></td>
+                                            <td class="tg-0lax"> </td>
+
+                                            <td class="tg-0lax">
+                                                <input type="submit" name="Submit" class="btn btn-info btn-sm" value="Select @teeTime.TeeTimeDate" />
+
+                                            </td>
                                         }
 
                                     </tr>
@@ -67,47 +119,9 @@
             </div>
 
         </form>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div name="SampleForm" onsubmit="return IsFormValid(window.document.SampleForm);">
-                        <form id="myform">
-                            <div class="form-group">
-                                <p id="demo"></p>
-                                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                <input type="text" class="form-control form-control-sm" id="jsTest" value="@Model.newTeeTime">
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Member Number:</label>
-                                <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter MemberNumber">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter # of Carts">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter Standing Tee Time">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <input type="text" class="form-control form-control-sm" id="lastNameField" placeholder="Enter # of Players">
-                            </div>
-                        </form>
-                    </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
-                </div>
-            </div>
-        </div>
+
     </div>
-    </div>
+</body>
+@Model.Message
+</html>

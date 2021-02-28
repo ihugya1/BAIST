@@ -169,5 +169,169 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.Close();
             return saleNumber;
         }
+        public List<int> GetLast20Scores(int memberNumber, string user, string password)
+        {
+            List<int> totalScoreList;
+
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            SqlCommand UpdateMACommand = new SqlCommand();
+
+
+            SqlCommand MACommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetLast20Scores"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@MemberNumber",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = memberNumber
+            };
+
+            MACommand.Parameters.Add(ASampleCommandParameter);
+            SqlDataReader ApplicationReader;
+            ApplicationReader = MACommand.ExecuteReader();
+            totalScoreList = new List<int>();
+            if (ApplicationReader.HasRows)
+            {
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
+                {
+                    Console.WriteLine(ApplicationReader.GetName(index));
+                }
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
+                {
+                    while (ApplicationReader.Read())
+                    {
+                        int newScore;
+                        newScore = int.Parse(ApplicationReader.GetValue("TotalScore").ToString());
+                        totalScoreList.Add(newScore);
+                    }
+
+                }
+            }
+            ApplicationReader.Close();
+            ClubBaistConnection.Close();
+            return totalScoreList;
+        }
+        public decimal GetHandicap(int memberNumber, string user, string password)
+        {
+            decimal handicap =0;
+
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            SqlCommand UpdateMACommand = new SqlCommand();
+
+
+            SqlCommand MACommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetHandicapIndex"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@MemberNumber",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = memberNumber
+            };
+
+            MACommand.Parameters.Add(ASampleCommandParameter);
+            SqlDataReader ApplicationReader;
+            ApplicationReader = MACommand.ExecuteReader();
+       
+            if (ApplicationReader.HasRows)
+            {
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
+                {
+                    Console.WriteLine(ApplicationReader.GetName(index));
+                }
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
+                {
+                    while (ApplicationReader.Read())
+                    {
+                      
+                        handicap = decimal.Parse(ApplicationReader.GetValue("HandicapIndex").ToString());
+                      
+                    }
+
+                }
+            }
+            ApplicationReader.Close();
+            ClubBaistConnection.Close();
+            return handicap;
+        }
+        public string GetMemberName(int memberNumber, string user, string password)
+        {
+            string membername = "";
+
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            SqlCommand UpdateMACommand = new SqlCommand();
+
+
+            SqlCommand MACommand = new SqlCommand
+            {
+                Connection = ClubBaistConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetMemberName"
+            };
+            SqlParameter ASampleCommandParameter = new SqlParameter
+            {
+                ParameterName = "@MemberNumber",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                SqlValue = memberNumber
+            };
+
+            MACommand.Parameters.Add(ASampleCommandParameter);
+            SqlDataReader ApplicationReader;
+            ApplicationReader = MACommand.ExecuteReader();
+
+            if (ApplicationReader.HasRows)
+            {
+                Console.WriteLine("Columns:");
+                Console.WriteLine("--------");
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
+                {
+                    Console.WriteLine(ApplicationReader.GetName(index));
+                }
+                Console.WriteLine("Values:");
+                Console.WriteLine("-------");
+                for (int index = 0; index < ApplicationReader.FieldCount; index++)
+                {
+                    while (ApplicationReader.Read())
+                    {
+
+                        membername =ApplicationReader.GetValue("MemberName").ToString();
+
+                    }
+
+                }
+            }
+            ApplicationReader.Close();
+            ClubBaistConnection.Close();
+            return membername;
+        }
+
+
     }
 }

@@ -11,8 +11,16 @@ namespace ClubBAISTPrototype.Pages.Player
 {
     public class ModifiesTeeTimeModel : PageModel
     {
+
         [BindProperty]
-        public TeeTime teeTime { get; set; }
+        public DateTime newTeeTimeTime { get; set; }
+        [BindProperty]
+        public int newMemberNumber { get; set; }
+        [BindProperty]
+        public int newNumOfPlayers { get; set; }
+        [BindProperty]
+        public int newNumOfCarts { get; set; }
+
         [BindProperty]
         public TimeSpan ts { get; set; }
         [BindProperty]
@@ -22,7 +30,7 @@ namespace ClubBAISTPrototype.Pages.Player
         public DateTime dateVal { get; set; }
         [BindProperty]
         public List<SelectListItem> Options { get; set; }
-
+        [BindProperty]
         public string Message { get; set; }
         [BindProperty]
         public DateTime SearchParameter { get; set; }
@@ -43,74 +51,99 @@ namespace ClubBAISTPrototype.Pages.Player
         public void OnGet()
         {
             CBS teetimes = new CBS();
-            DateTime dateVal = new DateTime(2021, 02, 15);
-            teetimes.CreateTeeSheet(dateVal);
-            _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(dateVal);
+
+            DateTime dateVal = new DateTime(1999, 02, 15);
+
+            SearchParameter = DateTime.Now;
+            teetimes.CreateTeeSheet(DateTime.Now);
+            _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
 
 
         }
         public void OnPost()
         {
 
-           
-           
+            TeeTime newTeeTime = new TeeTime();
+
+            CBS teetimes = new CBS();
+            SearchParameter = SearchParameter;
             CBS systemControl = new CBS();
+
             string[] subs = Submit.Split(' ');
-            
+
 
             switch (subs[0])
             {
 
                 case "Search":
+                    SearchParameter = SearchParameter;
+                    teetimes.CreateTeeSheet(SearchParameter);
+                    Console.WriteLine(SearchParameter);
+                    _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
 
-                    _sampleObjectCollection = systemControl.GetDailyTeeTimeSheet(dateVal);
-                    //  Message = $"OnPost - First - {FirstInputField}";
                     break;
                 case "Select":
+                    SearchParameter = SearchParameter;
+                    newTeeTimeTime = (DateTime.Parse(subs[1]).Add(DateTime.Parse(subs[2]).TimeOfDay));
+                    newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
+                    newMemberNumber = newTeeTime.MemberNumber;
+                    newNumOfCarts = newTeeTime.NumCarts;
+                    newNumOfPlayers = newTeeTime.NumPlayers;
+                    _sampleObjectCollection = teetimes.GetDailyTeeTimeSheet(SearchParameter.Date);
+                    break;
+                case "Cancel":
+                    SearchParameter = SearchParameter;
+                    newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
+                    if (newTeeTime != null)
+                    {
+                        bool success = false;
+                        Message = $"{subs[1]} Selected";
+                  
+                        newTeeTime.TeeTimeDate = DateTime.Parse(subs[2]);
+                        Console.WriteLine(newTeeTime.TeeTimeDate);
+                    
+                        success = systemControl.RemoveTeeTime(newTeeTime);
+                        SearchParameter = SearchParameter;
+                        newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
+                    }
+                    else
+                    {
+                        Message = "Error";
+                        SearchParameter = SearchParameter;
+                        newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
+                    }
+                    break;
+                case "Update":
+                    newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
+                    if (newTeeTime != null)
+                    {
+                        bool success = false;
+                        Message = $"{subs[1]} Selected";
+                        newTeeTime.NumPlayers = newNumOfPlayers;
+                        newTeeTime.MemberNumber = newMemberNumber;
+                        newTeeTime.NumCarts = newNumOfCarts;
+                        newTeeTime.TeeTimeDate = DateTime.Parse(subs[2]);
+                        Console.WriteLine(newTeeTime.TeeTimeDate);
 
-                    teeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]),DateTime.Parse(subs[2]));
-                    if (teeTime != null)
-                    {
-                      
+                        success = systemControl.UpdateTeeTime(newTeeTime);
                     }
                     else
                     {
                         Message = "Error";
+                        SearchParameter = SearchParameter;
+                        newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
                     }
+                    SearchParameter = SearchParameter;
+                    newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
                     break;
-                case "Reject":
-                    /*
-                    confirm = systemControl.RejectMembershipApplication(int.Parse(subs[1]));
-                    if (confirm)
-                    {
-                        Message = $"{subs[1]} Rejected";
-                        _sampleObjectCollection = systemControl.SearchApplicationsByParam(Parameter);
-                    }
-                    else
-                    {
-                        Message = "Error";
-                    }
-                          */
-                    break;
-              
-                case "Approve":
-                    /*
-                   confirm = systemControl.RejectMembershipApplication(int.Parse(subs[1]));
-                   if (confirm)
-                   {
-                       Message = $"{subs[1]} Rejected";
-                       _sampleObjectCollection = systemControl.SearchApplicationsByParam(Parameter);
-                   }
-                   else
-                   {
-                       Message = "Error";
-                   } */
-                    break;
-               default: 
-                    break;
+
+
+
 
             }
-
         }
+
+
     }
+
 }
