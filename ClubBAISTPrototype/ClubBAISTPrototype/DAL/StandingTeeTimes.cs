@@ -149,17 +149,17 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.Close();
             return sqlError;
         }
-        public bool ModifyTeeTimeRequest(StandingTeeTime newStandingTeeTimeRequest, string user, string password)
+        public bool ModifyStandingTeeTimeRequest(StandingTeeTime newStandingTeeTimeRequest, string user, string password)
         {
             bool sqlError = false;
-            Console.WriteLine("InsertStandingTeeTimeRequest");
+            Console.WriteLine("ModifyStandingTeeTime");
             SqlConnection ClubBaistConnection;
             ClubBaistConnection = new SqlConnection();
             ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
             ClubBaistConnection.Open();
             SqlCommand addStandingTeeTimeRequestCommand = new SqlCommand()
             {
-                CommandText = "ModifyTeeTimeRequest",
+                CommandText = "ModifyStandingTeeTime",
                 CommandType = CommandType.StoredProcedure,
                 Connection = ClubBaistConnection,
             };
@@ -291,14 +291,14 @@ namespace ClubBAISTPrototype.DAL
                 SqlValue = newStandingTeeTimeRequest.IsCancelled
             };
             addStandingTeeTimeRequestCommand.Parameters.Add(IsCancelledParam);
-            SqlParameter IsApproved = new SqlParameter()
+            SqlParameter IsApprovedParam = new SqlParameter()
             {
                 Direction = ParameterDirection.Input,
                 ParameterName = "@IsApproved",
                 SqlDbType = SqlDbType.Bit,
                 SqlValue = newStandingTeeTimeRequest.IsApproved
             };
-            addStandingTeeTimeRequestCommand.Parameters.Add(IsCancelledParam);
+            addStandingTeeTimeRequestCommand.Parameters.Add(IsApprovedParam);
 
             try
             {
@@ -348,14 +348,14 @@ namespace ClubBAISTPrototype.DAL
                     while (ApplicationReader.Read())
                     {
                         StandingTeeTime tee = new StandingTeeTime();
-                      
-                                        tee.ShareHolderNumber = int.Parse(ApplicationReader.GetValue("ShareHolderNumber").ToString());
+                      tee.StandingTeeTimeID = int.Parse(ApplicationReader.GetValue("StandingTeeTimeID").ToString());
+                        tee.ShareHolderNumber = int.Parse(ApplicationReader.GetValue("ShareHolderNumber").ToString());
                       
                                         tee.MemberNumber2 = int.Parse(ApplicationReader.GetValue("MemberNumber2").ToString());
+                        tee.MemberNumber3 = int.Parse(ApplicationReader.GetValue("MemberNumber3").ToString());
 
-                       
-                       
-                                        tee.MemberNumber4 = int.Parse(ApplicationReader.GetValue("MemberNumber4").ToString());
+
+                        tee.MemberNumber4 = int.Parse(ApplicationReader.GetValue("MemberNumber4").ToString());
                        
                                      tee.ShareHolderName = ApplicationReader.GetValue("ShareholderName").ToString(); 
 
@@ -371,7 +371,7 @@ namespace ClubBAISTPrototype.DAL
                      
                    
                                         tee.RequestedDayOfWeek = int.Parse(ApplicationReader.GetValue("RequestedDayOfWeek").ToString());
-                    
+                        tee.RequestedDayOfWeek= tee.RequestedDayOfWeek - 1;
 
                     
                                    tee.IsApproved = bool.Parse(ApplicationReader.GetValue("IsApproved").ToString());

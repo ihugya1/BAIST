@@ -87,34 +87,26 @@ namespace ClubBAISTPrototype.Pages.Shareholder
         }
         public void OnPost()
         {
-        
-            bool confirm;
-            selectedFilter = selectedFilter;
-            string Parameter;
-            MembershipApplication membershipApplication;
+            bool confirm = false ;
             CBS systemControl = new CBS();
-            Parameter = selectedFilter;
             string[] subs = Submit.Split(' ');
 
 
             switch (subs[0])
             {
-
-                case "Search":
-
-                    _sampleObjectCollection = systemControl.GetStandingTeeTimeList();
-                    //  Message = $"OnPost - First - {FirstInputField}";
-                    break;
-                case "Select":
-
-                    break;
-                case "Reject":
-
-              
-                    break;
-                default:
+                case "Cancel":
+                    StandingTeeTime teeTime = new StandingTeeTime();
+                    teeTime.StandingTeeTimeID = int.Parse(subs[1]);
+                    teeTime.IsCancelled = true;
+                    confirm = systemControl.ModifyStandingTeeTime(teeTime);
                     break;
             }
+            _sampleObjectCollection = systemControl.GetStandingTeeTimeList();
+                   
+              
+
+
+          
         }
     }
 }

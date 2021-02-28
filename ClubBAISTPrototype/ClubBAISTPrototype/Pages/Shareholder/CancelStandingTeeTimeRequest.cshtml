@@ -12,59 +12,49 @@
         <form name="ModifyStandingteeTimeRequest" method="post">
             <div class="card mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-light">Applications: </h6>
-
-                    <span class="label label-default">Search :</span>
-
-                    <input type="submit" name="Submit" value="Search" class="btn btn-info" />
-
+                    <h6 class="m-0 font-weight-bold text-light">Standing Tee Time Requests: </h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-dark table-bordered table-sm">
                             <thead>
                                 <tr>
-                                    <th>StandingTeeTime ID</th>
-                                    <th>ShareHolderNumber</th>
-                                    <th>MemberNumber2</th>
-                                    <th>MemberNumber3</th>
-                                    <th>MemberNumber4</th>
-                                    <th>ShareholderName</th>
-                                    <th>MemberName2</th>
-                                    <th>MemberName3</th>
-                                    <th>MemberName4</th>
-                                    <th>StartDate</th>
-                                    <th>EndDate</th>
-                                    <th>TeeTimeTime</th>
-                                    <th>RequestedDayOfWeek</th>
-                                    
-                                    <th>IsApproved</th>
-                                  
+                                    <th>Standing Tee Time ID</th>
+                                    <th>Share Holder Number</th>
+                                    <th>Member Number 2</th>
+                                    <th>Member Number 3</th>
+                                    <th>Member Number 4</th>
+                                    <th>Shareholder Name</th>
+                                    <th>Member Name 2</th>
+                                    <th>Member Name 3</th>
+                                    <th>Member Name 4</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Time</th>
+                                    <th>Day Of Week</th>
+                                    <th>Is Approved</th>
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach (var items in Model.SampleObjectCollection)
                                 {
 
-                                    <tr>
-                                        <td><input type="submit" name="Submit" value="Select @items.StandingTeeTimeID" /></td>
-                                        <td>@items.ShareHolderNumber<br /></td>
-                                        <td>@items.MemberNumber2<br /></td>
-                                        <td>@items.MemberNumber3<br /></td>
-                                        <td>@items.MemberNumber4<br /></td>
-                                        <td>@items.ShareHolderName<br /></td>
-                                        <td>@items.Member3Name<br /></td>
-                                        <td>@items.Member4Name<br /></td>
-                                        <td>@items.DateStart<br /></td>
-                                        <td>@items.DateEnd<br /></td>
-                                        <td>@items.TeeTimeTime<br /></td>
-                                        <td>@items.RequestedDayOfWeek<br /></td>
-                                    
-                                        <td>@items.IsApproved<br /></td>
-                                
-                                    </tr>
-
+                                <tr>
+                                    <td><input type="submit" name="Submit" class="btn btn-warning btn-sm" value="Cancel @items.StandingTeeTimeID" /></td>
+                                    <td>@items.ShareHolderNumber<br /></td>
+                                    <td>@items.MemberNumber2<br /></td>
+                                    <td>@items.MemberNumber3<br /></td>
+                                    <td>@items.MemberNumber4<br /></td>
+                                    <td>@items.ShareHolderName<br /></td>
+                                    <td>@items.Member2Name<br /></td>
+                                    <td>@items.Member3Name<br /></td>
+                                    <td>@items.Member4Name<br /></td>
+                                    <td>@items.DateStart.ToShortDateString()<br /></td>
+                                    <td>@items.DateEnd.ToShortDateString()<br /></td>
+                                    <td>@items.TeeTimeTime.TimeOfDay<br /></td>
+                                    <td>@Enum.GetName(typeof(DayOfWeek),items.RequestedDayOfWeek)<br /></td>
+                                    <td>@items.IsApproved<br /></td>
+                                </tr>
                                 }
                             </tbody>
                         </table>

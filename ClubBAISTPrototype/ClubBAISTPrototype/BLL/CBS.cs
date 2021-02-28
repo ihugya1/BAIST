@@ -120,6 +120,13 @@ namespace ClubBAISTPrototype.BLL
             Confirmation = standingTeeTimeManager.InsertStandingTeeTimeRequest(newStandingTeeTimeRequest, "ihugya1", "SimpCord101");
             return Confirmation;
         }
+        public bool ModifyStandingTeeTime(StandingTeeTime newStandingTeeTimeRequest)
+        {
+            bool Confirmation;
+            StandingTeeTimes standingTeeTimeManager = new StandingTeeTimes();
+            Confirmation = standingTeeTimeManager.ModifyStandingTeeTimeRequest(newStandingTeeTimeRequest, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
         public List<StandingTeeTime> GetStandingTeeTimeList()
         {
             List<StandingTeeTime> standingTeeTimes = new List<StandingTeeTime>();
