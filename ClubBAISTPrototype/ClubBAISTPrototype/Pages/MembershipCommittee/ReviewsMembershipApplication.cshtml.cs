@@ -94,6 +94,8 @@ namespace ClubBAISTPrototype.Pages.MembershipCommittee
                     new SelectListItem { Text = "Pending", Value = "P" },
                     new SelectListItem { Text = "Approved", Value = "A" },
                     new SelectListItem { Text = "Rejected", Value = "R" },
+                    new SelectListItem { Text = "On-Hold", Value = "H" },
+                    new SelectListItem { Text = "Wait Listed", Value = "W" },
                 };
             selectedFilter = "P";
             
@@ -101,9 +103,11 @@ namespace ClubBAISTPrototype.Pages.MembershipCommittee
         public void OnPost()
         {
             this.Options = new List<SelectListItem> {
-                    new SelectListItem { Text = "Pending", Value = "P" },
+                   new SelectListItem { Text = "Pending", Value = "P" },
                     new SelectListItem { Text = "Approved", Value = "A" },
                     new SelectListItem { Text = "Rejected", Value = "R" },
+                    new SelectListItem { Text = "On-Hold", Value = "H" },
+                    new SelectListItem { Text = "Wait Listed", Value = "W" },
                 };
             bool confirm;
             selectedFilter = selectedFilter;
@@ -141,7 +145,6 @@ namespace ClubBAISTPrototype.Pages.MembershipCommittee
                         HomeAlternatePhoneField = membershipApplication.HomeAlternatePhone;
                         EmailField = membershipApplication.Email;
                         DateOfBirthField = membershipApplication.DateOfBirth;
-                        //FirstNameField = membershipApplication.DateCompleted;
                         ShareHolder1Field = membershipApplication.ShareholderName1;
                         ShareHolder2Field = membershipApplication.ShareholderName2;
                         _sampleObjectCollection = systemControl.SearchApplicationsByParam(Parameter);
@@ -166,10 +169,36 @@ namespace ClubBAISTPrototype.Pages.MembershipCommittee
                     break;
                 case "Approve":
 
-                    confirm = systemControl.RejectMembershipApplication(int.Parse(subs[1]));
+                    confirm = systemControl.ApproveMembershipApplication(int.Parse(subs[1]));
                     if (confirm)
                     {
-                        Message = $"{subs[1]} Rejected";
+                        Message = $"{subs[1]} Approved";
+                        _sampleObjectCollection = systemControl.SearchApplicationsByParam(Parameter);
+                    }
+                    else
+                    {
+                        Message = "Error";
+                    }
+                    break;
+                case "Waitlist":
+
+                    confirm = systemControl.WaitListApplication(int.Parse(subs[1]));
+                    if (confirm)
+                    {
+                        Message = $"{subs[1]} put on wait list";
+                        _sampleObjectCollection = systemControl.SearchApplicationsByParam(Parameter);
+                    }
+                    else
+                    {
+                        Message = "Error";
+                    }
+                    break;
+                case "Hold":
+
+                    confirm = systemControl.HoldApplication(int.Parse(subs[1]));
+                    if (confirm)
+                    {
+                        Message = $"{subs[1]} put on hold";
                         _sampleObjectCollection = systemControl.SearchApplicationsByParam(Parameter);
                     }
                     else

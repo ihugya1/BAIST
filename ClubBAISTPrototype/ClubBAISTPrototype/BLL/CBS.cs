@@ -43,6 +43,20 @@ namespace ClubBAISTPrototype.BLL
             Confirmation = membershipManager.RejectMembershipApplication(applicationNum, "ihugya1", "SimpCord101");
             return Confirmation;
         }
+        public bool WaitListApplication(int applicationNum)
+        {
+            bool Confirmation;
+            MembershipApplications membershipManager = new MembershipApplications();
+            Confirmation = membershipManager.WaitListMembershipApplicaiton(applicationNum, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
+        public bool HoldApplication(int applicationNum)
+        {
+            bool Confirmation;
+            MembershipApplications membershipManager = new MembershipApplications();
+            Confirmation = membershipManager.HoldMembershipApplication(applicationNum, "ihugya1", "SimpCord101");
+            return Confirmation;
+        }
         public int AddGameScore(GolfGame newScoreCard)
         {
             int code;

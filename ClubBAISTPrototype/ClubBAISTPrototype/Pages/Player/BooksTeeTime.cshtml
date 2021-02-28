@@ -12,6 +12,15 @@
 <body>
     <div class="jumbotron-fluid">Book a Tee Time   </div>
     <div class="container-fluid">
+        @if (Model.error == false)
+        {
+                    <div class="card text-center text-white bg-success" style="max-width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">@Model.Message</p>
+                </div>
+            </div>
+        }
+        else {
         @if (Model.newTeeTimeTime > Model.dateVal)
         {<form name="SampleForm" method="post">
                 <div class="form-row">
@@ -64,7 +73,7 @@
             <input type="submit" name="Submit" value="Search" class="btn btn-info" />
         </form>
         <form method="post">
-            @if (Model.SampleObjectCollection.Count < 1)
+            @if (Model.SampleObjectCollection.Count > 1)
             {
 
 
@@ -130,9 +139,9 @@
                 </div>
             }
         </form>
-
+        }
 
     </div>
 </body>
-@Model.Message
+
 </html>

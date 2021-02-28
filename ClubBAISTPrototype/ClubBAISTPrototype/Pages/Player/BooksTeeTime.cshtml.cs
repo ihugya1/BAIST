@@ -13,6 +13,8 @@ namespace ClubBAISTPrototype.Pages.Player
     public class BooksTeeTimeModel : PageModel
     {
         [BindProperty]
+        public bool error { get; set; }
+        [BindProperty]
         public DateTime newTeeTimeTime { get; set; }
         [BindProperty]
         public string memberName { get; set; }
@@ -54,6 +56,7 @@ namespace ClubBAISTPrototype.Pages.Player
 
         public void OnGet()
         {
+            error = true;
             CBS teetimes = new CBS();
            
             DateTime dateVal = new DateTime(2015, 02, 15);
@@ -66,7 +69,7 @@ namespace ClubBAISTPrototype.Pages.Player
         }
         public void OnPost()
         {
-            
+            error = true;
             TeeTime newTeeTime = new TeeTime();
 
             CBS teetimes = new CBS();
@@ -97,17 +100,18 @@ namespace ClubBAISTPrototype.Pages.Player
                     newTeeTime = systemControl.GetTeeTime(DateTime.Parse(subs[1]), DateTime.Parse(subs[2]));
                     if (newTeeTime != null)
                     {
-                        bool success = false;
-                        Message = $"{subs[1]} Selected";
+                        
                         newTeeTime.NumCarts = newNumOfCarts;
                         newTeeTime.NumPlayers = newNumOfPlayers;
                         newTeeTime.TeeTimeDate = DateTime.Parse(subs[2]);
                         newTeeTime.MemberNumber = newMemberNumber;
                         newTeeTime.EmployeeName = "";
-                        success= systemControl.BookNewTeeTime(newTeeTime);
+                        error = systemControl.BookNewTeeTime(newTeeTime);
+                        Message = $"Tee Time Booked for {subs[1]} {subs[2]}";
                     }
                     else
                     {
+                        error = true;
                         Message = "Error";
                     }
                     break;

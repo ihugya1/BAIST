@@ -118,7 +118,7 @@ namespace ClubBAISTPrototype.Pages.Player
                     if (newTeeTime != null)
                     {
                         bool success = false;
-                        Message = $"{subs[1]} Selected";
+                        Message = $"{subs[1]} {subs[2]} updated";
                         newTeeTime.NumPlayers = newNumOfPlayers;
                         newTeeTime.MemberNumber = newMemberNumber;
                         newTeeTime.NumCarts = newNumOfCarts;

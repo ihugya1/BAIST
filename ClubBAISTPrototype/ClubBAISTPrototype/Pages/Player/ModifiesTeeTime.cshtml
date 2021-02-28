@@ -13,42 +13,42 @@
     </script>
 </head>
 <body>
-
+    <div class="jumbotron-fluid">Modify a Tee Time   </div>
     @if (Model.newTeeTimeTime > Model.dateVal)
     {<form name="SampleForm" method="post">
-         <div class="form-row">
-             <div class="col">
-                 @Model.Message
-                 <label for="demo" class="col-form-label">Tee Time:</label>
+            <div class="form-row">
+                <div class="col">
+                    @Model.Message
+                    <label for="demo" class="col-form-label">Tee Time:</label>
 
-                 <input id="demo" value="@Model.newTeeTimeTime" class="form-control form-control-sm" name="teedate" disabled />
+                    <input id="demo" value="@Model.newTeeTimeTime" class="form-control form-control-sm" name="teedate" disabled />
 
-             </div>
-             <div class="col">
-                 <label for="newmembernumber" class="col-form-label">Member Number:</label>
-                 <input type="number" asp-for="newMemberNumber" value="@Model.newMemberNumber" class="form-control form-control-sm" id="newmembernumber" placeholder="Enter Member Number" />
-             </div>
+                </div>
+                <div class="col">
+                    <label for="newmembernumber" class="col-form-label">Member Number:</label>
+                    <input type="number" asp-for="newMemberNumber" value="@Model.newMemberNumber" class="form-control form-control-sm" id="newmembernumber" placeholder="Enter Member Number" />
+                </div>
 
-             <div class="col">
-                 <label for="numofplayers" class="col-form-label">Num of Players:</label>
-                 <input type="number" asp-for="newNumOfPlayers" value="@Model.newNumOfPlayers" class="form-control form-control-sm" id="numofplayers" placeholder="Enter # of Players" />
-             </div>
-             <div class="col">
-                 <label for="numofcarts" class="col-form-label">Num of Carts:</label>
-                 <input asp-for="newNumOfCarts" type="text" value="@Model.newNumOfCarts" class="form-control form-control-sm" id="numofcarts" placeholder="Enter # of Carts">
+                <div class="col">
+                    <label for="numofplayers" class="col-form-label">Num of Players:</label>
+                    <input type="number" asp-for="newNumOfPlayers" value="@Model.newNumOfPlayers" class="form-control form-control-sm" id="numofplayers" placeholder="Enter # of Players" />
+                </div>
+                <div class="col">
+                    <label for="numofcarts" class="col-form-label">Num of Carts:</label>
+                    <input asp-for="newNumOfCarts" type="text" value="@Model.newNumOfCarts" class="form-control form-control-sm" id="numofcarts" placeholder="Enter # of Carts">
 
-             </div>
-             <div class="col">
-                 <label for="numofcarts" class="col-form-label">Update Tee Time:</label>
-                 <input type="submit" name="Submit" class="btn btn-warning btn-sm" value="Update @Model.newTeeTimeTime" data-toggle="modal" data-target="#exampleModal" />
-              
-             </div>
-             <div class="col">
-                 <label for="numofcarts" class="col-form-label">Delete Tee Time:</label>
-                 <input type="submit" name="Submit" class="btn btn-danger btn-sm" value="Cancel @Model.newTeeTimeTime" data-toggle="modal" data-target="#exampleModal" />
-             </div>
-             </div>
-</form>
+                </div>
+                <div class="col">
+                    <label for="numofcarts" class="col-form-label">Update Tee Time:</label>
+                    <input type="submit" name="Submit" class="btn btn-warning btn-sm" value="Update @Model.newTeeTimeTime" data-toggle="modal" data-target="#exampleModal" />
+
+                </div>
+                <div class="col">
+                    <label for="numofcarts" class="col-form-label">Delete Tee Time:</label>
+                    <input type="submit" name="Submit" class="btn btn-danger btn-sm" value="Cancel @Model.newTeeTimeTime" data-toggle="modal" data-target="#exampleModal" />
+                </div>
+            </div>
+        </form>
 
     }
 
@@ -62,62 +62,62 @@
             </div>
         </div>
     }
+   
 
-    <h1 class="h3 mb-2 text-light">Book Tee Time</h1>
-    <form asp-page-handler="search" method="post">
-        <h6 class="m-0 font-weight-bold text-light">Modify Tee Times: </h6>
-        <span class="label label-default">Date Select :</span>
-        <input type="date" name="SearchParameter" asp-for="SearchParameter" />
-        <input type="submit" name="Submit" value="Search" class="btn btn-info" />
-    </form>
-    <form method="post">
-        <!-- /.container-fluid -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
 
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped table-dark table-bordered table-sm">
-                        <thead>
-                            <tr>
-                                <th class="tg-0lax">Date Time</th>
-                                <th class="tg-0lax">Member Number</th>
-                                <th class="tg-0lax">Number Carts</th>
+        <h1 class="h3 mb-2 text-light">Book Tee Time</h1>
+        <form asp-page-handler="search" method="post">
+            <h6 class="m-0 font-weight-bold text-light">Modify Tee Times: </h6>
+            <span class="label label-default">Date Select :</span>
+            <input type="date" name="SearchParameter" asp-for="SearchParameter" />
+            <input type="submit" name="Submit" value="Search" class="btn btn-info" />
+        </form>
+        <form method="post">
+            <!-- /.container-fluid -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
 
-                                <th class="tg-0lax">Num Players</th>
-                                <th class="tg-0lax">Book</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var teeTime in Model.SampleObjectCollection)
-                            {
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-dark table-bordered table-sm">
+                            <thead>
                                 <tr>
+                                    <th class="tg-0lax">Date Time</th>
+                                    <th class="tg-0lax">Member Number</th>
+                                    <th class="tg-0lax">Number Carts</th>
 
-                                    @if (teeTime.MemberNumber > 0)
-                                    {
-
-                                        <td class="tg-0lax">@teeTime.TeeTimeDate</td>
-                                        <td class="tg-0lax">@teeTime.MemberNumber</td>
-                                        <td class="tg-0lax">@teeTime.NumCarts</td>
-
-                                        <td class="tg-0lax">@teeTime.NumPlayers</td>
-                                        <td class="tg-0lax"><input type="submit" name="Submit" class="btn btn-info btn-sm" value="Select @teeTime.TeeTimeDate" /></td>
-                                    }
-                                  
-
+                                    <th class="tg-0lax">Num Players</th>
+                                    <th class="tg-0lax">Book</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach (var teeTime in Model.SampleObjectCollection)
+                                {
+                                    <tr>
+
+                                        @if (teeTime.MemberNumber > 0)
+                                        {
+
+                                            <td class="tg-0lax">@teeTime.TeeTimeDate</td>
+                                            <td class="tg-0lax">@teeTime.MemberNumber</td>
+                                            <td class="tg-0lax">@teeTime.NumCarts</td>
+
+                                            <td class="tg-0lax">@teeTime.NumPlayers</td>
+                                            <td class="tg-0lax"><input type="submit" name="Submit" class="btn btn-info btn-sm" value="Select @teeTime.TeeTimeDate" /></td>
+                                        }
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </form>
-
-
-    <p id="demo"></p>
+        </form>
+  
 
 </body>
 @Model.Message

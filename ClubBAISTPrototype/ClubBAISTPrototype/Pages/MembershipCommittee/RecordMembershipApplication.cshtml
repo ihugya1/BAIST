@@ -2,141 +2,151 @@
 @model ClubBAISTPrototype.Pages.MembershipCommittee.RecordMemershipApplicationModel
 @{
 }
-<form method="post" name="ItemForm">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-light">Club BAIST Membership Application: </h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-dark table-borderless table-sm">
-                    <thead>
-                        <tr>
-                            <th>Personal Info:</th>
-                            <th>Work Info:</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-             
-                            <td>
-                                <label>Last Name</label>
-                                <input asp-for="LastNameField" type="text" class="form-control" id="lastNameField" placeholder="Enter Last Name">
-                                <span asp-validation-for="LastNameField"></span>
-                            </td>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="jumbotron-fluid">Record Membership Application  </div>
 
-                            <td>
-                            <label>Occupation</label>
-                            <input asp-for="OccupationField" type="text" class="form-control" id="occupationField" placeholder="Enter Occupation">
-                            <span asp-validation-for="OccupationField"></span>
-                            </td>
-                        </tr>
-                        <tr>
 
-                            <td>
-                                <label>First Name</label>
-                                <input asp-for="FirstNameField" type="text" class="form-control" id="firstNameField" placeholder="Enter First Name">
-                                <span asp-validation-for="FirstNameField"></span>
-                            </td>
+    <form method="post" name="ItemForm">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-light">Club BAIST Membership Application: </h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-dark table-borderless table-sm">
+                        <thead>
+                            <tr>
+                                <th>Personal Info:</th>
+                                <th>Work Info:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
 
-                            <td>
-                            <label>Company Name</label>
-                            <input asp-for="CompanyNameField" type="text" class="form-control" id="companyNameField" placeholder="Enter Company Name">
-                            <span asp-validation-for="CompanyNameField"></span>
-                            </td>
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>Last Name</label>
+                                    <input asp-for="LastNameField" type="text" class="form-control" id="lastNameField" placeholder="Enter Last Name">
+                                    <span asp-validation-for="LastNameField"></span>
+                                </td>
 
-                            <td>
-                                <label>Address</label>
-                                <input asp-for="HomeAddressField" type="text" class="form-control" id="homeAddressField" placeholder="Enter Home Address">
-                                <span asp-validation-for="HomeAddressField"></span>
-                            </td>
+                                <td>
+                                    <label>Occupation</label>
+                                    <input asp-for="OccupationField" type="text" class="form-control" id="occupationField" placeholder="Enter Occupation">
+                                    <span asp-validation-for="OccupationField"></span>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            <td>
-                            <label>Address</label>
-                            <input asp-for="CompanyAddressField" type="text" class="form-control" id="companyAddressField" placeholder="Enter Company Address">
-                            <span asp-validation-for="CompanyAddressField"></span>
-                            </td>
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>First Name</label>
+                                    <input asp-for="FirstNameField" type="text" class="form-control" id="firstNameField" placeholder="Enter First Name">
+                                    <span asp-validation-for="FirstNameField"></span>
+                                </td>
 
-                            <td>
-                                <label>Postal Code</label>
-                                <input asp-for="HomePostalCodeField" type="text" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" class="form-control" id="homePostalCode" placeholder="Enter Postal Code">
-                                <span asp-validation-for="HomePostalCodeField"></span>
-                            </td>
+                                <td>
+                                    <label>Company Name</label>
+                                    <input asp-for="CompanyNameField" type="text" class="form-control" id="companyNameField" placeholder="Enter Company Name">
+                                    <span asp-validation-for="CompanyNameField"></span>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            <td>
-                            <label>Postal code</label>
-                            <input asp-for="CompanyPostalCodeField" type="text" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" class="form-control" id="companyPostalCode" placeholder="Enter Company Postal Code">
-                            <span asp-validation-for="CompanyPostalCodeField"></span>
-                            </td>
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>Address</label>
+                                    <input asp-for="HomeAddressField" type="text" class="form-control" id="homeAddressField" placeholder="Enter Home Address">
+                                    <span asp-validation-for="HomeAddressField"></span>
+                                </td>
 
-                            <td>
-                                <label>Phone</label>
-                                <input asp-for="HomePhoneField" type="tel" class="form-control" id="homePhoneField" placeholder="Enter Home Phone">
-                                <span asp-validation-for="HomePhoneField"></span>
-                            </td>
+                                <td>
+                                    <label>Address</label>
+                                    <input asp-for="CompanyAddressField" type="text" class="form-control" id="companyAddressField" placeholder="Enter Company Address">
+                                    <span asp-validation-for="CompanyAddressField"></span>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            <td>
-                            <label>Phone</label>
-                            <input asp-for="CompanyPhoneField" type="tel" class="form-control" id="companyPhoneField" placeholder="Enter Company Phone">
-                            <span asp-validation-for="CompanyPhoneField"></span>
-                            </td>
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>Postal Code</label>
+                                    <input asp-for="HomePostalCodeField" type="text" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" class="form-control" id="homePostalCode" placeholder="Enter Postal Code">
+                                    <span asp-validation-for="HomePostalCodeField"></span>
+                                </td>
 
-                            <td>
-                            <label>Alternate Phone</label>
-                            <input asp-for="HomeAlternatePhoneField" type="tel" class="form-control" id="alternateHomePhoneField" placeholder="Enter Alternate Home Phone">
-                            <span asp-validation-for="HomeAlternatePhoneField"></span>
-                            </td>
-                            <td> </td>
-                            
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>Postal code</label>
+                                    <input asp-for="CompanyPostalCodeField" type="text" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" class="form-control" id="companyPostalCode" placeholder="Enter Company Postal Code">
+                                    <span asp-validation-for="CompanyPostalCodeField"></span>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            <td>
-                            <label>Email</label>
-                            <input asp-for="EmailField" type="email" pattern="^[\w-\.]+@@([\w-]+\.)+[\w-]{2,4}$" class="form-control" id="emailField" placeholder="Enter email">
-                            <span asp-validation-for="EmailField"></span>
-                            </td>
-                            <td></td>
-                        
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>Phone</label>
+                                    <input asp-for="HomePhoneField" type="tel" class="form-control" id="homePhoneField" placeholder="Enter Home Phone">
+                                    <span asp-validation-for="HomePhoneField"></span>
+                                </td>
 
-                            <td>
-                            <label>Date of Birth (Month/Day/Year)</label>
-                            <input asp-for="DateOfBirthField" type="date" class="form-control" id="dateOfBirthField" placeholder="Enter Date of Birth">
-                            <span asp-validation-for="DateOfBirthField"></span>
-                            </td>
-                            <td> </td>
-                         
-                        </tr>
-                        <tr>
+                                <td>
+                                    <label>Phone</label>
+                                    <input asp-for="CompanyPhoneField" type="tel" class="form-control" id="companyPhoneField" placeholder="Enter Company Phone">
+                                    <span asp-validation-for="CompanyPhoneField"></span>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            <td>
-                                <label>Shareholder Name 1:</label>
-                                <input asp-for="ShareHolder1Field" type="text" class="form-control" id="shareholderName1Field" placeholder="Enter Shareholder Name 1">
-                                <span asp-validation-for="ShareHolder1Field"></span>
-                            </td>
+                                <td>
+                                    <label>Alternate Phone</label>
+                                    <input asp-for="HomeAlternatePhoneField" type="tel" class="form-control" id="alternateHomePhoneField" placeholder="Enter Alternate Home Phone">
+                                    <span asp-validation-for="HomeAlternatePhoneField"></span>
+                                </td>
+                                <td> </td>
 
-                            <td>
-                            <label>Shareholder Name 2:</label>
-                            <input asp-for="ShareHolder2Field" type="text" class="form-control" id="shareholderName2Field" placeholder="Enter Shareholder Name 2">
-                            <span asp-validation-for="ShareHolder2Field"></span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                            <tr>
 
-                <button name="Submit" value="Submit" type="submit" class="btn btn-light">Submit</button>
+                                <td>
+                                    <label>Email</label>
+                                    <input asp-for="EmailField" type="email" pattern="^[\w-\.]+@@([\w-]+\.)+[\w-]{2,4}$" class="form-control" id="emailField" placeholder="Enter email">
+                                    <span asp-validation-for="EmailField"></span>
+                                </td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Date of Birth (Month/Day/Year)</label>
+                                    <input asp-for="DateOfBirthField" type="date" class="form-control" id="dateOfBirthField" placeholder="Enter Date of Birth">
+                                    <span asp-validation-for="DateOfBirthField"></span>
+                                </td>
+                                <td> </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <label>Shareholder Name 1:</label>
+                                    <input asp-for="ShareHolder1Field" type="text" class="form-control" id="shareholderName1Field" placeholder="Enter Shareholder Name 1">
+                                    <span asp-validation-for="ShareHolder1Field"></span>
+                                </td>
+
+                                <td>
+                                    <label>Shareholder Name 2:</label>
+                                    <input asp-for="ShareHolder2Field" type="text" class="form-control" id="shareholderName2Field" placeholder="Enter Shareholder Name 2">
+                                    <span asp-validation-for="ShareHolder2Field"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button name="Submit" value="Submit" type="submit" class="btn btn-light">Submit</button>
                 </div>
             </div>
         </div>
-</form>
-@Model.Message
+    </form>
+    @Model.Message
+</body>
+</html>

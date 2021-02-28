@@ -373,5 +373,73 @@ namespace ClubBAISTPrototype.DAL
             ClubBaistConnection.Close();
             return Success;
         }
+        public bool WaitListMembershipApplicaiton(int membershipApplicationID, string user, string password)
+        {
+            bool Success = true;
+            Console.WriteLine("WaitListApplication ");
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            SqlCommand approvalMembershipAppliction = new SqlCommand()
+            {
+                CommandText = "WaitListApplication",
+                CommandType = CommandType.StoredProcedure,
+                Connection = ClubBaistConnection,
+            };
+            SqlParameter MembershipApplicationID = new SqlParameter()
+            {
+                Direction = ParameterDirection.Input,
+                ParameterName = "@MembershipApplicationID",
+                SqlDbType = SqlDbType.Int,
+                SqlValue = membershipApplicationID
+            };
+            approvalMembershipAppliction.Parameters.Add(MembershipApplicationID);
+            try
+            {
+                approvalMembershipAppliction.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"RejectMembershipAppliction Error - {e}");
+                Success = false;
+            }
+            ClubBaistConnection.Close();
+            return Success;
+        }
+        public bool HoldMembershipApplication(int membershipApplicationID, string user, string password)
+        {
+            bool Success = true;
+            Console.WriteLine("HoldMembershipApplication ");
+            SqlConnection ClubBaistConnection;
+            ClubBaistConnection = new SqlConnection();
+            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ClubBaistConnection.Open();
+            SqlCommand approvalMembershipAppliction = new SqlCommand()
+            {
+                CommandText = "HoldMembershipApplication",
+                CommandType = CommandType.StoredProcedure,
+                Connection = ClubBaistConnection,
+            };
+            SqlParameter MembershipApplicationID = new SqlParameter()
+            {
+                Direction = ParameterDirection.Input,
+                ParameterName = "@MembershipApplicationID",
+                SqlDbType = SqlDbType.Int,
+                SqlValue = membershipApplicationID
+            };
+            approvalMembershipAppliction.Parameters.Add(MembershipApplicationID);
+            try
+            {
+                approvalMembershipAppliction.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"RejectMembershipAppliction Error - {e}");
+                Success = false;
+            }
+            ClubBaistConnection.Close();
+            return Success;
+        }
     }
 }
