@@ -129,11 +129,6 @@ namespace ClubBAISTPrototype.Pages.Player
                 Message = "Not enough data for this member";
             }
            
-            
-
-           
-
-
         }
         public void OnPost()
         {

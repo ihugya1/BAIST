@@ -11,53 +11,7 @@ namespace ClubBAISTPrototype.Pages.Shareholder
 {
     public class CancelStandingTeeTimeRequestModel : PageModel
     {
-        [BindProperty]
-        public int StandingTeeTimeID { get; set; }
-        [BindProperty]
-        public DateTime DateStart { get; set; }
-        [BindProperty]
-        public DateTime DateEnd { get; set; }
-        [BindProperty]
-        public DateTime TeeTimeTime { get; set; }
-        [BindProperty]
-        public DateTime? ApprovedDate { get; set; }
-        [BindProperty]
-        public DateTime? ApprovedTeeTime { get; set; }
-        [BindProperty]
-        public int RequestedDayOfWeek { get; set; }
-        [BindProperty]
-        public int ShareHolderNumber { get; set; }
-        [BindProperty]
-        public int MemberNumber2 { get; set; }
-        [BindProperty]
-        public int MemberNumber3 { get; set; }
-        [BindProperty]
-        public int MemberNumber4 { get; set; }
-        [BindProperty]
-        public string ShareHolderName { get; set; }
-        [BindProperty]
-        public string Member2Name { get; set; }
-        [BindProperty]
-        public string Member3Name { get; set; }
-        [BindProperty]
-        public string Member4Name { get; set; }
-        [BindProperty]
-        public int? NumCarts { get; set; }
-        [BindProperty]
-        public int? PriorityNumber { get; set; }
-        [BindProperty]
-        public string EmployeeName { get; set; }
-        [BindProperty]
-        public int? EmployeeNumber { get; set; }
-        [BindProperty]
-        public bool IsApproved { get; set; }
-        [BindProperty]
-        public bool IsCancelled { get; set; }
-
-        [BindProperty]
-        public string selectedFilter { get; set; }
-
-        public List<SelectListItem> Options { get; set; }
+       
 
         public string Message { get; set; }
         [BindProperty]
