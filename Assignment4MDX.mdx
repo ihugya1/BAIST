@@ -1,0 +1,102 @@
+/* SELECT identifies this as a SELECT statement. The FROM clause
+identifies the cube or partition the information is selected from. This is
+known as the cube context for the SELECT statement. The result of
+this SELECT statement is shown in Figure 12-2. */
+SELECT FROM [Max Min Manufacturing DM]
+// 3,418,942.00
+
+/* As you might expect, we need to be able to specify members other
+than the default members in our MDX SELECT statements for those
+statements to be of much interest. We do this by including query
+dimensions. An MDX SELECT statement with one query dimension
+has the following format:For example: */
+SELECT {[Guiding Lights],
+[Mythic World],
+[Warriors of Yore],
+[Woodland Creatures]} ON COLUMNS
+FROM [Max Min Manufacturing DM]
+// Guiding Lights	Mythic World	Warriors of Yore	Woodland Creatures
+//	386,461.00		961,734.00		1,092,912.00		977,835.00
+
+/*If you are paying attention, you realize we can save ourselves some
+typing and enter this query as follows:*/
+SELECT [Product Type].Members ON COLUMNS
+FROM [Max Min Manufacturing DM]
+// Guiding Lights	Mythic World	Warriors of Yore	Woodland Creatures
+//	386,461.00		961,734.00		1,092,912.00		977,835.00
+
+/*Let’s add a second query dimension to our MDX SELECT
+statement. With two query dimensions, the MDX SELECT statement
+has the following format:*/
+SELECT [Product Type].Members ON COLUMNS,
+[YEAR].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+/*
+	All	Guiding Lights	Mythic World	Warriors of Yore	Woodland Creatures
+All		10,188,455.00	1,215,787.00	2,885,044.00	3,213,966.00	2,873,658.00
+2009	3,349,380.00	399,000.00	958,350.00	1,048,166.00	943,864.00
+2010	3,420,133.00	430,326.00	964,960.00	1,072,888.00	951,959.00
+2011	3,418,942.00	386,461.00	961,734.00	1,092,912.00	977,835.00
+*/
+
+/*
+This MDX SELECT statement uses a set containing the Accepted
+Products measure and the Total Products calculated member for the
+COLUMNS query dimension. The result is shown in Figure 12-7. We
+end up with the total of all accepted products and the total of all
+production for each year.
+*/
+
+SELECT {[Measures].[Accepted Products], [Measures].[Total Products]} ON COLUMNS,
+[Year].Members on ROWS
+FROM [Max Min Manufacturing DM]
+/*
+		Accepted Products	Total Products
+All		10,188,455.00	10,296,577.00
+2009	3,349,380.00	3,384,911.00
+2010	3,420,133.00	3,456,413.00
+2011	3,418,942.00	3,455,253.00
+*/
+
+/*
+illustrates how the tuple in the slicer affects the result
+set. Each member of the COLUMNS query dimension is combined
+with each member of the ROWS query dimension. These
+combinations are then combined with the members of the slicer tuple.
+The default member is used for any dimension not represented in the
+COLUMNS query dimension, the ROWS query dimension, or the
+slicer tuple.
+*/
+SELECT [Product Type].Members ON COLUMNS,
+[Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE ([Measures].[Total Products], [Plant].&[3])
+/*
+	All	Guiding Lights	Mythic World	Warriors of Yore	Woodland Creatures
+All		6,093,910.00	647,012.00	2,915,931.00	1,092,118.00	1,438,849.00
+2009	1,997,130.00	205,773.00	968,602.00	356,292.00	466,463.00
+2010	2,063,129.00	237,114.00	975,291.00	370,802.00	479,922.00
+2011	2,033,651.00	204,125.00	972,038.00	365,024.00	492,464.00
+*/
+
+/*
+Here is the WITH statement and an MDX SELECT statement
+that uses it:
+*/
+WITH SET [American WWII Figures] AS
+{[American GI], [US Army Pilot], [US Navy Gunner's Mate]}
+SELECT {[American WWII Figures]} ON COLUMNS,
+[Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]
+/*
+	American GI	US Army Pilot	US Navy Gunner's Mate
+All		42,183.00	198,385.00	292,501.00
+2009	22,721.00	51,352.00	96,980.00
+2010	8,669.00	71,487.00	104,021.00
+2011	10,793.00	75,546.00	91,500.00
+*/
+
+/* CONTINUE FROM "Let’s expand on our American World War II Figures set and create
+calculated members that create rollups for each nationality in the
+World War II product subtype.*/
