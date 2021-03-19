@@ -1,8 +1,10 @@
 ﻿using ClubBAISTPrototype.BLL;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,10 +18,11 @@ namespace ClubBAISTPrototype.DAL
             int saleNumber = 0;
 
 
-            Console.WriteLine("InsertGolfGame ");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
 
@@ -173,9 +176,11 @@ namespace ClubBAISTPrototype.DAL
         {
             List<int> totalScoreList;
 
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand UpdateLast20Command = new SqlCommand();
 
@@ -227,9 +232,12 @@ namespace ClubBAISTPrototype.DAL
         {
             decimal handicap =0;
 
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+          
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand UpdateMACommand = new SqlCommand();
 
@@ -281,9 +289,11 @@ namespace ClubBAISTPrototype.DAL
         {
             string membername = "";
 
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand UpdateMACommand = new SqlCommand();
 

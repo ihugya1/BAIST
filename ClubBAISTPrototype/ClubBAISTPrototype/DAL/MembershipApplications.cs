@@ -1,8 +1,10 @@
 ﻿using ClubBAISTPrototype.BLL;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,9 +16,11 @@ namespace ClubBAISTPrototype.DAL
         {
             MembershipApplication membershipApplication = new MembershipApplication();
 
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand UpdateMACommand = new SqlCommand();
 
@@ -74,9 +78,11 @@ namespace ClubBAISTPrototype.DAL
         {
             List<MembershipApplication> membershipApplicationList;
 
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand UpdateMACommand = new SqlCommand();
 
@@ -145,9 +151,11 @@ namespace ClubBAISTPrototype.DAL
         {
             bool sqlError = false;
             Console.WriteLine("InsertMembershipApplication");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand UpdateStudentCommand = new SqlCommand();
             SqlCommand addMembershipApplicationCommand = new SqlCommand()
@@ -309,9 +317,11 @@ namespace ClubBAISTPrototype.DAL
         {
             bool Success = true;
             Console.WriteLine("ApproveMembershipAppliction ");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand approvalMembershipAppliction = new SqlCommand()
             {
@@ -377,9 +387,11 @@ namespace ClubBAISTPrototype.DAL
         {
             bool Success = true;
             Console.WriteLine("WaitListApplication ");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand approvalMembershipAppliction = new SqlCommand()
             {
@@ -411,9 +423,11 @@ namespace ClubBAISTPrototype.DAL
         {
             bool Success = true;
             Console.WriteLine("HoldMembershipApplication ");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             SqlCommand approvalMembershipAppliction = new SqlCommand()
             {

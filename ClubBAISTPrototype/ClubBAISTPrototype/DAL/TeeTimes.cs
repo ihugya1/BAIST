@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,9 +14,11 @@ namespace ClubBAISTPrototype.DAL
     {
         public void CreateDailySheet(DateTime searchParam,string user, string password)
         {
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
             SqlCommand CreateTimesCommand = new SqlCommand
@@ -50,9 +53,11 @@ namespace ClubBAISTPrototype.DAL
 
 
             Console.WriteLine("GetDailyTeeSheetByDay ");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
            
@@ -116,9 +121,11 @@ namespace ClubBAISTPrototype.DAL
 
             TeeTime item = new TeeTime();
             Console.WriteLine("GetTeeTime ");
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
 
@@ -191,9 +198,11 @@ namespace ClubBAISTPrototype.DAL
             TeeTime item = new TeeTime();
             Console.WriteLine("BookTeeTime ");
             Console.WriteLine(teeTime.TeeTimeDate);
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
 
@@ -267,9 +276,11 @@ namespace ClubBAISTPrototype.DAL
             TeeTime item = new TeeTime();
             Console.WriteLine("Delete Tee Time ");
             Console.WriteLine(teeTime.TeeTimeDate);
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
 
@@ -308,9 +319,11 @@ namespace ClubBAISTPrototype.DAL
             TeeTime item = new TeeTime();
             Console.WriteLine("ModifyTeeTime ");
             Console.WriteLine(teeTime.TeeTimeDate);
-            SqlConnection ClubBaistConnection;
-            ClubBaistConnection = new SqlConnection();
-            ClubBaistConnection.ConnectionString = @$"Persist Security Info=False;Database={user};User ID={user};Password={password};server=dev1.baist.ca;";
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            configurationBuilder.AddJsonFile("appsettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+            SqlConnection ClubBaistConnection = new SqlConnection(configuration.GetConnectionString("BAIS3230"));
             ClubBaistConnection.Open();
             //  SqlTransaction sqlTransaction = ClubBaistConnection.BeginTransaction();
 

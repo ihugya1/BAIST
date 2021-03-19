@@ -19,14 +19,14 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>6vb34iZz79RnjXw/SG5dvSRXbZI=2021-03-12 11:59:13 AM2021-03-12 11:59:13 AM</TimeStamp>
+        <TimeStamp>6vb34iZz79RnjXw/SG5dvSRXbZI=2021-03-18 5:16:12 PM2021-03-12 11:59:13 AM</TimeStamp>
         <ID>
           <String>Nortwind Mart</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>AikaMRyidGqPMLAuG0MBE6Cvnz8=2021-03-17 1:31:55 PM2021-03-12 11:59:13 AM</TimeStamp>
+        <TimeStamp>QXTLsZAl0LzHYy1gonMR+0jRrjk=2021-03-18 6:14:49 PM2021-03-12 11:59:13 AM</TimeStamp>
         <ID>
           <String>Northwind Mart</String>
         </ID>
@@ -54,7 +54,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>HNuqO2Q+8sJaAu6a11RGSZ29NyA=2021-03-17 11:36:13 AM2021-03-12 11:59:13 AM</TimeStamp>
+        <TimeStamp>36GpUloUr/0nbpEYt8scj2qrc1Y=2021-03-18 5:36:43 PM2021-03-12 11:59:13 AM</TimeStamp>
         <ID>
           <String>Time</String>
         </ID>
@@ -68,14 +68,14 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>whULAXIZ3wLQp7ld7GNOYotSa/Y=2021-03-17 12:54:37 PM2021-03-12 11:59:13 AMXZYzlNHN5yesY+kFlLX9jinzxYY=2021-03-17 12:54:37 PM2021-03-12 11:59:13 AM</TimeStamp>
+        <TimeStamp>HdVYCCv4h2ouXI5+JUV1FiHYoY0=2021-03-18 6:07:52 PM2021-03-12 11:59:13 AMrsqhS70TGIkZ7Xu/BBSx/M5xtNI=2021-03-18 6:07:52 PM2021-03-12 11:59:13 AM</TimeStamp>
         <ID>
           <String>Sales</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>Es4yXV2NgGSnfCRKLsCaYVApPiQ=2021-03-17 2:30:12 PM2021-03-17 1:31:55 PMHrfpNW5x7FWUtzs1dhijCvgpjvg=2021-03-17 2:30:12 PM2021-03-17 1:31:55 PM</TimeStamp>
+        <TimeStamp>t/8CXU1UkUacHWiRjcM8K5hTYTM=2021-03-18 6:46:54 PM2021-03-17 1:31:55 PMBVvIhBAObr47bmAwV0vIw+fNMkc=2021-03-18 6:18:16 PM2021-03-17 1:31:55 PM</TimeStamp>
         <ID>
           <String>Shipping</String>
         </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-03-17T20:30:23.456667Z</LastDeployed>
+  <LastDeployed>2021-03-19T00:47:10.473333Z</LastDeployed>
 </DeploymentSnapshot>

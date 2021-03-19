@@ -1,17 +1,17 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cf5c3aac-7df8-41f1-994b-85827e110008" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a676edec-9452-4e12-bc32-4504aab2fb47" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Shipping</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Sale Fact</ID>
       <Partitions>
-        <Partition dwd:design-time-name="03286c94-cc7d-471d-8107-8990bd17020d">
+        <Partition dwd:design-time-name="2a699d5a-9fbf-4c58-9fa9-dd475388e6c8">
           <ID>Sale Fact</ID>
           <Name>Sale Fact</Name>
-          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d1bfba00-4eba-45fc-82a8-a23553722434">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="2c3e58ac-3887-4381-b81f-909377dfff04">
             <DataSourceViewID>Northwind Mart</DataSourceViewID>
             <TableID>dbo_SaleFact</TableID>
           </Source>
@@ -19,15 +19,15 @@
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
           <EstimatedRows>1814</EstimatedRows>
-          <AggregationDesignID>ShippingAggregationDesign</AggregationDesignID>
+          <AggregationDesignID>AggrationDesignShipping</AggregationDesignID>
         </Partition>
       </Partitions>
       <AggregationDesigns>
         <AggregationDesign>
-          <ID>ShippingAggregationDesign</ID>
-          <Name>ShippingAggregationDesign</Name>
-          <CreatedTimestamp>2021-03-17T20:29:16.513333Z</CreatedTimestamp>
-          <LastSchemaUpdate>2021-03-17T20:29:16.513333Z</LastSchemaUpdate>
+          <ID>AggrationDesignShipping</ID>
+          <Name>AggrationDesignShipping</Name>
+          <CreatedTimestamp>2021-03-19T00:17:49.183333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2021-03-19T00:17:49.183333Z</LastSchemaUpdate>
           <EstimatedRows>1814</EstimatedRows>
           <Dimensions>
             <Dimension>
@@ -36,9 +36,6 @@
                 <Attribute>
                   <AttributeID>Time Key</AttributeID>
                   <EstimatedCount>388</EstimatedCount>
-                </Attribute>
-                <Attribute>
-                  <AttributeID>The Date</AttributeID>
                 </Attribute>
                 <Attribute>
                   <AttributeID>Day Of Week</AttributeID>
@@ -61,6 +58,9 @@
                 </Attribute>
                 <Attribute>
                   <AttributeID>Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>The Date</AttributeID>
                 </Attribute>
               </Attributes>
             </Dimension>
@@ -249,11 +249,6 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Year</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -268,6 +263,11 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Shipper Key</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
               </Dimensions>
             </Aggregation>
@@ -277,6 +277,11 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -291,6 +296,29 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Customer Key</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Shipper</CubeDimensionID>
                   <Attributes>
                     <Attribute>
                       <AttributeID>Shipper Key</AttributeID>
@@ -300,8 +328,8 @@
               </Dimensions>
             </Aggregation>
             <Aggregation>
-              <ID>Aggregation 5</ID>
-              <Name>Aggregation 5</Name>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
@@ -324,34 +352,6 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
-                </Dimension>
-              </Dimensions>
-            </Aggregation>
-            <Aggregation>
-              <ID>Aggregation 6</ID>
-              <Name>Aggregation 6</Name>
-              <Dimensions>
-                <Dimension>
-                  <CubeDimensionID>Time</CubeDimensionID>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Customer</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Customer Key</AttributeID>
-                    </Attribute>
-                  </Attributes>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Product</CubeDimensionID>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Shipper</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Shipper Key</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
               </Dimensions>
             </Aggregation>
@@ -384,39 +384,6 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Year</AttributeID>
-                    </Attribute>
-                  </Attributes>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Customer</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Country</AttributeID>
-                    </Attribute>
-                  </Attributes>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Product</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Category Name</AttributeID>
-                    </Attribute>
-                  </Attributes>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Shipper</CubeDimensionID>
-                </Dimension>
-              </Dimensions>
-            </Aggregation>
-            <Aggregation>
-              <ID>Aggregation 9</ID>
-              <Name>Aggregation 9</Name>
-              <Dimensions>
-                <Dimension>
-                  <CubeDimensionID>Time</CubeDimensionID>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -445,6 +412,39 @@
               </Dimensions>
             </Aggregation>
             <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Shipper</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
               <ID>Aggregation a</ID>
               <Name>Aggregation a</Name>
               <Dimensions>
@@ -456,6 +456,11 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
@@ -468,11 +473,6 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Year</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -491,6 +491,11 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -500,11 +505,6 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Shipper Key</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
               </Dimensions>
             </Aggregation>
@@ -520,14 +520,14 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Product</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Category Name</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Shipper Key</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
               </Dimensions>
             </Aggregation>
@@ -560,11 +560,6 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Year</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -579,6 +574,11 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Shipper Key</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
               </Dimensions>
             </Aggregation>
@@ -588,6 +588,11 @@
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Customer</CubeDimensionID>
@@ -602,6 +607,29 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 11</ID>
+              <Name>Aggregation 11</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Shipper</CubeDimensionID>
                   <Attributes>
                     <Attribute>
                       <AttributeID>Shipper Key</AttributeID>
@@ -611,8 +639,8 @@
               </Dimensions>
             </Aggregation>
             <Aggregation>
-              <ID>Aggregation 11</ID>
-              <Name>Aggregation 11</Name>
+              <ID>Aggregation 12</ID>
+              <Name>Aggregation 12</Name>
               <Dimensions>
                 <Dimension>
                   <CubeDimensionID>Time</CubeDimensionID>
@@ -635,34 +663,6 @@
                 </Dimension>
                 <Dimension>
                   <CubeDimensionID>Shipper</CubeDimensionID>
-                </Dimension>
-              </Dimensions>
-            </Aggregation>
-            <Aggregation>
-              <ID>Aggregation 12</ID>
-              <Name>Aggregation 12</Name>
-              <Dimensions>
-                <Dimension>
-                  <CubeDimensionID>Time</CubeDimensionID>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Customer</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Country</AttributeID>
-                    </Attribute>
-                  </Attributes>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Product</CubeDimensionID>
-                </Dimension>
-                <Dimension>
-                  <CubeDimensionID>Shipper</CubeDimensionID>
-                  <Attributes>
-                    <Attribute>
-                      <AttributeID>Shipper Key</AttributeID>
-                    </Attribute>
-                  </Attributes>
                 </Dimension>
               </Dimensions>
             </Aggregation>

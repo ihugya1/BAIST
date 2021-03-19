@@ -99,4 +99,99 @@ All		42,183.00	198,385.00	292,501.00
 
 /* CONTINUE FROM "Let’s expand on our American World War II Figures set and create
 calculated members that create rollups for each nationality in the
-World War II product subtype.*/
+World War II product subtype.
+*/
+WITH SET [American WWII Figures] AS
+{[American GI], [US Army Pilot], [US Navy Gunner's Mate]}
+SELECT {[American WWII Figures]} ON COLUMNS,
+		[Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]
+
+//Create calculated members that create rollups
+WITH
+    MEMBER [World War II].[American Figures] AS
+        [American GI]+[US Army Pilot]+[US Navy Gunner's Mate]
+    MEMBER [World War II].[British Figures] AS
+        [British Tank Commander]+[RAF Pilot]
+    MEMBER [World War II].[Russian Figures] AS
+        [Russian Infantry]+[Russian Tank Commander]
+    MEMBER [World War II].[German Figures] AS
+        [German Panzer Driver]
+SELECT {[American Figures],
+            [British Figures],
+            [Russian Figures],
+            [German Figures]} ON COLUMNS,
+        [Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]
+
+
+//Temp Calculated Members
+WITH 
+	MEMBER [Measures].[Percent Of Parent] AS
+	CStr(ROUND(([Product Hierarchy].CurrentMember,
+						[Measures].[Total Products])*100/
+				([Product Hierarchy].CurrentMember.Parent,
+					[Measures].[Total Products]),2) )+"%"
+	SELECT [Product Type].Members ON COLUMNS,
+			[Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Percent Of Parent]
+
+//Crossjoin
+SELECT CROSSJOIN( [Product Type].Members,
+						[Plant].Members) ON COLUMNS,
+		[Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]
+
+//Non empty cross join
+SELECT NON EMPTY CROSSJOIN( [Product Type].Members,
+						[Plant].Members) ON COLUMNS,
+		[Year].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]
+
+//Top Count 
+SELECT TOPCOUNT([Product].Members, 5,
+        [Measures].[Total Products]) ON COLUMNS
+FROM [Max Min Manufacturing DM]
+
+//Bottom Count
+SELECT BOTTOMCOUNT ([Machine].Members, 3,
+						[Measures].[Total Products]) ON COLUMNS
+			FROM [Max Min Manufacturing DM]
+
+
+//Top Count 2 dimentions
+SELECT TOPCOUNT([Product].Members, 5, 
+				[Measures].[Total Products]) ON COLUMNS,
+				[Year].[2010] ON ROWS
+FROM [Max Min Manufacturing DM]
+
+//Aggregates
+WITH
+    MEMBER [Measures].[Avg per Month] AS
+    'ROUND (Sum(Descendants([Date Hierarchy].CurrentMember, [Date]),
+                                        [Measures].[Total Products]) /
+    Count(Descendants([Date Hierarchy].CurrentMember, [Date])), 0)'
+
+SELECT [Year].Members ON COLUMNS,
+       [Product Type].Members ON ROWS
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Avg per Month]
+WHERE [Measures].[Avg per Month]
+
+//AXIS
+SELECT [Product Type].Members ON AXIS(0),
+		[Year].Members ON AXIS(1)
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]
+
+//AXIS 3 Dimensions with front end window error
+SELECT [Product Type].Members ON AXIS(0),
+		[Year].Members ON AXIS(1),
+		[Material].Members ON AXIS(2)
+FROM [Max Min Manufacturing DM]
+WHERE [Measures].[Total Products]

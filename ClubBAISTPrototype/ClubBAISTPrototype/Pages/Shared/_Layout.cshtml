@@ -23,61 +23,42 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Player/RecordsPlayerScores">Scores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Player/BooksTeeTime">Book Tee Time</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Player/ModifiesTeeTime">Change Tee Time</a>
-                    </li>
+                  
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tee Times</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Player/BooksTeeTime">Book a Tee Time</a>
-                            <a class="dropdown-item" href="/Player/ModifiesTeeTime">Modify/Cancel a Tee Time</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" asp-page="/Player/BooksTeeTime">Book a Tee Time</a>
+                            <a class="dropdown-item" asp-page="/Player/ModifiesTeeTime">Modify/Cancel a Tee Time</a>
+                           
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Applications</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/MembershipCommittee/RecordMembershipApplication">Records Membership Application</a>
-                            <a class="dropdown-item" href="/MembershipCommittee/ReviewsMembershipApplication">Review Membership Application</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" asp-page="/MembershipCommittee/RecordMembershipApplication">Records Membership Application</a>
+                            <a class="dropdown-item" asp-page="/MembershipCommittee/ReviewsMembershipApplication">Review Membership Application</a>
+                           
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Scores</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Player/RecordsPlayerScores">Record Player Score</a>
-                            <a class="dropdown-item" href="/Player/ViewsPlayerHandicap">View Player Handicap</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" asp-page="/Player/RecordsPlayerScores">Record Player Score</a>
+                            <a class="dropdown-item" asp-page="/Player/ViewsPlayerHandicap">View Player Handicap</a>
+                           
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Standing Tee Times:</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Shareholder/MakeStandingTeeTimeRequest">Make Standing Tee Time Request</a>
-                            <a class="dropdown-item" href="/ShareholderCancelStandingTeeTimeRequest">Cancel Standing Tee Time Request</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" asp-page="/Shareholder/MakeStandingTeeTimeRequest">Make Standing Tee Time Request</a>
+                            <a class="dropdown-item" asp-page="/Shareholder/CancelStandingTeeTimeRequest">Cancel Standing Tee Time Request</a>
+                           
                         </div>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+              
             </div>
         </nav>
     </header>
@@ -89,7 +70,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - ClubBAISTPrototype - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - ClubBAISTPrototype - Ian Hugya<a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
