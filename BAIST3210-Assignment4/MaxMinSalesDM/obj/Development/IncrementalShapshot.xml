@@ -1,0 +1,110 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>ihugya1MaxMinSalesDM</Database>
+    <Server>64.141.18.118</Server>
+    <ConnectionString>Data Source=64.141.18.118;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>RBB43+fNOVS9vw4b9KpwpXC0iok=2021-03-24 2:00:31 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Max Min Sales DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>DGNf/0fZk7TovM29m8MDWH+H2xc=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>MaxMinSalesDM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>HbVeoI1ckxi761e0xqkkey8IliE=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>poa3lgMIfFLmr2e6P1htY811rGY=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>TvEg1o+LSHiODWTgLmVQbJPj0+k=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ZpLuksnIsyrD3H6jRzp5p4mKzmo=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Promotion</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>1PufsJmoxw9V+5ZYU58FwGDqkx8=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Sales Person</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>lIZLiRHYwhS4JH0NlMh+VxlGgEQ=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Store</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>fk79UyUvK8KiMDE3SBkegIG9oeg=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PMFNgQVBujBwMe8Ngjeo2JxI0ObgE=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>New cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>vzgM060aY2MmSheawu5vioRQBgU=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+        <ID>
+          <String>Classification—Children At Home</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>I/a8KLMSXhtLJXIseqpL/Xjlbok=2021-03-24 2:24:20 PM2021-03-24 2:18:43 PM</TimeStamp>
+        <ID>
+          <String>Classification - Children At Home</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>OXy/2D6jOelmwuO6+XhF5gyP0Gk=2021-03-05 8:05:00 PM2021-03-05 8:05:00 PM</TimeStamp>
+      <ID>
+        <String>ihugya1MaxMinSalesDM</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2021-03-24T20:53:16.51Z</LastDeployed>
+</DeploymentSnapshot>
